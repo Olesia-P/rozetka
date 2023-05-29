@@ -1,0 +1,50 @@
+@import "../../../styles/variables";
+
+.card {
+    background-color: $black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 10px 10px 5px;
+
+    .profileWrap {
+
+        padding: 12px 15px 10px 10px;
+
+        .profile {
+            width: 30px;
+            height: 30px;
+            background-color: #ffffff1a;
+            border-radius: 50%;
+            padding: 5px;
+            color: whitesmoke;
+        }
+    }
+
+    .entrance {
+
+        display: flex;
+        flex-direction: column;
+
+        .links {
+            display: flex;
+            justify-content: start;
+
+            div {
+                padding-right: 15px;
+            }
+
+            a {
+                padding-right: 15px;
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+        .caption {
+            color: rgb(166, 165, 165);
+            font-size: 12px;
+        }
+    }
+}
