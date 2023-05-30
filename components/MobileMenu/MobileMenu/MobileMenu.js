@@ -9,6 +9,12 @@ import Chat from "../Chat/Chat";
 import Basket from "../Basket/Basket";
 import ChooseLanguage from "../ChooseLanguage/ChooseLanguage";
 import ChooseCity from "../ChooseCity/ChooseCity";
+import CompanyInfo from "../CompanyInfo/CompanyInfo";
+import Help from "../Help/Help";
+import Services from "../Services/Services";
+import ForPartners from "../ForPartners/ForPartners";
+import DownloadApps from "../DownloadApps/DownloadApps";
+import SocialMedia from "../SocialMedia/SocialMedia";
 
 export default function MobileMenu() {
   return (
@@ -23,6 +29,12 @@ export default function MobileMenu() {
         <Basket />
         <ChooseLanguage />
         <ChooseCity />
+        <CompanyInfo />
+        <Help />
+        <Services />
+        <ForPartners />
+        <DownloadApps />
+        <SocialMedia />
       </div>
     </div>
   );
