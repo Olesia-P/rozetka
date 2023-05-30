@@ -1,22 +1,17 @@
-import css from "../Authorization/Authorization.module.scss";
+import css from "./Authorization.module.scss";
 import { BiUser } from "react-icons/bi";
-import Link from "next/link";
 
 export default function Authorization() {
   return (
-    <div className={css.card}>
+    <div className={css.container}>
       <div className={css.profileWrap}>
         <BiUser className={css.profile} />
       </div>
       <div className={css.entrance}>
         <div className={css.links}>
-          <Link href="/">
-            <a>Вхід</a>
-          </Link>
+          <a>Вхід</a>
           <div> | </div>
-          <Link href="/">
-            <a>Реєстрація</a>
-          </Link>
+          <a>Реєстрація</a>
         </div>
         <div className={css.caption}>
           Авторизуйтесь для отримання розширених можливостей

@@ -1,4 +1,4 @@
-import css from "../LogoHeader/LogoHeader.module.scss";
+import css from "./LogoHeader.module.scss";
 import { RxCross2 } from "react-icons/rx";
 
 export default function LogoHeader() {

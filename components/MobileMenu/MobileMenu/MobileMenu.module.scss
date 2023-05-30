@@ -13,8 +13,14 @@
         width: 85%;
         background-color: white;
         font-size: 14px;
+        scrollbar-width: thin;
     }
 
+    .scroll {
+        height: 50%;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
 
 
 }
