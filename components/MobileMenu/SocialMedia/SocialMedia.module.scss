@@ -1,78 +1,84 @@
 @import "../../../styles/variables";
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    padding: 16px 8px 32px 8px;
-    border-bottom: 1px solid $divider;
+    display: none;
+}
 
-
-    .header {
-        color: $bleak-header-grey;
-        font-weight: 700;
-        padding: 0 16px;
-        margin-bottom: 8px;
-    }
-
-    .linksWrap {
+@media(max-width:400px) {
+    .container {
         display: flex;
-        justify-content: start;
-        align-items: center;
-        padding: 0 16px;
-        width: 95%;
-        gap: 5px;
-
-        a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 16px 8px 32px 8px;
+        border-bottom: 1px solid $divider;
 
 
-
-            .icon {
-                width: 15px;
-                height: 15px;
-                color: white;
-            }
-
-            .facebook {
-                background-color: rgb(62, 119, 170);
-                border: 10px solid rgb(62, 119, 170);
-                border-radius: 50%;
-            }
-
-            .twitter {
-                background-color: #76C9FD;
-                border: 10px solid #76C9FD;
-                border-radius: 50%;
-            }
-
-            .youtube {
-                background-color: #E90000;
-                border: 10px solid #E90000;
-                border-radius: 50%;
-            }
-
-            .instagram {
-                background-color: purple;
-                border: 10px solid purple;
-                border-radius: 50%;
-            }
-
-            .viber {
-                background-color: #7D3DAF;
-                border: 10px solid #7D3DAF;
-                border-radius: 50%;
-            }
-
-            .telegram {
-                background-color: #0088CC;
-                border: 10px solid #0088CC;
-                border-radius: 50%;
-            }
+        .header {
+            color: $bleak-header-grey;
+            font-weight: 700;
+            padding: 0 16px;
+            margin-bottom: 8px;
         }
 
+        .linksWrap {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding: 0 16px;
+            width: 95%;
+            gap: 5px;
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+
+
+                .icon {
+                    width: 15px;
+                    height: 15px;
+                    color: white;
+                }
+
+                .facebook {
+                    background-color: rgb(62, 119, 170);
+                    border: 10px solid rgb(62, 119, 170);
+                    border-radius: 50%;
+                }
+
+                .twitter {
+                    background-color: #76C9FD;
+                    border: 10px solid #76C9FD;
+                    border-radius: 50%;
+                }
+
+                .youtube {
+                    background-color: #E90000;
+                    border: 10px solid #E90000;
+                    border-radius: 50%;
+                }
+
+                .instagram {
+                    background-color: purple;
+                    border: 10px solid purple;
+                    border-radius: 50%;
+                }
+
+                .viber {
+                    background-color: #7D3DAF;
+                    border: 10px solid #7D3DAF;
+                    border-radius: 50%;
+                }
+
+                .telegram {
+                    background-color: #0088CC;
+                    border: 10px solid #0088CC;
+                    border-radius: 50%;
+                }
+            }
+
+        }
     }
 }

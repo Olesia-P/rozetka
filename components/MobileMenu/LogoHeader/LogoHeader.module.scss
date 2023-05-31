@@ -1,22 +1,28 @@
 @import "../../../styles/variables";
 
 .logoBar {
-    background-color: $black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 8px 6px 16px;
+    display: none;
+}
+
+@media(max-width:400px) {
+    .logoBar {
+        background-color: $black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 8px 6px 16px;
 
 
-    .logo {
-        height: 24px;
-        padding: 8px 0;
-    }
+        .logo {
+            height: 24px;
+            padding: 8px 0;
+        }
 
-    .exitCross {
-        height: 15px;
-        width: 15px;
-        color: white;
-        padding: 12px
+        .exitCross {
+            height: 15px;
+            width: 15px;
+            color: white;
+            padding: 12px
+        }
     }
 }

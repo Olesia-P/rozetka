@@ -1,25 +1,29 @@
 @import "../../../styles/variables";
 
-
-
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    gap: 18px;
-    padding: 16px 0 18px 0;
-    border-bottom: 1px solid $divider;
+    display: none;
+}
 
-    .header {
-        padding: 0 16px;
-        color: $bleak-header-grey;
-        font-weight: 700;
-    }
+@media(max-width:400px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 18px;
+        padding: 16px 0 18px 0;
+        border-bottom: 1px solid $divider;
 
-    .link {
-        padding: 0 16px;
-        text-decoration: none;
-        color: black;
+        .header {
+            padding: 0 16px;
+            color: $bleak-header-grey;
+            font-weight: 700;
+        }
+
+        .link {
+            padding: 0 16px;
+            text-decoration: none;
+            color: black;
+        }
     }
 }
