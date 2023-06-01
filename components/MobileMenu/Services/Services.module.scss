@@ -4,39 +4,41 @@
     display: none;
 }
 
-@media(max-width:400px) {
+@media(max-width:$max-width-mobile) {
+
     .container {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: start;
         gap: 18px;
-        padding: 16px 0 18px 0;
+        padding: 20px 16px 18px 16px;
         border-bottom: 1px solid $divider;
 
         .headerWrap {
             display: flex;
-            padding: 0 16px;
             justify-content: space-between;
             align-items: center;
-            width: 90%;
+            width: 100%;
 
             .header {
-
                 color: $bleak-header-grey;
                 font-weight: 700;
             }
 
-            .chevron {
-                height: 20px;
-                width: 20px;
-                transform: rotate(90deg);
+            .chevronWrap {
+                display: flex;
+                align-items: center;
 
+                .chevron {
+                    margin-right: 10px;
+                    height: 20px;
+                    width: 20px;
+                    transform: rotate(90deg);
+                }
             }
         }
 
         .link {
-            padding: 0 16px;
             text-decoration: none;
             color: black;
         }

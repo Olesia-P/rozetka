@@ -4,12 +4,13 @@
     display: none;
 }
 
-@media(max-width:400px) {
+@media(max-width:$max-width-mobile) {
     .container {
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
-        padding: 0 8px;
+        padding: 2px 16px 0 16px;
+        height: 46px;
 
         .logo {
             background-color: $light-grey;
@@ -17,7 +18,7 @@
             width: 22px;
             padding: 8px;
             border-radius: 50%;
-            margin: 8px 15px 5px 10px;
+            margin-right: 16px;
         }
     }
 }

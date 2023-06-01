@@ -13,3 +13,17 @@ $mainFont: 'Rozetka',
     Roboto,
     Helvetica,
     sans-serif;
+$max-width-mobile: 768px;
+
+@mixin dfc() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin dfcc() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

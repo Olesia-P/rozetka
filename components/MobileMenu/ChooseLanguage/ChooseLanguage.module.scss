@@ -4,18 +4,19 @@
     display: none;
 }
 
-@media(max-width:400px) {
+@media(max-width:$max-width-mobile) {
     .container {
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
-        display: grid;
+        display: flex;
         grid-template-columns: repeat(3, 1fr);
-        margin: 12px 0;
-        padding: 0 8px;
+        margin: 8px 0;
+        padding: 4px 16px 0px 16px;
+        height: 48px;
 
         .caption {
             color: $font-grey;
-            margin-left: 8px;
+            width: 75px;
         }
 
         .buttonWrap {
@@ -23,6 +24,7 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            gap: 8px;
 
             .button {
                 display: flex;
@@ -32,7 +34,6 @@
                 padding: 6px 12px;
                 border: 1px solid $divider;
                 border-radius: 4px;
-                margin-right: 8px;
 
                 img {
                     padding-right: 8px;

@@ -1,11 +1,7 @@
 import css from "./SocialMedia.module.scss";
 import cx from "classnames";
 
-import {
-  AiFillTwitterCircle,
-  AiFillYoutube,
-  AiOutlineInstagram,
-} from "react-icons/ai";
+import { AiFillYoutube, AiOutlineInstagram } from "react-icons/ai";
 import {
   FaViber,
   FaTelegramPlane,

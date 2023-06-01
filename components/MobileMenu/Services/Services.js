@@ -7,7 +7,9 @@ export default function Services() {
     <div className={css.container}>
       <div className={css.headerWrap}>
         <div className={css.header}>Сервіси</div>
-        <FiChevronRight className={css.chevron} />
+        <div className={css.chevronWrap}>
+          <FiChevronRight className={css.chevron} />
+        </div>
       </div>
 
       <Link href="/">

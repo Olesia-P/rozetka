@@ -4,25 +4,37 @@
     display: none;
 }
 
-@media(max-width:400px) {
+@media(max-width:$max-width-mobile) {
     .container {
         background-color: $green;
         display: flex;
-        justify-content: space-evenly;
         align-items: center;
-        padding: 4px 0;
+        padding: 0 16px;
+        height: 48px;
+
+        .logo {
+            margin-right: 16px;
+        }
 
         .link {
-            padding-right: 30px;
             color: white;
             text-decoration: none;
             font-weight: 700;
         }
 
-        .chevron {
-            color: white;
-            height: 20px;
-            width: 20px;
+        .chevronContainer {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 63px;
+
+            .chevron {
+                color: white;
+                height: 20px;
+                width: 20px;
+                justify-self: flex-end;
+
+            }
         }
     }
 }

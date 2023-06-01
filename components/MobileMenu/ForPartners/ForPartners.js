@@ -7,7 +7,9 @@ export default function ForPartners() {
     <div className={css.container}>
       <div className={css.headerWrap}>
         <div className={css.header}>Партнерам</div>
-        <FiChevronRight className={css.chevron} />
+        <div className={css.chevronWrap}>
+          <FiChevronRight className={css.chevron} />
+        </div>
       </div>
 
       <Link href="/">

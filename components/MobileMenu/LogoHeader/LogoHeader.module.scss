@@ -4,25 +4,29 @@
     display: none;
 }
 
-@media(max-width:400px) {
+@media(max-width:$max-width-mobile) {
     .logoBar {
         background-color: $black;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 8px 8px 6px 16px;
-
+        height: 40px;
 
         .logo {
             height: 24px;
-            padding: 8px 0;
         }
 
-        .exitCross {
-            height: 15px;
-            width: 15px;
-            color: white;
-            padding: 12px
+        .crossContainer {
+            width: 40px;
+            height: 40px;
+            @include dfc();
+
+            .exitCross {
+                height: 15px;
+                width: 15px;
+                color: white;
+            }
         }
     }
 }

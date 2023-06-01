@@ -15,26 +15,29 @@ import Services from "../Services/Services";
 import ForPartners from "../ForPartners/ForPartners";
 import DownloadApps from "../DownloadApps/DownloadApps";
 import SocialMedia from "../SocialMedia/SocialMedia";
+import { GiHamburgerMenu } from "react-icons/gi";
 
-export default function MobileMenu() {
+export default function MobileMenu({}) {
   return (
-    <div className={css.overlay}>
-      <div className={cx(css.menu, css.scroll)}>
-        <LogoHeader />
-        <Authorization />
-        <PrytulaFond />
-        <Catalog />
-        <ReferenceCenter />
-        <Chat />
-        <Basket />
-        <ChooseLanguage />
-        <ChooseCity />
-        <CompanyInfo />
-        <Help />
-        <Services />
-        <ForPartners />
-        <DownloadApps />
-        <SocialMedia />
+    <div className={cx(css.container)}>
+      <div className={cx(css.overlay)}>
+        <div className={cx(css.menu, css.scroll)}>
+          <LogoHeader />
+          <Authorization />
+          <PrytulaFond />
+          <Catalog />
+          <ReferenceCenter />
+          <Chat />
+          <Basket />
+          <ChooseLanguage />
+          <ChooseCity />
+          <CompanyInfo />
+          <Help />
+          <Services />
+          <ForPartners />
+          <DownloadApps />
+          <SocialMedia />
+        </div>
       </div>
     </div>
   );

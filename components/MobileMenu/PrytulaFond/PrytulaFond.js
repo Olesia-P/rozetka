@@ -16,7 +16,10 @@ export default function PrytulaFond() {
       >
         ФОНД СЕРГІЯ ПРИТУЛИ
       </a>
-      <a href="https://www.liqpay.ua/uk/checkout/card/checkout_1685468596509562_55639874_L5F5fn1tUf7s5SMkg4h3">
+      <a
+        className={css.chevronContainer}
+        href="https://www.liqpay.ua/uk/checkout/card/checkout_1685468596509562_55639874_L5F5fn1tUf7s5SMkg4h3"
+      >
         <FiChevronRight className={css.chevron} />
       </a>
     </div>
