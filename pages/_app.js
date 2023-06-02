@@ -10,11 +10,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <div>
-      <MobileMenu
-        onClick={() => {
-          setOpened(true);
-        }}
-      />
+      <MobileMenu onClick={() => setOpened(false)} />
       <Hamburger
         onClick={() => {
           setOpened(true);
