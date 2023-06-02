@@ -5,7 +5,7 @@ import cx from "classnames";
 import { useState } from "react";
 
 export default function Services() {
-  const [isList, setIsList] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={css.container}>
@@ -15,27 +15,17 @@ export default function Services() {
           <FiChevronRight
             className={cx(
               css.chevron,
-              isList === true && css.rotateOpened,
-              isList === false && css.rotateClosed
+              isOpen === true && css.rotateOpened,
+              isOpen === false && css.rotateClosed
             )}
             onClick={() => {
-              setIsList(!isList);
+              setIsOpen(!isOpen);
             }}
           />
         </div>
       </div>
-      {isList && (
-        <div
-          className={cx(
-            css.linkWrap,
-            isList === true && css.animation,
-            css.drawerDown,
-            css.down
-            // isList === false && css.animation,
-            // css.drawerUp,
-            // css.up
-          )}
-        >
+      {isOpen && (
+        <div className={cx(css.linkWrap, isOpen && css.openedList)}>
           <Link href="/">
             <a className={css.link}>Бонусний рахунок</a>
           </Link>
