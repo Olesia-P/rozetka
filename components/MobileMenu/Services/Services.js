@@ -24,22 +24,21 @@ export default function Services() {
           />
         </div>
       </div>
-      {isOpen && (
-        <div className={cx(css.linkWrap, isOpen && css.openedList)}>
-          <Link href="/">
-            <a className={css.link}>Бонусний рахунок</a>
-          </Link>
-          <Link href="/">
-            <a className={css.link}>Rozetka Premium</a>
-          </Link>
-          <Link href="/">
-            <a className={css.link}>Подарункові сертифікати</a>
-          </Link>
-          <Link href="/">
-            <a className={css.link}>Rozetka обмін</a>
-          </Link>
-        </div>
-      )}
+
+      <div className={cx(css.linkWrap, isOpen && css.openedList)}>
+        <Link href="/">
+          <a className={css.link}>Бонусний рахунок</a>
+        </Link>
+        <Link href="/">
+          <a className={css.link}>Rozetka Premium</a>
+        </Link>
+        <Link href="/">
+          <a className={css.link}>Подарункові сертифікати</a>
+        </Link>
+        <Link href="/">
+          <a className={css.link}>Rozetka обмін</a>
+        </Link>
+      </div>
     </div>
   );
 }

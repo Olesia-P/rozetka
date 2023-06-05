@@ -23,6 +23,7 @@
                 padding: 5px;
                 color: whitesmoke;
                 @include dfc();
+                cursor: pointer;
             }
         }
 
@@ -42,6 +43,7 @@
                     padding-right: 15px;
                     text-decoration: none;
                     color: white;
+                    cursor: pointer;
                 }
             }
 

@@ -15,32 +15,52 @@ import Services from "../Services/Services";
 import ForPartners from "../ForPartners/ForPartners";
 import DownloadApps from "../DownloadApps/DownloadApps";
 import SocialMedia from "../SocialMedia/SocialMedia";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { useState } from "react";
+import PopUp from "../PopUp/PopUp";
 
-export default function MobileMenu({}) {
+export default function MobileMenu({ setOpened }) {
+  const [isPopUp, setIsPopUp] = useState(false);
+  const [popUpMessage, setPopUpMessage] = useState("");
   return (
-    <div className={cx(css.container)}>
-      <div className={cx(css.overlay)}>
-        <div className={cx(css.menu, css.scroll)}>
-          <LogoHeader />
-          <Authorization />
-          <PrytulaFond />
-          <Catalog />
-          <ReferenceCenter />
-          <Chat />
-          <Basket />
-          <ChooseLanguage />
-          <ChooseCity />
-          <CompanyInfo />
-          <Help />
-          <Services />
-          <ForPartners />
-          <DownloadApps />
-          <SocialMedia />
+    <div>
+      {!isPopUp && (
+        <div className={cx(css.overlay)}>
+          <div className={cx(css.menu, css.scroll)}>
+            <LogoHeader setOpened={setOpened} />
+            <Authorization
+              setIsPopUp={setIsPopUp}
+              isPopUp={isPopUp}
+              setPopUpMessage={setPopUpMessage}
+            />
+            <PrytulaFond />
+            <Catalog
+              setIsPopUp={setIsPopUp}
+              isPopUp={isPopUp}
+              setPopUpMessage={setPopUpMessage}
+            />
+            <ReferenceCenter />
+            <Chat />
+            <Basket
+              setIsPopUp={setIsPopUp}
+              isPopUp={isPopUp}
+              setPopUpMessage={setPopUpMessage}
+            />
+            <ChooseLanguage />
+            <ChooseCity
+              setIsPopUp={setIsPopUp}
+              isPopUp={isPopUp}
+              setPopUpMessage={setPopUpMessage}
+            />
+            <CompanyInfo />
+            <Help />
+            <Services />
+            <ForPartners />
+            <DownloadApps />
+            <SocialMedia />
+          </div>
         </div>
-      </div>
+      )}
+      {isPopUp && <PopUp setIsPopUp={setIsPopUp} message={popUpMessage} />}
     </div>
   );
 }
-
-//

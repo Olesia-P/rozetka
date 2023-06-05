@@ -1,7 +1,11 @@
 import css from "./Authorization.module.scss";
 import { BiUser } from "react-icons/bi";
 
-export default function Authorization() {
+export default function Authorization({ setIsPopUp, setPopUpMessage }) {
+  const callPopUp = () => {
+    setIsPopUp(true);
+    setPopUpMessage("This is authorization page");
+  };
   return (
     <div className={css.container}>
       <div className={css.profileWrap}>
@@ -9,9 +13,9 @@ export default function Authorization() {
       </div>
       <div className={css.entrance}>
         <div className={css.links}>
-          <a>Вхід</a>
+          <a onClick={callPopUp}>Вхід</a>
           <div> | </div>
-          <a>Реєстрація</a>
+          <a onClick={callPopUp}>Реєстрація</a>
         </div>
         <div className={css.caption}>
           Авторизуйтесь для отримання розширених можливостей

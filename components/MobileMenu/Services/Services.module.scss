@@ -43,15 +43,13 @@
             flex-direction: column;
             justify-content: center;
             gap: 18px;
-            transition: max-height 1s ease-in;
+            transition: max-height 0.5s ease-in;
             overflow: hidden;
-            box-sizing: border-box;
             max-height: 0;
 
 
             &.openedList {
                 max-height: 300px;
-                transition: max-height 1s ease-in;
             }
 
             .link {
@@ -62,12 +60,10 @@
     }
 }
 
-
-
 .rotateOpened {
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
 }
 
 .rotateClosed {
-    transform: rotate(-90deg);
+    transform: rotate(90deg);
 }

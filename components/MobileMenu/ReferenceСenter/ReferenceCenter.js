@@ -1,11 +1,14 @@
 import css from "./ReferenceCenter.module.scss";
 import { BsQuestionCircle } from "react-icons/bs";
+import Link from "next/link";
 
 export default function ReferenceCenter() {
   return (
     <div className={css.container}>
       <BsQuestionCircle className={css.logo} />
-      <div className={css.link}>Довідковий центр</div>
+      <Link href="https://help.rozetka.com.ua/">
+        <a className={css.link}>Довідковий центр</a>
+      </Link>
     </div>
   );
 }
