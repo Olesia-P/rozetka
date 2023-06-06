@@ -18,15 +18,17 @@ import SocialMedia from "../SocialMedia/SocialMedia";
 import { useState } from "react";
 import PopUp from "../PopUp/PopUp";
 
-export default function MobileMenu({ setOpened }) {
+export default function MobileMenu({ setOpenedMobile, openedMobile }) {
   const [isPopUp, setIsPopUp] = useState(false);
   const [popUpMessage, setPopUpMessage] = useState("");
   return (
     <div>
       {!isPopUp && (
         <div className={cx(css.overlay)}>
-          <div className={cx(css.menu, css.scroll)}>
-            <LogoHeader setOpened={setOpened} />
+          <div
+            className={cx(css.menu, css.scroll, openedMobile && css.openedMenu)}
+          >
+            <LogoHeader setOpenedMobile={setOpenedMobile} />
             <Authorization
               setIsPopUp={setIsPopUp}
               isPopUp={isPopUp}

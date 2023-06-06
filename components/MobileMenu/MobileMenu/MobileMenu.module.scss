@@ -16,10 +16,16 @@
         line-height: 1.5;
 
         .menu {
-            width: 320px;
+            max-width: 0px;
             background-color: white;
             font-size: 14px;
             scrollbar-width: thin;
+            transition: max-width 0.5s ease-in;
+
+            &.openedMenu {
+                transition: max-width 0.5s ease-in;
+                max-width: 320px;
+            }
         }
 
         .scroll {

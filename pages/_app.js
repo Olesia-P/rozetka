@@ -4,12 +4,17 @@ import Hamburger from "../components/Hamburger/Hamburger.js";
 import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
-  const [opened, setOpened] = useState(false);
+  const [openedMobile, setOpenedMobile] = useState(false);
 
   return (
     <div>
-      {opened && <MobileMenu setOpened={setOpened} />}
-      {!opened && <Hamburger setOpened={setOpened} />}
+      {openedMobile && (
+        <MobileMenu
+          setOpenedMobile={setOpenedMobile}
+          openedMobile={openedMobile}
+        />
+      )}
+      {!openedMobile && <Hamburger setOpenedMobile={setOpenedMobile} />}
 
       <Component {...pageProps} />
     </div>
