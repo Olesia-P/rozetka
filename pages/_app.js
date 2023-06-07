@@ -8,13 +8,11 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <div>
-      {openedMobile && (
-        <MobileMenu
-          setOpenedMobile={setOpenedMobile}
-          openedMobile={openedMobile}
-        />
-      )}
-      {!openedMobile && <Hamburger setOpenedMobile={setOpenedMobile} />}
+      <MobileMenu
+        setOpenedMobile={setOpenedMobile}
+        openedMobile={openedMobile}
+      />
+      <Hamburger setOpenedMobile={setOpenedMobile} />
 
       <Component {...pageProps} />
     </div>

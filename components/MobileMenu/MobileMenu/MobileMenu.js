@@ -24,7 +24,13 @@ export default function MobileMenu({ setOpenedMobile, openedMobile }) {
   return (
     <div>
       {!isPopUp && (
-        <div className={cx(css.overlay)}>
+        <div className={css.container}>
+          <div
+            className={cx(css.overlay, openedMobile && css.openedOverlay)}
+            onClick={() => {
+              setOpenedMobile(false);
+            }}
+          ></div>
           <div
             className={cx(css.menu, css.scroll, openedMobile && css.openedMenu)}
           >
