@@ -1,10 +1,10 @@
 import css from "./Authorization.module.scss";
 import { BiUser } from "react-icons/bi";
 
-export default function Authorization({ setIsPopUp, setPopUpMessage }) {
+export default function Authorization({ setIsPopUp, setPopUpType }) {
   const callPopUp = () => {
     setIsPopUp(true);
-    setPopUpMessage("This is authorization page");
+    setPopUpType("authorization");
   };
   return (
     <div className={css.container}>

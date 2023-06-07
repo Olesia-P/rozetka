@@ -16,11 +16,29 @@ import ForPartners from "../ForPartners/ForPartners";
 import DownloadApps from "../DownloadApps/DownloadApps";
 import SocialMedia from "../SocialMedia/SocialMedia";
 import { useState } from "react";
-import PopUp from "../PopUp/PopUp";
+import PopUpAuthorizationFilling from "../PopUpFillings/PopUpAuthorizationFilling";
+import PopUpCatalogFilling from "../PopUpFillings/PopUpCatalogFilling";
+import PopUpBasketFilling from "../PopUpFillings/PopUpBasketFilling";
+import PopUpCityChoiceFilling from "../PopUpFillings/PopUpCityChoiceFilling";
+import PopUpWrap from "../PopUpWrap/PopUpWrap";
 
 export default function MobileMenu({ setOpenedMobile, openedMobile }) {
   const [isPopUp, setIsPopUp] = useState(false);
-  const [popUpMessage, setPopUpMessage] = useState("");
+  const [popUpType, setPopUpType] = useState("");
+
+  const PopUp = () => {
+    switch (popUpType) {
+      case "basket":
+        return PopUpWrap(PopUpBasketFilling, setIsPopUp);
+      case "city choice":
+        return PopUpWrap(PopUpCityChoiceFilling, setIsPopUp);
+      case "authorization":
+        return PopUpWrap(PopUpAuthorizationFilling, setIsPopUp);
+      case "catalog":
+        return PopUpWrap(PopUpCatalogFilling, setIsPopUp);
+    }
+  };
+
   return (
     <div>
       {!isPopUp && (
@@ -37,28 +55,15 @@ export default function MobileMenu({ setOpenedMobile, openedMobile }) {
             <LogoHeader setOpenedMobile={setOpenedMobile} />
             <Authorization
               setIsPopUp={setIsPopUp}
-              isPopUp={isPopUp}
-              setPopUpMessage={setPopUpMessage}
+              setPopUpType={setPopUpType}
             />
             <PrytulaFond />
-            <Catalog
-              setIsPopUp={setIsPopUp}
-              isPopUp={isPopUp}
-              setPopUpMessage={setPopUpMessage}
-            />
+            <Catalog setIsPopUp={setIsPopUp} setPopUpType={setPopUpType} />
             <ReferenceCenter />
             <Chat />
-            <Basket
-              setIsPopUp={setIsPopUp}
-              isPopUp={isPopUp}
-              setPopUpMessage={setPopUpMessage}
-            />
+            <Basket setIsPopUp={setIsPopUp} setPopUpType={setPopUpType} />
             <ChooseLanguage />
-            <ChooseCity
-              setIsPopUp={setIsPopUp}
-              isPopUp={isPopUp}
-              setPopUpMessage={setPopUpMessage}
-            />
+            <ChooseCity setIsPopUp={setIsPopUp} setPopUpType={setPopUpType} />
             <CompanyInfo />
             <Help />
             <Services />
@@ -68,7 +73,7 @@ export default function MobileMenu({ setOpenedMobile, openedMobile }) {
           </div>
         </div>
       )}
-      {isPopUp && <PopUp setIsPopUp={setIsPopUp} message={popUpMessage} />}
+      {isPopUp && <PopUp />}
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import css from "./Catalog.module.scss";
 import { AiOutlineShop } from "react-icons/ai";
 
-export default function Catalog({ setIsPopUp, setPopUpMessage }) {
+export default function Catalog({ setIsPopUp, setPopUpType }) {
   const callPopUp = () => {
     setIsPopUp(true);
-    setPopUpMessage("This is catalog page");
+    setPopUpType("catalog");
   };
   return (
     <div className={css.container} onClick={callPopUp}>
