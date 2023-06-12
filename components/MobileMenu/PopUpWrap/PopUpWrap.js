@@ -1,11 +1,11 @@
 import React from "react";
 import css from "./PopUpWrap.module.scss";
 
-export default function PopUpWrap(PopUpFillingComponent, setPopUpState) {
+export default function PopUpWrap({ Component, setPopUpState }) {
   return (
     <div className={css.card}>
       <div className={css.title}>
-        <PopUpFillingComponent />
+        <Component />
       </div>
       <div
         className={css.button}

@@ -1,15 +1,14 @@
 import css from "./ChooseCity.module.scss";
 import { FiChevronRight } from "react-icons/fi";
 
-export default function ChooseCity({ setIsPopUp, setPopUpType }) {
+export default function ChooseCity({ setCityChoicePopUp }) {
   return (
     <div className={css.container}>
       <div className={css.caption}>Місто</div>
       <div
         className={css.cityWrap}
         onClick={() => {
-          setIsPopUp(true);
-          setPopUpType("city choice");
+          setCityChoicePopUp(true);
         }}
       >
         <div className={css.city}>Київ</div>

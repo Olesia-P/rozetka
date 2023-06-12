@@ -21,59 +21,69 @@ import PopUpCatalogFilling from "../PopUpFillings/PopUpCatalogFilling";
 import PopUpBasketFilling from "../PopUpFillings/PopUpBasketFilling";
 import PopUpCityChoiceFilling from "../PopUpFillings/PopUpCityChoiceFilling";
 import PopUpWrap from "../PopUpWrap/PopUpWrap";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { changeMobile } from "../../features/isMobileSlice";
 
-export default function MobileMenu({ setOpenedMobile, openedMobile }) {
-  const [isPopUp, setIsPopUp] = useState(false);
-  const [popUpType, setPopUpType] = useState("");
+export default function MobileMenu() {
+  // const [isPopUp, setIsPopUp] = useState(false);
+  // const [popUpType, setPopUpType] = useState("");
+  const [authorizationPopUp, setAuthorizationPopUp] = useState(false);
+  const [basketPopUp, setBasketPopUp] = useState(false);
+  const [catalogPopUp, setCatalogPopUp] = useState(false);
+  const [cityChoicePopUp, setCityChoicePopUp] = useState(false);
 
-  const PopUp = () => {
-    switch (popUpType) {
-      case "basket":
-        return PopUpWrap(PopUpBasketFilling, setIsPopUp);
-      case "city choice":
-        return PopUpWrap(PopUpCityChoiceFilling, setIsPopUp);
-      case "authorization":
-        return PopUpWrap(PopUpAuthorizationFilling, setIsPopUp);
-      case "catalog":
-        return PopUpWrap(PopUpCatalogFilling, setIsPopUp);
-    }
-  };
+  // const PopUp = () => {
+  //   switch (popUpType) {
+  //     case "basket":
+  //       return PopUpWrap(PopUpBasketFilling, setIsPopUp);
+  //     case "city choice":
+  //       return PopUpWrap(PopUpCityChoiceFilling, setIsPopUp);
+  //     case "authorization":
+  //       return PopUpWrap(PopUpAuthorizationFilling, setIsPopUp);
+  //     case "catalog":
+  //       return PopUpWrap(PopUpCatalogFilling, setIsPopUp);
+  //   }
+  // };
+
+  // const PopUp = PopUpWrap();
+
+  const isMobile = useSelector((state) => state.isMobile.value);
+  const dispatch = useDispatch();
 
   return (
     <div>
-      {!isPopUp && (
-        <div className={css.container}>
-          <div
-            className={cx(css.overlay, openedMobile && css.openedOverlay)}
-            onClick={() => {
-              setOpenedMobile(false);
-            }}
-          ></div>
-          <div
-            className={cx(css.menu, css.scroll, openedMobile && css.openedMenu)}
-          >
-            <LogoHeader setOpenedMobile={setOpenedMobile} />
-            <Authorization
-              setIsPopUp={setIsPopUp}
-              setPopUpType={setPopUpType}
-            />
-            <PrytulaFond />
-            <Catalog setIsPopUp={setIsPopUp} setPopUpType={setPopUpType} />
-            <ReferenceCenter />
-            <Chat />
-            <Basket setIsPopUp={setIsPopUp} setPopUpType={setPopUpType} />
-            <ChooseLanguage />
-            <ChooseCity setIsPopUp={setIsPopUp} setPopUpType={setPopUpType} />
-            <CompanyInfo />
-            <Help />
-            <Services />
-            <ForPartners />
-            <DownloadApps />
-            <SocialMedia />
-          </div>
+      <div className={cx(css.container, isMobile && css.open)}>
+        <div
+          className={cx(css.overlay)}
+          onClick={() => {
+            dispatch(changeMobile(false));
+          }}
+        ></div>
+        <div className={cx(css.menu, css.scroll)}>
+          <LogoHeader />
+          <Authorization setAuthorizationPopUp={setAuthorizationPopUp} />
+          <PrytulaFond />
+          <Catalog setCatalogPopUp={setCatalogPopUp} />
+          <ReferenceCenter />
+          <Chat />
+          <Basket setBasketPopUp={setBasketPopUp} />
+          <ChooseLanguage />
+          <ChooseCity setCityChoicePopUp={setCityChoicePopUp} />
+          <CompanyInfo />
+          <Help />
+          <Services />
+          <ForPartners />
+          <DownloadApps />
+          <SocialMedia />
         </div>
-      )}
-      {isPopUp && <PopUp />}
+      </div>
+
+      {/* <PopUp
+        setPopUpState={setBasketPopUp}
+        popUpState={basketPopUp}
+        component={PopUpBasketFilling}
+      /> */}
     </div>
   );
 }

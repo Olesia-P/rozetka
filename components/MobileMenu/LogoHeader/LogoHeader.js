@@ -1,7 +1,10 @@
 import css from "./LogoHeader.module.scss";
 import { RxCross2 } from "react-icons/rx";
+import { useDispatch } from "react-redux";
+import { changeMobile } from "../../features/isMobileSlice";
 
-export default function LogoHeader({ setOpenedMobile }) {
+export default function LogoHeader() {
+  const dispatch = useDispatch();
   return (
     <div className={css.logoBar}>
       <img
@@ -10,7 +13,7 @@ export default function LogoHeader({ setOpenedMobile }) {
       />
       <div
         className={css.crossContainer}
-        onClick={() => setOpenedMobile(false)}
+        onClick={() => dispatch(changeMobile(false))}
       >
         <RxCross2 className={css.exitCross} />
       </div>

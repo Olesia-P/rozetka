@@ -19,12 +19,6 @@
             transition: opacity 0.5s ease-in;
         }
 
-        .openedOverlay {
-            opacity: 100%;
-            transition: opacity 0.5s ease-in;
-            z-index: 1;
-        }
-
         .menu {
             position: absolute;
             transform: translateX(-100%);
@@ -36,16 +30,23 @@
             z-index: 2;
         }
 
-        .openedMenu {
-            transform: translateX(0);
-            transition: transform 0.5s ease-in;
-
-        }
-
         .scroll {
             height: 100%;
             overflow: scroll;
             overflow-x: hidden;
+        }
+
+        &.open {
+            .menu {
+                transform: translateX(0);
+                transition: transform 0.5s ease-in;
+            }
+
+            .overlay {
+                opacity: 100%;
+                transition: opacity 0.5s ease-in;
+                z-index: 1;
+            }
         }
     }
 }
