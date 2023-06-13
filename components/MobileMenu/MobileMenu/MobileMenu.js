@@ -9,10 +9,6 @@ import Chat from "../Chat/Chat";
 import Basket from "../Basket/Basket";
 import ChooseLanguage from "../ChooseLanguage/ChooseLanguage";
 import ChooseCity from "../ChooseCity/ChooseCity";
-import CompanyInfo from "../CompanyInfo/CompanyInfo";
-import Help from "../Help/Help";
-import Services from "../Services/Services";
-import ForPartners from "../ForPartners/ForPartners";
 import DownloadApps from "../DownloadApps/DownloadApps";
 import SocialMedia from "../SocialMedia/SocialMedia";
 import { useState } from "react";
@@ -23,7 +19,8 @@ import PopUpCityChoiceFilling from "../PopUpFillings/PopUpCityChoiceFilling";
 import withPopUp from "../withPopUp/withPopUp";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { changeMobile } from "../../features/isMobileSlice";
+import { changeMobile } from "../../../store/modules/isMobileSlice.js";
+import MenuList from "../MenuList/MenuList";
 
 export default function MobileMenu() {
   const [isAuthorizationPopUp, setIsAuthorizationPopUp] = useState(false);
@@ -58,10 +55,10 @@ export default function MobileMenu() {
           <Basket setIsBasketPopUp={setIsBasketPopUp} />
           <ChooseLanguage />
           <ChooseCity setIsCityChoicePopUp={setIsCityChoicePopUp} />
-          <CompanyInfo />
-          <Help />
-          <Services />
-          <ForPartners />
+          <MenuList objectName="companyInfo" isAccordion={false} />
+          <MenuList objectName="help" isAccordion={false} />
+          <MenuList objectName="services" isAccordion={true} />
+          <MenuList objectName="forPartners" isAccordion={true} />
           <DownloadApps />
           <SocialMedia />
         </div>

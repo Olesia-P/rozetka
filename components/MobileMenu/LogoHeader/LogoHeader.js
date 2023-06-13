@@ -1,7 +1,7 @@
 import css from "./LogoHeader.module.scss";
 import { RxCross2 } from "react-icons/rx";
 import { useDispatch } from "react-redux";
-import { changeMobile } from "../../features/isMobileSlice";
+import { changeMobile } from "../../../store/modules/isMobileSlice";
 
 export default function LogoHeader() {
   const dispatch = useDispatch();

@@ -45,12 +45,19 @@
             gap: 18px;
             transition: max-height 0.5s ease-in;
             overflow: hidden;
-            max-height: 0;
 
+            &.accordion {
+                max-height: 0;
+            }
+
+            &.notAccordion {
+                max-height: 300px;
+            }
 
             &.openedList {
                 max-height: 300px;
             }
+
 
             .link {
                 text-decoration: none;
