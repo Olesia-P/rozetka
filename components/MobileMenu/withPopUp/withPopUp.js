@@ -1,8 +1,8 @@
 import React from "react";
-import css from "./PopUpWrap.module.scss";
+import css from "./withPopUp.module.scss";
 
-export default function PopUpWrap({ Component, setPopUpState }) {
-  return (
+const PopUpWrap = (Component) => (props) => {
+  return props.open ? (
     <div className={css.card}>
       <div className={css.title}>
         <Component />
@@ -10,11 +10,15 @@ export default function PopUpWrap({ Component, setPopUpState }) {
       <div
         className={css.button}
         onClick={() => {
-          setPopUpState(false);
+          props.setOpenState(false);
         }}
       >
         X
       </div>
     </div>
+  ) : (
+    <></>
   );
-}
+};
+
+export default PopUpWrap;

@@ -20,36 +20,24 @@ import PopUpAuthorizationFilling from "../PopUpFillings/PopUpAuthorizationFillin
 import PopUpCatalogFilling from "../PopUpFillings/PopUpCatalogFilling";
 import PopUpBasketFilling from "../PopUpFillings/PopUpBasketFilling";
 import PopUpCityChoiceFilling from "../PopUpFillings/PopUpCityChoiceFilling";
-import PopUpWrap from "../PopUpWrap/PopUpWrap";
+import withPopUp from "../withPopUp/withPopUp";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { changeMobile } from "../../features/isMobileSlice";
 
 export default function MobileMenu() {
-  // const [isPopUp, setIsPopUp] = useState(false);
-  // const [popUpType, setPopUpType] = useState("");
-  const [authorizationPopUp, setAuthorizationPopUp] = useState(false);
-  const [basketPopUp, setBasketPopUp] = useState(false);
-  const [catalogPopUp, setCatalogPopUp] = useState(false);
-  const [cityChoicePopUp, setCityChoicePopUp] = useState(false);
-
-  // const PopUp = () => {
-  //   switch (popUpType) {
-  //     case "basket":
-  //       return PopUpWrap(PopUpBasketFilling, setIsPopUp);
-  //     case "city choice":
-  //       return PopUpWrap(PopUpCityChoiceFilling, setIsPopUp);
-  //     case "authorization":
-  //       return PopUpWrap(PopUpAuthorizationFilling, setIsPopUp);
-  //     case "catalog":
-  //       return PopUpWrap(PopUpCatalogFilling, setIsPopUp);
-  //   }
-  // };
-
-  // const PopUp = PopUpWrap();
+  const [isAuthorizationPopUp, setIsAuthorizationPopUp] = useState(false);
+  const [isBasketPopUp, setIsBasketPopUp] = useState(false);
+  const [isCatalogPopUp, setIsCatalogPopUp] = useState(false);
+  const [isCityChoicePopUp, setIsCityChoicePopUp] = useState(false);
 
   const isMobile = useSelector((state) => state.isMobile.value);
   const dispatch = useDispatch();
+
+  const PopUpBasket = withPopUp(PopUpBasketFilling);
+  const PopUpCatalog = withPopUp(PopUpCatalogFilling);
+  const PopUpAuthorizationPopUp = withPopUp(PopUpAuthorizationFilling);
+  const PopUpCityChoice = withPopUp(PopUpCityChoiceFilling);
 
   return (
     <div>
@@ -62,14 +50,14 @@ export default function MobileMenu() {
         ></div>
         <div className={cx(css.menu, css.scroll)}>
           <LogoHeader />
-          <Authorization setAuthorizationPopUp={setAuthorizationPopUp} />
+          <Authorization setIsAuthorizationPopUp={setIsAuthorizationPopUp} />
           <PrytulaFond />
-          <Catalog setCatalogPopUp={setCatalogPopUp} />
+          <Catalog setIsCatalogPopUp={setIsCatalogPopUp} />
           <ReferenceCenter />
           <Chat />
-          <Basket setBasketPopUp={setBasketPopUp} />
+          <Basket setIsBasketPopUp={setIsBasketPopUp} />
           <ChooseLanguage />
-          <ChooseCity setCityChoicePopUp={setCityChoicePopUp} />
+          <ChooseCity setIsCityChoicePopUp={setIsCityChoicePopUp} />
           <CompanyInfo />
           <Help />
           <Services />
@@ -78,12 +66,16 @@ export default function MobileMenu() {
           <SocialMedia />
         </div>
       </div>
-
-      {/* <PopUp
-        setPopUpState={setBasketPopUp}
-        popUpState={basketPopUp}
-        component={PopUpBasketFilling}
-      /> */}
+      <PopUpBasket open={isBasketPopUp} setOpenState={setIsBasketPopUp} />
+      <PopUpCatalog open={isCatalogPopUp} setOpenState={setIsCatalogPopUp} />
+      <PopUpAuthorizationPopUp
+        open={isAuthorizationPopUp}
+        setOpenState={setIsAuthorizationPopUp}
+      />
+      <PopUpCityChoice
+        open={isCityChoicePopUp}
+        setOpenState={setIsCityChoicePopUp}
+      />
     </div>
   );
 }

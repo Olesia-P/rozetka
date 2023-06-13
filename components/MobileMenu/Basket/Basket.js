@@ -1,12 +1,12 @@
 import css from "./Basket.module.scss";
 import { SlBasket } from "react-icons/sl";
 
-export default function Basket({ setBasketPopUp }) {
+export default function Basket({ setIsBasketPopUp }) {
   return (
     <div
       className={css.container}
       onClick={() => {
-        setBasketPopUp(true);
+        setIsBasketPopUp(true);
       }}
     >
       <SlBasket className={css.logo} />

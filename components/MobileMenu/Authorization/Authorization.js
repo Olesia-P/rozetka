@@ -1,9 +1,9 @@
 import css from "./Authorization.module.scss";
 import { BiUser } from "react-icons/bi";
 
-export default function Authorization({ setAuthorizationPopUp }) {
+export default function Authorization({ setIsAuthorizationPopUp }) {
   const callPopUp = () => {
-    setAuthorizationPopUp(false);
+    setIsAuthorizationPopUp(false);
   };
   return (
     <div className={css.container}>
