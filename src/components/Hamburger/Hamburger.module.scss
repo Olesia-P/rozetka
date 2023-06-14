@@ -4,10 +4,11 @@
     width: 40px;
     height: 40px;
     @include dfc();
+    margin-right: 15px;
 
     .hamburger {
-        width: 30px;
-        height: 30px;
+        width: 27px;
+        height: 27px;
         color: white
     }
 }

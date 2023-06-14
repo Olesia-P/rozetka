@@ -1,7 +1,7 @@
 import React from "react";
 import css from "./withPopUp.module.scss";
 
-const PopUpWrap = (Component) => (props) => {
+const withPopUp = (Component) => (props) => {
   return props.open ? (
     <div className={css.card}>
       <div className={css.title}>
@@ -21,4 +21,4 @@ const PopUpWrap = (Component) => (props) => {
   );
 };
 
-export default PopUpWrap;
+export default withPopUp;

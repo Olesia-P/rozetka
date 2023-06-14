@@ -34,6 +34,11 @@
                 height: 20px;
                 width: 20px;
                 transition: all 0.3s ease-in;
+                transform: rotate(90deg);
+
+                &.openedList {
+                    transform: rotate(-90deg);
+                }
             }
         }
     }
@@ -56,6 +61,7 @@
 
         &.openedList {
             max-height: 300px;
+
         }
 
 
@@ -67,11 +73,3 @@
 }
 
 // }
-
-.rotateOpened {
-    transform: rotate(-90deg);
-}
-
-.rotateClosed {
-    transform: rotate(90deg);
-}

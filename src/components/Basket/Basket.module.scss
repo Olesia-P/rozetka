@@ -1,0 +1,49 @@
+@import "../../styles/variables";
+
+.container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+
+
+
+
+    .header {
+        // position: fixed;
+        padding: 0 16px;
+        height: 57px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $divider;
+
+        .title {
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .crossContainer {
+            @include dfc;
+            width: 26px;
+            height: 26px;
+
+            .cross {
+                width: 20px;
+                height: 20px;
+                color: $font-grey;
+            }
+        }
+    }
+
+    .contentContainer {
+        padding: 16px;
+        scrollbar-width: thin;
+
+        &.scroll {
+            height: 100%;
+            overflow: scroll;
+            overflow-x: hidden;
+        }
+    }
+}

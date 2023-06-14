@@ -3,12 +3,12 @@ import { BiUser } from "react-icons/bi";
 
 export default function Authorization({ setIsAuthorizationPopUp }) {
   const callPopUp = () => {
-    setIsAuthorizationPopUp(false);
+    setIsAuthorizationPopUp(true);
   };
   return (
     <div className={css.container}>
       <div className={css.profileWrap}>
-        <BiUser className={css.profile} />
+        <BiUser className={css.profile} onClick={callPopUp} />
       </div>
       <div className={css.entrance}>
         <div className={css.links}>

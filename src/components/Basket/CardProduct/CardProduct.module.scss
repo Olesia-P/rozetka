@@ -1,0 +1,72 @@
+@import "../../../styles/variables";
+
+.cardProduct {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+
+    .imgContainer {
+        position: relative;
+        @include dfc;
+        width: 125px;
+        height: 96px;
+        margin-right: 16px;
+        text-decoration: none;
+
+        .discoutIcon {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-size: 8px;
+            background-color: $red;
+            color: white;
+            padding: 4px 9px;
+            border-radius: 50px;
+            font-weight: 700;
+        }
+    }
+
+    .productName {
+        color: black;
+        font-size: 14px;
+        text-decoration: none;
+        line-height: 1.5;
+    }
+
+    .deleteBtnContainer {
+        width: 40px;
+        height: 40px;
+        @include dfc;
+
+        .deleteBtn {
+            color: $blue;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .cardDelete {
+
+        position: absolute;
+        z-index: 5;
+        right: 0;
+        top: 0;
+        height: 40px;
+        width: 220px;
+        box-shadow: 0 2px 4px #00000040;
+        padding: 8px 16px;
+        background-color: white;
+        font-size: 16px;
+        color: $blue;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 4px;
+        display: none;
+
+        .icon {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}

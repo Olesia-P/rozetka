@@ -1,3 +1,4 @@
+import { useState } from "react";
 import css from "./MobileMenu.module.scss";
 import cx from "classnames";
 import LogoHeader from "../LogoHeader/LogoHeader.js";
@@ -11,16 +12,21 @@ import ChooseLanguage from "../ChooseLanguage/ChooseLanguage";
 import ChooseCity from "../ChooseCity/ChooseCity";
 import DownloadApps from "../DownloadApps/DownloadApps";
 import SocialMedia from "../SocialMedia/SocialMedia";
-import { useState } from "react";
+import MenuList from "../MenuList/MenuList";
+import {
+  companyInfo,
+  help,
+  forPartners,
+  services,
+} from "../../../utils/MobileMenuListObjects";
 import PopUpAuthorizationFilling from "../PopUpFillings/PopUpAuthorizationFilling";
 import PopUpCatalogFilling from "../PopUpFillings/PopUpCatalogFilling";
 import PopUpBasketFilling from "../PopUpFillings/PopUpBasketFilling";
 import PopUpCityChoiceFilling from "../PopUpFillings/PopUpCityChoiceFilling";
-import withPopUp from "../withPopUp/withPopUp";
+import withPopUp from "../../../hocs/withPopUp/withPopUp";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { changeMobile } from "../../../store/modules/isMobileSlice.js";
-import MenuList from "../MenuList/MenuList";
 
 export default function MobileMenu() {
   const [isAuthorizationPopUp, setIsAuthorizationPopUp] = useState(false);
@@ -55,10 +61,10 @@ export default function MobileMenu() {
           <Basket setIsBasketPopUp={setIsBasketPopUp} />
           <ChooseLanguage />
           <ChooseCity setIsCityChoicePopUp={setIsCityChoicePopUp} />
-          <MenuList objectName="companyInfo" isAccordion={false} />
-          <MenuList objectName="help" isAccordion={false} />
-          <MenuList objectName="services" isAccordion={true} />
-          <MenuList objectName="forPartners" isAccordion={true} />
+          <MenuList object={companyInfo} isAccordion={false} />
+          <MenuList object={help} isAccordion={false} />
+          <MenuList object={services} isAccordion={true} />
+          <MenuList object={forPartners} isAccordion={true} />
           <DownloadApps />
           <SocialMedia />
         </div>
