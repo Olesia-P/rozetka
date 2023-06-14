@@ -1,33 +1,34 @@
 @import "../../../styles/variables";
 
+// .container {
+//     display: none;
+// }
+
+// @media(max-width:$max-width-mobile) {
 .container {
-    display: none;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 18px 16px;
+    border-bottom: 1px solid $divider;
 
-@media(max-width:$max-width-mobile) {
-    .container {
+    .header {
+        color: $bleak-header-grey;
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .imgWrap {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 18px 16px;
-        border-bottom: 1px solid $divider;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
 
-        .header {
-            color: $bleak-header-grey;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .imgWrap {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-
-            img {
-                height: 32px;
-            }
+        img {
+            height: 32px;
         }
     }
 }
+
+// }

@@ -1,56 +1,57 @@
 @import "../../../styles/variables";
 
+// .container {
+//     display: none;
+// }
+
+// @media(max-width:$max-width-mobile) {
 .container {
-    display: none;
-}
+    background-color: $black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    gap: 16px;
 
-@media(max-width:$max-width-mobile) {
-    .container {
-        background-color: $black;
-        color: white;
+    .profileWrap {
+        .profile {
+            width: 30px;
+            height: 30px;
+            background-color: #ffffff1a;
+            border-radius: 50%;
+            padding: 5px;
+            color: whitesmoke;
+            @include dfc();
+            cursor: pointer;
+        }
+    }
+
+    .entrance {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 16px;
-        gap: 16px;
+        flex-direction: column;
 
-        .profileWrap {
-            .profile {
-                width: 30px;
-                height: 30px;
-                background-color: #ffffff1a;
-                border-radius: 50%;
-                padding: 5px;
-                color: whitesmoke;
-                @include dfc();
+        .links {
+            display: flex;
+            justify-content: flex-start;
+
+            div {
+                padding-right: 15px;
+            }
+
+            a {
+                padding-right: 15px;
+                text-decoration: none;
+                color: white;
                 cursor: pointer;
             }
         }
 
-        .entrance {
-            display: flex;
-            flex-direction: column;
-
-            .links {
-                display: flex;
-                justify-content: flex-start;
-
-                div {
-                    padding-right: 15px;
-                }
-
-                a {
-                    padding-right: 15px;
-                    text-decoration: none;
-                    color: white;
-                    cursor: pointer;
-                }
-            }
-
-            .caption {
-                color: rgb(166, 165, 165);
-                font-size: 12px;
-            }
+        .caption {
+            color: rgb(166, 165, 165);
+            font-size: 12px;
         }
     }
 }
+
+// }

@@ -1,6 +1,6 @@
 import "../styles/globals.scss";
 import MobileMenu from "../components/MobileMenu/MobileMenu/MobileMenu.js";
-import Hamburger from "../components/Hamburger/Hamburger.js";
+import Header from "../components/Header/Header.js";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import isMobileReducer from "../store/modules/isMobileSlice";
@@ -15,8 +15,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <div>
+        <Header />
         <MobileMenu />
-        <Hamburger />
 
         <Component {...pageProps} />
       </div>

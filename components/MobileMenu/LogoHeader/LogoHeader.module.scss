@@ -1,32 +1,33 @@
 @import "../../../styles/variables";
 
+// .logoBar {
+//     display: none;
+// }
+
+// @media(max-width:$max-width-mobile) {
 .logoBar {
-    display: none;
-}
+    background-color: $black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 8px 6px 16px;
+    height: 40px;
 
-@media(max-width:$max-width-mobile) {
-    .logoBar {
-        background-color: $black;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 8px 8px 6px 16px;
+    .logo {
+        height: 24px;
+    }
+
+    .crossContainer {
+        width: 40px;
         height: 40px;
+        @include dfc();
 
-        .logo {
-            height: 24px;
-        }
-
-        .crossContainer {
-            width: 40px;
-            height: 40px;
-            @include dfc();
-
-            .exitCross {
-                height: 15px;
-                width: 15px;
-                color: white;
-            }
+        .exitCross {
+            height: 15px;
+            width: 15px;
+            color: white;
         }
     }
 }
+
+// }

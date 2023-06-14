@@ -1,29 +1,30 @@
 @import "../../../styles/variables";
 
+// .container {
+//     display: none;
+// }
+
+// @media(max-width:$max-width-mobile) {
 .container {
-    display: none;
-}
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2px 16px 0 16px;
+    height: 46px;
 
-@media(max-width:$max-width-mobile) {
-    .container {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 2px 16px 0 16px;
-        height: 46px;
+    .logo {
+        background-color: $light-grey;
+        height: 22px;
+        width: 22px;
+        padding: 8px;
+        border-radius: 50%;
+        margin-right: 16px;
+    }
 
-        .logo {
-            background-color: $light-grey;
-            height: 22px;
-            width: 22px;
-            padding: 8px;
-            border-radius: 50%;
-            margin-right: 16px;
-        }
-
-        .link {
-            text-decoration: none;
-            color: $black;
-        }
+    .link {
+        text-decoration: none;
+        color: $black;
     }
 }
+
+// }
