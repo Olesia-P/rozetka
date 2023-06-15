@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
       <div>
         <Header />
         <MobileMenu />
-        {/* <Basket /> */}
+        <Basket />
 
         <Component {...pageProps} />
       </div>

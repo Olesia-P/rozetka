@@ -2,8 +2,13 @@ import css from "./Header.module.scss";
 import Hamburger from "../Hamburger/Hamburger.js";
 import { FaMicrophone } from "react-icons/fa";
 import { SlBasket } from "react-icons/sl";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { changeIsBasket } from "../../store/modules/isBasketSlice";
 
 export default function Header() {
+  const dispatch = useDispatch();
+
   return (
     <div className={css.container}>
       <div className={css.layout}>
@@ -21,7 +26,12 @@ export default function Header() {
             <FaMicrophone className={css.mic} />
           </div>
         </div>
-        <div className={css.basketContainer}>
+        <div
+          className={css.basketContainer}
+          onClick={() => {
+            dispatch(changeIsBasket(true));
+          }}
+        >
           <SlBasket className={css.basket} />
           <div className={css.itemsCounter}>1</div>
         </div>

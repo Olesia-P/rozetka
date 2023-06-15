@@ -5,9 +5,7 @@
     height: 100%;
     width: 100%;
     background-color: white;
-
-
-
+    display: none;
 
     .header {
         // position: fixed;
@@ -45,5 +43,9 @@
             overflow: scroll;
             overflow-x: hidden;
         }
+    }
+
+    &.opened {
+        display: block;
     }
 }
