@@ -4,7 +4,8 @@
     position: fixed;
     padding: 0 14px;
     background-color: $black;
-    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
 
     .layout {
         height: 56px;
@@ -12,6 +13,7 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+
 
         img {
             margin-right: 16px;

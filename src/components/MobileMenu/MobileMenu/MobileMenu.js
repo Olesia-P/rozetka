@@ -7,7 +7,7 @@ import PrytulaFond from "../PrytulaFond/PrytulaFond";
 import Catalog from "../Catalog/Catalog";
 import ReferenceCenter from "../ReferenceСenter/ReferenceCenter";
 import Chat from "../Chat/Chat";
-import Basket from "../Basket/Basket";
+import BasketLink from "../BasketLink/BasketLink";
 import ChooseLanguage from "../ChooseLanguage/ChooseLanguage";
 import ChooseCity from "../ChooseCity/ChooseCity";
 import DownloadApps from "../DownloadApps/DownloadApps";
@@ -58,7 +58,7 @@ export default function MobileMenu() {
           <Catalog setIsCatalogPopUp={setIsCatalogPopUp} />
           <ReferenceCenter />
           <Chat />
-          <Basket setIsBasketPopUp={setIsBasketPopUp} />
+          <BasketLink setIsBasketPopUp={setIsBasketPopUp} />
           <ChooseLanguage />
           <ChooseCity setIsCityChoicePopUp={setIsCityChoicePopUp} />
           <MenuList object={companyInfo} isAccordion={false} />

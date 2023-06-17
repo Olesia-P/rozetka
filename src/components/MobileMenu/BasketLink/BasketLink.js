@@ -1,7 +1,7 @@
-import css from "./Basket.module.scss";
+import css from "./BasketLink.module.scss";
 import { SlBasket } from "react-icons/sl";
 
-export default function Basket({ setIsBasketPopUp }) {
+export default function BasketLink({ setIsBasketPopUp }) {
   return (
     <div
       className={css.container}

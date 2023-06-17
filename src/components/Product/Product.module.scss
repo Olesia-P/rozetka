@@ -1,0 +1,20 @@
+@import "../../styles/variables";
+
+.btn {
+    @include greenBtn;
+    margin: 150px auto;
+    width: 200px;
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(120%);
+    }
+}
+
+.basket {
+    color: white;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}

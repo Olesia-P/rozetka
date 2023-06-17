@@ -4,6 +4,7 @@ import Header from "../components/Header/Header.js";
 import { Provider } from "react-redux";
 import { store } from "../store";
 import Basket from "../components/Basket/Basket";
+import Product from "../components/Product/Product";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }) {
         <Header />
         <MobileMenu />
         <Basket />
+        <Product />
 
         <Component {...pageProps} />
       </div>
