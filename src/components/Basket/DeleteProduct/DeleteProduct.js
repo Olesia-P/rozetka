@@ -1,6 +1,7 @@
 import css from "./DeleteProduct.module.scss";
 import cx from "classnames";
 import { MdDeleteOutline } from "react-icons/md";
+import { useDispatch } from "react-redux";
 
 export default function DeleteProduct({
   deleteFromBasketObject,
@@ -8,6 +9,7 @@ export default function DeleteProduct({
   index,
   isOpenDelete,
 }) {
+  const dispatch = useDispatch();
   return (
     <div
       className={cx(css.cardDelete, isOpenDelete && css.openDelete)}
