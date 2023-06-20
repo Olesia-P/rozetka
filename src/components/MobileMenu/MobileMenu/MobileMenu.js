@@ -7,7 +7,7 @@ import PrytulaFond from "../PrytulaFond/PrytulaFond";
 import Catalog from "../Catalog/Catalog";
 import ReferenceCenter from "../ReferenceСenter/ReferenceCenter";
 import Chat from "../Chat/Chat";
-import BasketLink from "../BasketLink/BasketLink";
+import CartLink from "../CartLink/CartLink";
 import ChooseLanguage from "../ChooseLanguage/ChooseLanguage";
 import ChooseCity from "../ChooseCity/ChooseCity";
 import DownloadApps from "../DownloadApps/DownloadApps";
@@ -21,7 +21,7 @@ import {
 } from "../../../utils/MobileMenuListObjects";
 import PopUpAuthorizationFilling from "../PopUpFillings/PopUpAuthorizationFilling";
 import PopUpCatalogFilling from "../PopUpFillings/PopUpCatalogFilling";
-import PopUpBasketFilling from "../PopUpFillings/PopUpBasketFilling";
+import PopUpCartFilling from "../PopUpFillings/PopUpCartFilling";
 import PopUpCityChoiceFilling from "../PopUpFillings/PopUpCityChoiceFilling";
 import withPopUp from "../../../hocs/withPopUp/withPopUp";
 import { useSelector } from "react-redux";
@@ -30,14 +30,14 @@ import { changeMobile } from "../../../store/modules/isMobileSlice.js";
 
 export default function MobileMenu() {
   const [isAuthorizationPopUp, setIsAuthorizationPopUp] = useState(false);
-  const [isBasketPopUp, setIsBasketPopUp] = useState(false);
+  const [isCartPopUp, setIsCartPopUp] = useState(false);
   const [isCatalogPopUp, setIsCatalogPopUp] = useState(false);
   const [isCityChoicePopUp, setIsCityChoicePopUp] = useState(false);
 
   const isMobile = useSelector((state) => state.isMobile.value);
   const dispatch = useDispatch();
 
-  const PopUpBasket = withPopUp(PopUpBasketFilling);
+  const PopUpCart = withPopUp(PopUpCartFilling);
   const PopUpCatalog = withPopUp(PopUpCatalogFilling);
   const PopUpAuthorizationPopUp = withPopUp(PopUpAuthorizationFilling);
   const PopUpCityChoice = withPopUp(PopUpCityChoiceFilling);
@@ -58,7 +58,7 @@ export default function MobileMenu() {
           <Catalog setIsCatalogPopUp={setIsCatalogPopUp} />
           <ReferenceCenter />
           <Chat />
-          <BasketLink setIsBasketPopUp={setIsBasketPopUp} />
+          <CartLink setIsCartPopUp={setIsCartPopUp} />
           <ChooseLanguage />
           <ChooseCity setIsCityChoicePopUp={setIsCityChoicePopUp} />
           <MenuList object={companyInfo} isAccordion={false} />
@@ -69,7 +69,7 @@ export default function MobileMenu() {
           <SocialMedia />
         </div>
       </div>
-      <PopUpBasket open={isBasketPopUp} setOpenState={setIsBasketPopUp} />
+      <PopUpCart open={isCartPopUp} setOpenState={setIsCartPopUp} />
       <PopUpCatalog open={isCatalogPopUp} setOpenState={setIsCatalogPopUp} />
       <PopUpAuthorizationPopUp
         open={isAuthorizationPopUp}

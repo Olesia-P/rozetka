@@ -10,7 +10,7 @@ import { changeIsBasket } from "../../store/modules/isBasketSlice";
 
 export default function Basket() {
   const isBasket = useSelector((state) => state.isBasket.value);
-  const basketObject = useSelector((state) => state.basketObject.value);
+  const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
   const [isOpenDelete, setIsOpenDelete] = useState(false);
 
@@ -38,11 +38,11 @@ export default function Basket() {
         </div>
         <div className={cx(css.contentContainer, css.scroll)}>
           <CardProduct
-            basketObject={basketObject}
+            cart={cart}
             isOpenDelete={isOpenDelete}
             setIsOpenDelete={setIsOpenDelete}
           />
-          {/* <OrderDetails basketObject={basketObject} /> */}
+
           <CountOrder />
         </div>
       </div>

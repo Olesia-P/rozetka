@@ -19,10 +19,18 @@ h1 {
   }
 }
 
-.mobile {
+.mobile-block {
   display: none;
 
   @media(max-width: $max-width-mobile) {
     display: block;
+  }
+}
+
+.mobile-flex {
+  display: none;
+
+  @media(max-width: $max-width-mobile) {
+    display: flex;
   }
 }

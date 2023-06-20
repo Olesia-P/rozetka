@@ -1,7 +1,14 @@
 @import "../../styles/variables";
 
 .btn {
-    @include greenBtn;
+    height: 48px;
+    width: 100%;
+    background-color: $green;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
     margin: 150px auto;
     width: 200px;
     transition: all 0.2s ease-in;
@@ -10,6 +17,7 @@
     &:hover {
         filter: brightness(120%);
     }
+
 }
 
 .basket {

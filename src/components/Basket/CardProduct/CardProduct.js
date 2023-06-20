@@ -4,24 +4,20 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import {
-  deleteFromBasketObject,
+  deleteFromCart,
   plusToQuantity,
   minusToQuantity,
-} from "../../../store/modules/basketObjectSlice";
+} from "../../../store/modules/cartSlice";
 import { deleteFromCost } from "../../../store/modules/costSlice";
 import DeleteProduct from "../DeleteProduct/DeleteProduct";
 
-export default function CardProduct({
-  basketObject,
-  isOpenDelete,
-  setIsOpenDelete,
-}) {
+export default function CardProduct({ cart, isOpenDelete, setIsOpenDelete }) {
   const dispatch = useDispatch();
 
   return (
     <div>
-      {basketObject.map((element, index) => (
-        <div key={index}>
+      {cart.products.map((element) => (
+        <div key={element}>
           <div className={css.cardProduct}>
             <Link href="/">
               <a className={css.imgContainer}>
@@ -39,12 +35,7 @@ export default function CardProduct({
               />
             </div>
 
-            <DeleteProduct
-              deleteFromBasketObject={deleteFromBasketObject}
-              deleteFromCost={deleteFromCost}
-              index={index}
-              isOpenDelete={isOpenDelete}
-            />
+            <DeleteProduct isOpenDelete={isOpenDelete} productId={element.id} />
           </div>
 
           <div className={css.orderDetailsCard}>
@@ -53,7 +44,7 @@ export default function CardProduct({
                 <AiOutlineMinus
                   className={css.minusBtn}
                   onClick={() => {
-                    const trueIndex = basketObject.indexOf(element);
+                    const trueIndex = cart.indexOf(element);
                     dispatch(minusToQuantity(trueIndex));
                   }}
                 />
@@ -63,7 +54,7 @@ export default function CardProduct({
                 <AiOutlinePlus
                   className={css.plusBtn}
                   onClick={() => {
-                    const trueIndex = basketObject.indexOf(element);
+                    const trueIndex = cart.indexOf(element);
                     dispatch(plusToQuantity(trueIndex));
                   }}
                 />

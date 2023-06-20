@@ -1,12 +1,12 @@
-import css from "./BasketLink.module.scss";
+import css from "./CartLink.module.scss";
 import { SlBasket } from "react-icons/sl";
 
-export default function BasketLink({ setIsBasketPopUp }) {
+export default function CartLink({ setIsCartPopUp }) {
   return (
     <div
       className={css.container}
       onClick={() => {
-        setIsBasketPopUp(true);
+        setIsCartPopUp(true);
       }}
     >
       <SlBasket className={css.logo} />

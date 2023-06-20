@@ -8,10 +8,10 @@ import { changeIsBasket } from "../../store/modules/isBasketSlice";
 
 export default function Header() {
   const dispatch = useDispatch();
-  const basketObject = useSelector((state) => state.basketObject.value);
+  const cart = useSelector((state) => state.cart.value);
 
   return (
-    <div className={cx(css.container, "mobile")}>
+    <div className={cx(css.container, "mobile-block")}>
       <div className={css.layout}>
         <Hamburger />
         <img src="https://content2.rozetka.com.ua/widget_logotype/light/original/342999092.svg" />
@@ -34,7 +34,7 @@ export default function Header() {
           }}
         >
           <SlBasket className={css.basket} />
-          <div className={css.itemsCounter}>{basketObject.length}</div>
+          <div className={css.itemsCounter}>{cart.products.length}</div>
         </div>
       </div>
     </div>
