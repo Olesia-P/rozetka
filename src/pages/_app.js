@@ -3,8 +3,7 @@ import MobileMenu from "../components/MobileMenu/MobileMenu/MobileMenu.js";
 import Header from "../components/Header/Header.js";
 import { Provider } from "react-redux";
 import { store } from "../store";
-import Basket from "../components/Basket/Basket";
-import Product from "../components/Product/Product";
+import Cart from "../components/Cart/Cart";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -12,8 +11,7 @@ function MyApp({ Component, pageProps }) {
       <div>
         <Header />
         <MobileMenu />
-        <Basket />
-        <Product />
+        <Cart />
 
         <Component {...pageProps} />
       </div>

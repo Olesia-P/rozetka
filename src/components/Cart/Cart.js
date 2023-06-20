@@ -1,4 +1,4 @@
-import css from "./Basket.module.scss";
+import css from "./Cart.module.scss";
 import cx from "classnames";
 import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
@@ -8,22 +8,22 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { changeIsCart } from "../../store/modules/isCartSlice";
 
-export default function Basket() {
+export default function Cart() {
   const isCart = useSelector((state) => state.isCart.value);
   const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
-  const [isOpenDelete, setIsOpenDelete] = useState(false);
+  // const [isOpenDelete, setIsOpenDelete] = useState(false);
 
   return (
     <div>
-      <div
+      {/* <div
         className={cx(css.overlay, isOpenDelete && css.openDelete)}
         onClick={() => {
           if (isOpenDelete) {
             setIsOpenDelete(false);
           }
         }}
-      ></div>
+      ></div> */}
       <div className={cx(css.container, isCart && css.opened)}>
         <div className={css.header}>
           <div className={css.title}>Кошик</div>
@@ -39,8 +39,8 @@ export default function Basket() {
         <div className={cx(css.contentContainer, css.scroll)}>
           <CardProduct
             cart={cart}
-            isOpenDelete={isOpenDelete}
-            setIsOpenDelete={setIsOpenDelete}
+            // isOpenDelete={isOpenDelete}
+            // setIsOpenDelete={setIsOpenDelete}
           />
 
           <CountOrder />

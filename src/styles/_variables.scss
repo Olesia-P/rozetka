@@ -41,3 +41,14 @@ $max-width-mobile: 768px;
     border-radius: 8px;
     @include dfc;
 }
+
+@mixin oldPrice {
+    color: rgb(166, 165, 165);
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+@mixin currentPrice {
+    font-size: 20px;
+    color: $red;
+}

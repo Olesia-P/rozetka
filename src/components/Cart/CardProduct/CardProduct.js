@@ -1,6 +1,5 @@
 import css from "./CardProduct.module.scss";
 import Link from "next/link";
-import { BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import {
@@ -11,7 +10,7 @@ import {
 import { deleteFromCost } from "../../../store/modules/costSlice";
 import DeleteProduct from "../DeleteProduct/DeleteProduct";
 
-export default function CardProduct({ cart, isOpenDelete, setIsOpenDelete }) {
+export default function CardProduct({ cart }) {
   const dispatch = useDispatch();
 
   return (
@@ -28,14 +27,14 @@ export default function CardProduct({ cart, isOpenDelete, setIsOpenDelete }) {
             <Link href="/">
               <a className={css.productName}>{element.name}</a>
             </Link>
-            <div className={css.deleteBtnContainer}>
+            {/* <div className={css.deleteBtnContainer}>
               <BsThreeDotsVertical
                 className={css.deleteBtn}
                 onClick={() => setIsOpenDelete(true)}
               />
-            </div>
+            </div> */}
 
-            <DeleteProduct isOpenDelete={isOpenDelete} productId={element.id} />
+            <DeleteProduct productId={element.id} />
           </div>
 
           <div className={css.orderDetailsCard}>
@@ -62,7 +61,7 @@ export default function CardProduct({ cart, isOpenDelete, setIsOpenDelete }) {
             </div>
             <div className={css.priceContainer}>
               <div className={css.oldPrice}>{element.oldPrice} ₴</div>
-              <div className={css.newPrice}>{element.currentPrice} ₴</div>
+              <div className={css.currentPrice}>{element.currentPrice} ₴</div>
             </div>
           </div>
         </div>

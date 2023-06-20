@@ -28,12 +28,12 @@ export default function Header() {
           </div>
         </div>
         <div
-          className={css.basketContainer}
+          className={css.cartContainer}
           onClick={() => {
             dispatch(changeIsCart(true));
           }}
         >
-          <SlBasket className={css.basket} />
+          <SlBasket className={css.cart} />
           <div className={css.itemsCounter}>{cart.products.length}</div>
         </div>
       </div>
