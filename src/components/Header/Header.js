@@ -4,7 +4,7 @@ import Hamburger from "../Hamburger/Hamburger.js";
 import { FaMicrophone } from "react-icons/fa";
 import { SlBasket } from "react-icons/sl";
 import { useDispatch, useSelector } from "react-redux";
-import { changeIsBasket } from "../../store/modules/isBasketSlice";
+import { changeIsCart } from "../../store/modules/isCartSlice";
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ export default function Header() {
         <div
           className={css.basketContainer}
           onClick={() => {
-            dispatch(changeIsBasket(true));
+            dispatch(changeIsCart(true));
           }}
         >
           <SlBasket className={css.basket} />

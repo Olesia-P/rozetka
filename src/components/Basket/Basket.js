@@ -6,10 +6,10 @@ import CardProduct from "./CardProduct/CardProduct";
 import CountOrder from "./CountOrder/CountOrder";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { changeIsBasket } from "../../store/modules/isBasketSlice";
+import { changeIsCart } from "../../store/modules/isCartSlice";
 
 export default function Basket() {
-  const isBasket = useSelector((state) => state.isBasket.value);
+  const isCart = useSelector((state) => state.isCart.value);
   const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
   const [isOpenDelete, setIsOpenDelete] = useState(false);
@@ -24,13 +24,13 @@ export default function Basket() {
           }
         }}
       ></div>
-      <div className={cx(css.container, isBasket && css.opened)}>
+      <div className={cx(css.container, isCart && css.opened)}>
         <div className={css.header}>
           <div className={css.title}>Кошик</div>
           <div
             className={css.crossContainer}
             onClick={() => {
-              dispatch(changeIsBasket(false));
+              dispatch(changeIsCart(false));
             }}
           >
             <RxCross2 className={css.cross} />
