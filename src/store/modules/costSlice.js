@@ -1,10 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialStateValue = [];
-
 const costSlice = createSlice({
   name: "cost",
-  initialState: { value: initialStateValue },
+  initialState: { value: [] },
   reducers: {
     addToCost: (state, action) => {
       state.value.push(action.payload);

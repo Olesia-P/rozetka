@@ -3,9 +3,9 @@ import Link from "next/link";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import {
-  deleteFromCart,
   plusToQuantity,
   minusToQuantity,
+  updateProductCost,
 } from "../../../store/modules/cartSlice";
 import { deleteFromCost } from "../../../store/modules/costSlice";
 import DeleteProduct from "../DeleteProduct/DeleteProduct";
@@ -16,7 +16,7 @@ export default function CardProduct({ cart }) {
   return (
     <div>
       {cart.products.map((element) => (
-        <div key={element}>
+        <div key={element.id}>
           <div className={css.cardProduct}>
             <Link href="/">
               <a className={css.imgContainer}>
@@ -27,12 +27,6 @@ export default function CardProduct({ cart }) {
             <Link href="/">
               <a className={css.productName}>{element.name}</a>
             </Link>
-            {/* <div className={css.deleteBtnContainer}>
-              <BsThreeDotsVertical
-                className={css.deleteBtn}
-                onClick={() => setIsOpenDelete(true)}
-              />
-            </div> */}
 
             <DeleteProduct productId={element.id} />
           </div>
@@ -43,8 +37,8 @@ export default function CardProduct({ cart }) {
                 <AiOutlineMinus
                   className={css.minusBtn}
                   onClick={() => {
-                    const trueIndex = cart.indexOf(element);
-                    dispatch(minusToQuantity(trueIndex));
+                    dispatch(minusToQuantity(element.id));
+                    dispatch(updateProductCost(element.id));
                   }}
                 />
               </div>
@@ -53,15 +47,15 @@ export default function CardProduct({ cart }) {
                 <AiOutlinePlus
                   className={css.plusBtn}
                   onClick={() => {
-                    const trueIndex = cart.indexOf(element);
-                    dispatch(plusToQuantity(trueIndex));
+                    dispatch(plusToQuantity(element.id));
+                    dispatch(updateProductCost(element.id));
                   }}
                 />
               </div>
             </div>
             <div className={css.priceContainer}>
-              <div className={css.oldPrice}>{element.oldPrice} ₴</div>
-              <div className={css.currentPrice}>{element.currentPrice} ₴</div>
+              <div className={css.oldPrice}>{element.oldCost} ₴</div>
+              <div className={css.currentPrice}>{element.currentCost} ₴</div>
             </div>
           </div>
         </div>

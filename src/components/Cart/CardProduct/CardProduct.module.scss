@@ -1,7 +1,5 @@
 @import "../../../styles/variables";
 
-
-
 .cardProduct {
     display: flex;
     justify-content: space-evenly;
@@ -18,13 +16,10 @@
         margin-right: 16px;
         text-decoration: none;
 
-
         .img {
             max-width: 125px;
             max-height: 96px;
-
         }
-
 
         .discoutIcon {
             position: absolute;
@@ -45,10 +40,6 @@
         text-decoration: none;
         line-height: 1.5;
     }
-
-
-
-
 }
 
 .orderDetailsCard {

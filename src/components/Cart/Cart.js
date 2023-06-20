@@ -1,6 +1,5 @@
 import css from "./Cart.module.scss";
 import cx from "classnames";
-import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import CardProduct from "./CardProduct/CardProduct";
 import CountOrder from "./CountOrder/CountOrder";
@@ -12,18 +11,9 @@ export default function Cart() {
   const isCart = useSelector((state) => state.isCart.value);
   const cart = useSelector((state) => state.cart.value);
   const dispatch = useDispatch();
-  // const [isOpenDelete, setIsOpenDelete] = useState(false);
 
   return (
     <div>
-      {/* <div
-        className={cx(css.overlay, isOpenDelete && css.openDelete)}
-        onClick={() => {
-          if (isOpenDelete) {
-            setIsOpenDelete(false);
-          }
-        }}
-      ></div> */}
       <div className={cx(css.container, isCart && css.opened)}>
         <div className={css.header}>
           <div className={css.title}>Кошик</div>
@@ -37,12 +27,7 @@ export default function Cart() {
           </div>
         </div>
         <div className={cx(css.contentContainer, css.scroll)}>
-          <CardProduct
-            cart={cart}
-            // isOpenDelete={isOpenDelete}
-            // setIsOpenDelete={setIsOpenDelete}
-          />
-
+          <CardProduct cart={cart} />
           <CountOrder />
         </div>
       </div>
