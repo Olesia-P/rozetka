@@ -8,8 +8,10 @@ import { changeIsCart } from "../../store/modules/isCartSlice";
 
 export default function Header() {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart.value);
-
+  const cart = useSelector((state) => state.cart);
+  const { products } = useSelector(({ cart }) => cart);
+  console.log("products", products);
+  console.log("cart", cart);
   return (
     <div className={cx(css.container, "mobile-block")}>
       <div className={css.layout}>
@@ -34,7 +36,7 @@ export default function Header() {
           }}
         >
           <SlBasket className={css.cart} />
-          <div className={css.itemsCounter}>{cart.products.length}</div>
+          {/* <div className={css.itemsCounter}>{products.length}</div> */}
         </div>
       </div>
     </div>

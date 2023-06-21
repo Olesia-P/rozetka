@@ -29,7 +29,6 @@ export default function DeleteProduct({ productId }) {
         className={cx(css.cardDelete, isOpenDelete && css.openDelete)}
         onClick={() => {
           dispatch(deleteFromCart(productId));
-          // dispatch(deleteFromCost());
         }}
       >
         <MdDeleteOutline className={css.icon} />

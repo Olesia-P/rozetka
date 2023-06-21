@@ -9,7 +9,7 @@ import { changeIsCart } from "../../store/modules/isCartSlice";
 
 export default function Cart() {
   const isCart = useSelector((state) => state.isCart.value);
-  const cart = useSelector((state) => state.cart.value);
+
   const dispatch = useDispatch();
 
   return (
@@ -27,7 +27,7 @@ export default function Cart() {
           </div>
         </div>
         <div className={cx(css.contentContainer, css.scroll)}>
-          <CardProduct cart={cart} />
+          <CardProduct />
           <CountOrder />
         </div>
       </div>

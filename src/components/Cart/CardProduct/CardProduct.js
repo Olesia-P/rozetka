@@ -2,17 +2,17 @@ import css from "./CardProduct.module.scss";
 import Link from "next/link";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   plusToQuantity,
   minusToQuantity,
   updateProductCost,
 } from "../../../store/modules/cartSlice";
-import { deleteFromCost } from "../../../store/modules/costSlice";
 import DeleteProduct from "../DeleteProduct/DeleteProduct";
 
-export default function CardProduct({ cart }) {
+export default function CardProduct() {
   const dispatch = useDispatch();
-
+  const cart = useSelector((state) => state.cart);
   return (
     <div>
       {cart.products.map((element) => (
