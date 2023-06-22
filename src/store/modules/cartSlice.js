@@ -45,15 +45,15 @@ const cartSlice = createSlice({
         state.products.find((it) => it.id === receivedId).oldPrice;
     },
 
-    countCost: (state) => {
-      const costArray = state.products.map((it) => it.currentCost);
-      const initialValue = 0;
-      const sum = costArray.reduce(
-        (accumulator, currentValue) => accumulator + currentValue,
-        initialValue
-      );
-      return sum;
-    },
+    // countCost: (state) => {
+    //   const costArray = state.products.map((it) => it.currentCost);
+    //   const initialValue = 0;
+    //   const sum = costArray.reduce(
+    //     (accumulator, currentValue) => accumulator + currentValue,
+    //     initialValue
+    //   );
+    //   return state;
+    // },
   },
 });
 

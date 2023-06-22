@@ -2,7 +2,7 @@ import css from "./Hamburger.module.scss";
 import { AiOutlineMenu } from "react-icons/ai";
 import cx from "classnames";
 import { useDispatch } from "react-redux";
-import { changeMobile } from "../../store/modules/isMobileSlice";
+import { changeIsMobileMenuOpen } from "../../store/modules//commonOpeningSlice";
 
 export default function Hamburger() {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ export default function Hamburger() {
       <AiOutlineMenu
         className={css.hamburger}
         onClick={() => {
-          dispatch(changeMobile(true));
+          dispatch(changeIsMobileMenuOpen(true));
         }}
       />
     </div>

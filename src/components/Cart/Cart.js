@@ -5,22 +5,22 @@ import CardProduct from "./CardProduct/CardProduct";
 import CountOrder from "./CountOrder/CountOrder";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { changeIsCart } from "../../store/modules/isCartSlice";
+import { changeIsCartOpen } from "../../store/modules/commonOpeningSlice";
 
 export default function Cart() {
-  const isCart = useSelector((state) => state.isCart.value);
+  const { isCartOpen } = useSelector(({ commonOpening }) => commonOpening);
 
   const dispatch = useDispatch();
 
   return (
     <div>
-      <div className={cx(css.container, isCart && css.opened)}>
+      <div className={cx(css.container, isCartOpen && css.opened)}>
         <div className={css.header}>
           <div className={css.title}>Кошик</div>
           <div
             className={css.crossContainer}
             onClick={() => {
-              dispatch(changeIsCart(false));
+              dispatch(changeIsCartOpen(false));
             }}
           >
             <RxCross2 className={css.cross} />

@@ -1,11 +1,10 @@
 import css from "./CountOrder.module.scss";
 import { useSelector } from "react-redux";
-import { countCost } from "../../../store/modules/cartSlice";
-import { useDispatch } from "react-redux";
+import { countOrderCost } from "../../../utils/functions";
 
 export default function CountOrder() {
-  const dispatch = useDispatch();
-  const sum = dispatch(countCost());
+  const { products } = useSelector(({ cart }) => cart);
+  const sum = countOrderCost(products);
   return (
     <div className={css.containerCount}>
       <div className={css.card}>

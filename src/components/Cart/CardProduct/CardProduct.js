@@ -12,10 +12,10 @@ import DeleteProduct from "../DeleteProduct/DeleteProduct";
 
 export default function CardProduct() {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
+  const { products } = useSelector(({ cart }) => cart);
   return (
     <div>
-      {cart.products.map((element) => (
+      {products.map((element) => (
         <div key={element.id}>
           <div className={css.cardProduct}>
             <Link href="/">

@@ -1,10 +1,10 @@
-import css from "./MenuList.module.scss";
+import css from "./MobileMenuList.module.scss";
 import Link from "next/link";
 import { FiChevronRight } from "react-icons/fi";
 import cx from "classnames";
 import { useState } from "react";
 
-export default function MenuList({ object, isAccordion }) {
+export default function MobileMenuList({ object, isAccordion }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

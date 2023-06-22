@@ -1,14 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import isMobileReducer from "./modules/isMobileSlice";
-import isCartReducer from "./modules/isCartSlice";
 import cartReducer from "./modules/cartSlice";
-import costSliceReducer from "./modules/costSlice";
+import commonOpeningReducer from "./modules/commonOpeningSlice";
 
 export const store = configureStore({
   reducer: {
-    isMobile: isMobileReducer,
-    isCart: isCartReducer,
+    commonOpening: commonOpeningReducer,
     cart: cartReducer,
-    cost: costSliceReducer,
   },
 });

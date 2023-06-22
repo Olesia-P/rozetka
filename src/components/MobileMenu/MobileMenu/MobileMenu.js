@@ -1,7 +1,7 @@
 import { useState } from "react";
 import css from "./MobileMenu.module.scss";
 import cx from "classnames";
-import LogoHeader from "../LogoHeader/LogoHeader.js";
+import LogoBar from "../LogoBar/LogoBar.js";
 import Authorization from "../Authorization/Authorization.js";
 import PrytulaFond from "../PrytulaFond/PrytulaFond";
 import Catalog from "../Catalog/Catalog";
@@ -12,7 +12,7 @@ import ChooseLanguage from "../ChooseLanguage/ChooseLanguage";
 import ChooseCity from "../ChooseCity/ChooseCity";
 import DownloadApps from "../DownloadApps/DownloadApps";
 import SocialMedia from "../SocialMedia/SocialMedia";
-import MenuList from "../MenuList/MenuList";
+import MobileMenuList from "../MobileMenuList/MobileMenuList";
 import {
   companyInfo,
   help,
@@ -26,7 +26,7 @@ import PopUpCityChoiceFilling from "../PopUpFillings/PopUpCityChoiceFilling";
 import withPopUp from "../../../hocs/withPopUp/withPopUp";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { changeMobile } from "../../../store/modules/isMobileSlice.js";
+import { changeIsMobileMenuOpen } from "../../../store/modules/commonOpeningSlice";
 
 export default function MobileMenu() {
   const [isAuthorizationPopUp, setIsAuthorizationPopUp] = useState(false);
@@ -34,7 +34,9 @@ export default function MobileMenu() {
   const [isCatalogPopUp, setIsCatalogPopUp] = useState(false);
   const [isCityChoicePopUp, setIsCityChoicePopUp] = useState(false);
 
-  const isMobile = useSelector((state) => state.isMobile.value);
+  const { isMobileMenuOpen } = useSelector(
+    ({ commonOpening }) => commonOpening
+  );
   const dispatch = useDispatch();
 
   const PopUpCart = withPopUp(PopUpCartFilling);
@@ -44,15 +46,15 @@ export default function MobileMenu() {
 
   return (
     <div>
-      <div className={cx(css.container, isMobile && css.open)}>
+      <div className={cx(css.container, isMobileMenuOpen && css.open)}>
         <div
           className={cx(css.overlay)}
           onClick={() => {
-            dispatch(changeMobile(false));
+            dispatch(changeIsMobileMenuOpen(false));
           }}
         ></div>
         <div className={cx(css.menu, css.scroll)}>
-          <LogoHeader />
+          <LogoBar />
           <Authorization setIsAuthorizationPopUp={setIsAuthorizationPopUp} />
           <PrytulaFond />
           <Catalog setIsCatalogPopUp={setIsCatalogPopUp} />
@@ -61,10 +63,10 @@ export default function MobileMenu() {
           <CartLink setIsCartPopUp={setIsCartPopUp} />
           <ChooseLanguage />
           <ChooseCity setIsCityChoicePopUp={setIsCityChoicePopUp} />
-          <MenuList object={companyInfo} isAccordion={false} />
-          <MenuList object={help} isAccordion={false} />
-          <MenuList object={services} isAccordion={true} />
-          <MenuList object={forPartners} isAccordion={true} />
+          <MobileMenuList object={companyInfo} isAccordion={false} />
+          <MobileMenuList object={help} isAccordion={false} />
+          <MobileMenuList object={services} isAccordion={true} />
+          <MobileMenuList object={forPartners} isAccordion={true} />
           <DownloadApps />
           <SocialMedia />
         </div>

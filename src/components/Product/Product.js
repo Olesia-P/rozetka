@@ -3,12 +3,9 @@ import cx from "classnames";
 import { SlBasket } from "react-icons/sl";
 import { useDispatch } from "react-redux";
 import { addToCart, updateProductCost } from "../../store/modules/cartSlice";
-import { useSelector } from "react-redux";
 
 export default function Product({ product }) {
   const dispatch = useDispatch();
-
-  const cart = useSelector((state) => state.cart.value);
 
   return (
     <div className={cx(css.productCard, "mobile-flex")}>

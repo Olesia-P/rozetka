@@ -4,14 +4,13 @@ import Hamburger from "../Hamburger/Hamburger.js";
 import { FaMicrophone } from "react-icons/fa";
 import { SlBasket } from "react-icons/sl";
 import { useDispatch, useSelector } from "react-redux";
-import { changeIsCart } from "../../store/modules/isCartSlice";
+import { changeIsCartOpen } from "../../store/modules/commonOpeningSlice";
 
 export default function Header() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const { products } = useSelector(({ cart }) => cart);
-  console.log("products", products);
-  console.log("cart", cart);
+
   return (
     <div className={cx(css.container, "mobile-block")}>
       <div className={css.layout}>
@@ -32,11 +31,11 @@ export default function Header() {
         <div
           className={css.cartContainer}
           onClick={() => {
-            dispatch(changeIsCart(true));
+            dispatch(changeIsCartOpen(true));
           }}
         >
           <SlBasket className={css.cart} />
-          {/* <div className={css.itemsCounter}>{products.length}</div> */}
+          <div className={css.itemsCounter}>{products.length}</div>
         </div>
       </div>
     </div>
