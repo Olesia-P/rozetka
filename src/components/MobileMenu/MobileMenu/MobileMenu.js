@@ -21,7 +21,6 @@ import {
 } from "../../../utils/MobileMenuListObjects";
 import PopUpAuthorizationFilling from "../PopUpFillings/PopUpAuthorizationFilling";
 import PopUpCatalogFilling from "../PopUpFillings/PopUpCatalogFilling";
-import PopUpCartFilling from "../PopUpFillings/PopUpCartFilling";
 import PopUpCityChoiceFilling from "../PopUpFillings/PopUpCityChoiceFilling";
 import withPopUp from "../../../hocs/withPopUp/withPopUp";
 import { useSelector } from "react-redux";
@@ -30,7 +29,6 @@ import { changeIsMobileMenuOpen } from "../../../store/modules/commonOpeningSlic
 
 export default function MobileMenu() {
   const [isAuthorizationPopUp, setIsAuthorizationPopUp] = useState(false);
-  const [isCartPopUp, setIsCartPopUp] = useState(false);
   const [isCatalogPopUp, setIsCatalogPopUp] = useState(false);
   const [isCityChoicePopUp, setIsCityChoicePopUp] = useState(false);
 
@@ -39,7 +37,6 @@ export default function MobileMenu() {
   );
   const dispatch = useDispatch();
 
-  const PopUpCart = withPopUp(PopUpCartFilling);
   const PopUpCatalog = withPopUp(PopUpCatalogFilling);
   const PopUpAuthorizationPopUp = withPopUp(PopUpAuthorizationFilling);
   const PopUpCityChoice = withPopUp(PopUpCityChoiceFilling);
@@ -60,7 +57,7 @@ export default function MobileMenu() {
           <Catalog setIsCatalogPopUp={setIsCatalogPopUp} />
           <ReferenceCenter />
           <Chat />
-          <CartLink setIsCartPopUp={setIsCartPopUp} />
+          <CartLink />
           <ChooseLanguage />
           <ChooseCity setIsCityChoicePopUp={setIsCityChoicePopUp} />
           <MobileMenuList object={companyInfo} isAccordion={false} />
@@ -71,8 +68,8 @@ export default function MobileMenu() {
           <SocialMedia />
         </div>
       </div>
-      <PopUpCart open={isCartPopUp} setOpenState={setIsCartPopUp} />
-      <PopUpCatalog open={isCatalogPopUp} setOpenState={setIsCatalogPopUp} />
+
+      {/* <PopUpCatalog open={isCatalogPopUp} setOpenState={setIsCatalogPopUp} /> */}
       <PopUpAuthorizationPopUp
         open={isAuthorizationPopUp}
         setOpenState={setIsAuthorizationPopUp}

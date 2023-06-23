@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import css from "./CardProduct.module.scss";
+import cx from "classnames";
 import Link from "next/link";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useDispatch } from "react-redux";
@@ -21,7 +22,11 @@ export default function CardProduct() {
           <div className={css.cardProduct}>
             <Link href="/">
               <a className={css.imgContainer}>
-                <img src={element.img} className={css.img} alt="fvfgb" />
+                <img
+                  src={element.img}
+                  className={css.img}
+                  alt="product picture"
+                />
                 <div className={css.discoutIcon}>-{element.discount}%</div>
               </a>
             </Link>
@@ -36,7 +41,10 @@ export default function CardProduct() {
             <div className={css.counterContainer}>
               <div className={css.counterBtn}>
                 <AiOutlineMinus
-                  className={css.minusBtn}
+                  className={cx(
+                    css.minusBtn,
+                    element.quantity <= 1 && css.stopMinusBtn
+                  )}
                   onClick={() => {
                     dispatch(minusToQuantity(element.id));
                     dispatch(updateProductCost(element.id));

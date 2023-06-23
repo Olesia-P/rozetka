@@ -23,11 +23,13 @@
         .header {
             color: $bleak-header-grey;
             font-weight: 700;
+            cursor: pointer;
         }
 
         .chevronWrap {
             display: flex;
             align-items: center;
+            cursor: pointer;
 
             .chevron {
                 margin-right: 10px;
@@ -48,7 +50,7 @@
         flex-direction: column;
         justify-content: center;
         gap: 18px;
-        transition: max-height 0.5s ease-in;
+        transition: max-height 0.3s ease-in;
         overflow: hidden;
 
         &.accordion {

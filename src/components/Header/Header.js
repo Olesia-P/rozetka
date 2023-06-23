@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import css from "./Header.module.scss";
 import cx from "classnames";
 import Hamburger from "../Hamburger/Hamburger.js";
@@ -15,7 +16,10 @@ export default function Header() {
     <div className={cx(css.container, "mobile-block")}>
       <div className={css.layout}>
         <Hamburger />
-        <img src="https://content2.rozetka.com.ua/widget_logotype/light/original/342999092.svg" />
+        <img
+          src="https://content2.rozetka.com.ua/widget_logotype/light/original/342999092.svg"
+          alt="logo"
+        />
         <div className={css.searchForm}>
           <input
             type="text"

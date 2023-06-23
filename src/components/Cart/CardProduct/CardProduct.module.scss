@@ -64,7 +64,11 @@
             }
 
             .minusBtn {
-                color: rgb(210, 210, 210);
+                color: $blue;
+
+                &.stopMinusBtn {
+                    color: rgb(166, 165, 165);
+                }
             }
 
             .plusBtn {

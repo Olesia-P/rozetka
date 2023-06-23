@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import css from "./Cart.module.scss";
 import cx from "classnames";
 import { RxCross2 } from "react-icons/rx";
@@ -9,6 +10,7 @@ import { changeIsCartOpen } from "../../store/modules/commonOpeningSlice";
 
 export default function Cart() {
   const { isCartOpen } = useSelector(({ commonOpening }) => commonOpening);
+  const { products } = useSelector(({ cart }) => cart);
 
   const dispatch = useDispatch();
 
@@ -26,10 +28,22 @@ export default function Cart() {
             <RxCross2 className={css.cross} />
           </div>
         </div>
-        <div className={cx(css.contentContainer, css.scroll)}>
-          <CardProduct />
-          <CountOrder />
-        </div>
+
+        {products.length > 0 ? (
+          <div className={cx(css.contentContainer, css.scroll)}>
+            <CardProduct />
+            <CountOrder />
+          </div>
+        ) : (
+          <div className={cx(css.contentContainer, css.scroll, css.emptyCart)}>
+            <img
+              src="https://xl-static.rozetka.com.ua/assets/img/design/modal-cart-dummy.svg"
+              alt="empty cart"
+            />
+            <h4>Кошик порожній</h4>
+            <p>Але це ніколи не пізно виправити :)</p>
+          </div>
+        )}
       </div>
     </div>
   );

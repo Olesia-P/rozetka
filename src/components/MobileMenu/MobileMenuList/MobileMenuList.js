@@ -10,7 +10,14 @@ export default function MobileMenuList({ object, isAccordion }) {
   return (
     <div className={css.container}>
       <div className={css.headerWrap}>
-        <div className={css.header}>{object.header}</div>
+        <div
+          className={css.header}
+          onClick={() => {
+            setIsOpen((state) => !state);
+          }}
+        >
+          {object.header}
+        </div>
         {isAccordion && (
           <div className={css.chevronWrap}>
             <FiChevronRight
