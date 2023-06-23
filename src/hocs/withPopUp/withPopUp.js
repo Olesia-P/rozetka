@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React from "react";
 import css from "./withPopUp.module.scss";
 import cx from "classnames";

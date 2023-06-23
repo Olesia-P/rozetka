@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import css from "./CardProduct.module.scss";
 import Link from "next/link";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
@@ -20,7 +21,7 @@ export default function CardProduct() {
           <div className={css.cardProduct}>
             <Link href="/">
               <a className={css.imgContainer}>
-                <img src={element.img} className={css.img} />
+                <img src={element.img} className={css.img} alt="fvfgb" />
                 <div className={css.discoutIcon}>-{element.discount}%</div>
               </a>
             </Link>
