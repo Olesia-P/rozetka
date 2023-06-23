@@ -55,7 +55,9 @@ export default function CardProduct() {
             </div>
             <div className={css.priceContainer}>
               <div className={css.oldPrice}>{element.oldCost} ₴</div>
-              <div className={css.currentPrice}>{element.currentCost} ₴</div>
+              <div className={css.currentPrice}>
+                {element.currentPrice * element.quantity} ₴
+              </div>
             </div>
           </div>
         </div>

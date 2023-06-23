@@ -5,7 +5,9 @@
     height: 100%;
     width: 100%;
     background-color: white;
-    display: none;
+    // display: none;
+    transform: scale(0.0);
+
 
     .header {
         // position: fixed;
@@ -45,6 +47,9 @@
     }
 
     &.opened {
-        display: block;
+        // display: block;
+        transform: scale(1);
+        transition: all 0.2s ease-in-out;
+
     }
 }
