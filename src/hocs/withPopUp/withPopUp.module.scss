@@ -1,17 +1,18 @@
 .card {
     position: fixed;
+    top: 0;
     height: 100%;
     width: 100%;
     z-index: 3;
     background-color: white;
-    transform: scale(0.0);
-    transition: all 0.2s ease-in-out;
-
+    // transform: scale(0.0);
+    // transition: all 0.2s ease-in-out;
+    display: none;
 
     .title {
         margin: 60px 0;
         text-align: center;
-        font-size: 30pt;
+        font-size: 20pt;
     }
 
     .button {
@@ -28,8 +29,8 @@
     }
 
     &.opened {
-        transform: scale(1);
-        transition: all 0.2s ease-in-out;
-
+        // transform: scale(1);
+        // transition: all 0.2s ease-in-out;
+        display: block;
     }
 }

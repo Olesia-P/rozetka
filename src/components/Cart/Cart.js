@@ -30,12 +30,12 @@ export default function Cart() {
         </div>
 
         {products.length > 0 ? (
-          <div className={cx(css.contentContainer, css.scroll)}>
+          <div className={cx(css.contentContainer)}>
             <CardProduct />
             <CountOrder />
           </div>
         ) : (
-          <div className={cx(css.contentContainer, css.scroll, css.emptyCart)}>
+          <div className={cx(css.contentContainer, css.emptyCart)}>
             <img
               src="https://xl-static.rozetka.com.ua/assets/img/design/modal-cart-dummy.svg"
               alt="empty cart"

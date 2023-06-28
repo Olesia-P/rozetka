@@ -69,7 +69,7 @@ export default function MobileMenu() {
         </div>
       </div>
 
-      {/* <PopUpCatalog open={isCatalogPopUp} setOpenState={setIsCatalogPopUp} /> */}
+      <PopUpCatalog open={isCatalogPopUp} setOpenState={setIsCatalogPopUp} />
       <PopUpAuthorizationPopUp
         open={isAuthorizationPopUp}
         setOpenState={setIsAuthorizationPopUp}

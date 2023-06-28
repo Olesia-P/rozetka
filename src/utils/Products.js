@@ -5,8 +5,6 @@ export const product1 = {
   currentPrice: 12999,
   discount: 42,
   quantity: 1,
-  currentCost: 12999,
-  oldCost: 22429,
   id: 111,
 };
 
@@ -17,7 +15,5 @@ export const product2 = {
   currentPrice: 1099,
   discount: 63,
   quantity: 1,
-  currentCost: 1099,
-  oldCost: 2999,
   id: 222,
 };

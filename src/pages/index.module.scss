@@ -7,8 +7,10 @@
 .productsLayout {
     @include dfc;
 
-    box-sizing: border-box;
+    // box-sizing: border-box;
     width: 100%;
+    overflow-y: auto;
+    flex-wrap: wrap;
 }
 
 .testingPopUp {
