@@ -24,16 +24,26 @@
     .name {
         font-size: 12px;
         margin: 10px 0;
+        max-height: 40px;
+        overflow: hidden;
 
     }
 
     .oldPrice {
         @include oldPrice;
 
+        &.noOldPrice {
+            display: none;
+        }
+
     }
 
     .currentPrice {
         @include currentPrice;
+
+        &.noDiscount {
+            color: black;
+        }
 
     }
 

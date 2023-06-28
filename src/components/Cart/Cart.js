@@ -7,6 +7,7 @@ import CountOrder from "./CountOrder/CountOrder";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { changeIsCartOpen } from "../../store/modules/commonOpeningSlice";
+import { useEffect } from "react";
 
 export default function Cart() {
   const { isCartOpen } = useSelector(({ commonOpening }) => commonOpening);

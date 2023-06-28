@@ -1,7 +1,7 @@
 @import "../../styles/variables";
 
 .container {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
     background-color: white;
@@ -9,6 +9,7 @@
     display: none;
     z-index: 2;
     box-sizing: border-box;
+    overscroll-behavior: contain;
 
     .header {
         position: fixed;

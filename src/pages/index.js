@@ -1,19 +1,18 @@
 import Product from "../components/Product/Product";
-import { product1, product2 } from "../utils/Products";
+import { ProductsArray } from "../utils/ProductsArray";
 import css from "./index.module.scss";
+import { useSelector } from "react-redux";
 
 export default function Home() {
+  // const { isCartOpen } = useSelector(({ commonOpening }) => commonOpening);
   return (
     <div>
       <div className={css.space}></div>
       <h1 className="defaultCaption">THIS SITE HAS THE MOBILE VERSION ONLY</h1>
       <div className={css.productsLayout}>
-        <Product product={product1} />
-        <Product product={product2} />
-        <Product product={product1} />
-        <Product product={product2} />
-        <Product product={product1} />
-        <Product product={product2} />
+        {ProductsArray.map((element) => (
+          <Product product={element} key={element.id} />
+        ))}
       </div>
     </div>
   );

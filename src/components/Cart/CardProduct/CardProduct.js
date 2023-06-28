@@ -8,13 +8,14 @@ import { useSelector } from "react-redux";
 import {
   plusToQuantity,
   minusToQuantity,
-  updateProductCost,
 } from "../../../store/modules/cartSlice";
 import DeleteProduct from "../DeleteProduct/DeleteProduct";
+import { numberWithSpaces } from "../../../utils/functions";
 
 export default function CardProduct() {
   const dispatch = useDispatch();
   const { products } = useSelector(({ cart }) => cart);
+
   return (
     <div>
       {products.map((element) => (
@@ -27,7 +28,14 @@ export default function CardProduct() {
                   className={css.img}
                   alt="product picture"
                 />
-                <div className={css.discoutIcon}>-{element.discount}%</div>
+                <div
+                  className={cx(
+                    css.discoutIcon,
+                    element.discount === 0 && css.noDiscountIcon
+                  )}
+                >
+                  -{element.discount}%
+                </div>
               </a>
             </Link>
             <Link href="/">
@@ -47,7 +55,6 @@ export default function CardProduct() {
                   )}
                   onClick={() => {
                     dispatch(minusToQuantity(element.id));
-                    dispatch(updateProductCost(element.id));
                   }}
                 />
               </div>
@@ -57,17 +64,21 @@ export default function CardProduct() {
                   className={css.plusBtn}
                   onClick={() => {
                     dispatch(plusToQuantity(element.id));
-                    dispatch(updateProductCost(element.id));
                   }}
                 />
               </div>
             </div>
             <div className={css.priceContainer}>
-              <div className={css.oldPrice}>
-                {element.oldPrice * element.quantity} ₴
+              <div
+                className={cx(
+                  css.oldPrice,
+                  element.oldPrice === 0 && css.noOldPrice
+                )}
+              >
+                {numberWithSpaces(element.oldPrice * element.quantity)} ₴
               </div>
               <div className={css.currentPrice}>
-                {element.currentPrice * element.quantity} ₴
+                {numberWithSpaces(element.currentPrice * element.quantity)} ₴
               </div>
             </div>
           </div>

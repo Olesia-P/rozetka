@@ -32,6 +32,10 @@
             padding: 4px 9px;
             border-radius: 50px;
             font-weight: 700;
+
+            &.noDiscountIcon {
+                display: none;
+            }
         }
     }
 
@@ -96,7 +100,11 @@
         line-height: 1.2;
 
         .oldPrice {
-            @include oldPrice
+            @include oldPrice;
+
+            &.noOldPrice {
+                display: none;
+            }
         }
 
         .currentPrice {
