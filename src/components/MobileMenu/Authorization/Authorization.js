@@ -1,9 +1,13 @@
+import { useDispatch } from "react-redux";
 import css from "./Authorization.module.scss";
 import { BiUser } from "react-icons/bi";
+import { changeIsAuthorizOpen } from "../../../store/modules/commonOpeningSlice";
 
-export default function Authorization({ setIsAuthorizationPopUp }) {
+export default function Authorization({}) {
+  const dispatch = useDispatch();
+
   const callPopUp = () => {
-    setIsAuthorizationPopUp(true);
+    dispatch(changeIsAuthorizOpen(true));
   };
   return (
     <div className={css.container}>

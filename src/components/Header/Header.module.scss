@@ -1,34 +1,89 @@
 @import "../../styles/variables";
+@import "../../styles/breakpoints";
+
+@mixin hover {
+    border-radius: 5px;
+    background-color: $black;
+    transition: all 0.1s ease-in;
+
+    &:hover {
+        background-color: #fff3;
+    }
+}
 
 .container {
     position: fixed;
-    padding: 0 14px;
+    padding: 0 32px;
     background-color: $black;
     width: 100%;
     box-sizing: border-box;
 
     .layout {
-        height: 56px;
+        height: 72px;
         background-color: $black;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
 
-        img {
+        .hamburger {
             margin-right: 16px;
+        }
+
+        .mobileLogo {
+            display: none;
+        }
+
+        .desktopLogo {
+            display: block;
+            margin-right: 24px;
+            cursor: pointer;
+        }
+
+        .catalogContainer {
+            @include dfc;
+            background-color: #fff3;
+            color: white;
+            padding: 0px 16px;
+            margin-right: 24px;
+            border-radius: 8px;
+            height: 40px;
+            cursor: pointer;
+            transition: all 0.1s ease-in;
+
+            .catalogLogo {
+                height: 30px;
+                width: 30px;
+                margin-right: 12px;
+            }
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.418);
+            }
         }
 
         .searchForm {
             @include dfc;
             width: 100%;
 
+            .searchIconContainer {
+                @include dfc;
+
+                .searchIcon {
+                    border-top-left-radius: 3px;
+                    border-bottom-left-radius: 3px;
+                    background-color: white;
+                    height: 20px;
+                    width: 20px;
+                    border: 1px solid white;
+                    padding: 9px 0 9px 12px;
+                }
+            }
+
             .input {
                 height: 38px;
                 padding: 0 12px;
                 border: 1px solid white;
                 font-size: 15px;
-                border-top-left-radius: 3px;
-                border-bottom-left-radius: 3px;
                 outline: none;
                 width: 100%;
             }
@@ -38,9 +93,8 @@
                 width: 60px;
                 height: 38px;
                 @include dfc;
-                border-top-right-radius: 3px;
-                border-bottom-right-radius: 3px;
                 border: 1px solid white;
+                position: relative;
 
                 .mic {
                     width: 7px;
@@ -57,32 +111,178 @@
                     content: "";
                 }
             }
-        }
 
-        .cartContainer {
-            @include dfc;
-            width: 50px;
-            height: 40px;
-            margin-left: 12px;
-
-            .cart {
+            .searchBtn {
                 color: white;
-                width: 24px;
-                height: 24px;
-            }
-
-            .itemsCounter {
-                position: absolute;
                 background-color: $green;
-                color: white;
-                border-radius: 50px;
-                padding: 3px 7px;
-                font-size: 12px;
-                right: 4px;
-                top: 6px;
+                border-top-right-radius: 3px;
+                border-bottom-right-radius: 3px;
+                padding: 10px 14px;
+                border: 1px solid $green;
+                margin-right: 25px;
+                transition: all 0.1s ease-in;
+                cursor: pointer;
+
+                &:hover {
+                    filter: brightness(115%);
+                }
             }
         }
 
-    }
+        .iconsBlock {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            box-sizing: border-box;
 
+            .languageChoiceContainer {
+                color: white;
+                @include dfc;
+                font-size: 13px;
+
+                .ua,
+                .ru {
+                    &:hover {
+                        color: red;
+                        cursor: pointer;
+                    }
+                }
+
+                .ua {
+                    padding: 2px 10px 0 0;
+                }
+
+                .ru {
+                    padding: 2px 8px 0 8px;
+                }
+
+                .UAflag {
+                    height: 28px;
+                    @include dfc;
+                    border-left: 1px solid $bleak-header-grey;
+
+                    img {
+                        padding: 0 10px;
+                    }
+                }
+
+                .notChosenLang {
+                    color: $bleak-header-grey;
+
+                    &:hover {
+                        color: white;
+                        filter: brightness(200%);
+                    }
+                }
+            }
+
+            .profile {
+                width: 30px;
+                height: 30px;
+                color: whitesmoke;
+                @include dfc();
+                cursor: pointer;
+                padding: 5px;
+                margin-left: 12px;
+                @include hover;
+            }
+
+            .cartContainer {
+                @include dfc;
+                width: 50px;
+                height: 40px;
+                margin: 0 12px;
+
+                .cart {
+                    color: white;
+                    width: 24px;
+                    height: 24px;
+                    @include hover;
+                    padding: 8px;
+                }
+
+                .itemsCounter {
+                    position: absolute;
+                    background-color: $green;
+                    color: white;
+                    border-radius: 50px;
+                    padding: 3px 7px;
+                    font-size: 12px;
+                    right: 45px;
+                    top: 15px;
+                }
+            }
+        }
+    }
+}
+
+
+@include mobile {
+    .container {
+        padding: 0 8px;
+
+        .layout {
+            height: 56px;
+
+            .hamburger {
+                margin-right: 8px;
+            }
+
+            .mobileLogo {
+                margin-right: 16px;
+                display: block;
+            }
+
+            .desktopLogo {
+                display: none;
+            }
+
+            .catalogContainer {
+                display: none;
+            }
+
+            .searchForm {
+                .searchIconContainer {
+                    display: none;
+                }
+
+                .input {
+                    border-top-left-radius: 3px;
+                    border-bottom-left-radius: 3px;
+                }
+
+                .micBtn {
+                    border-top-right-radius: 3px;
+                    border-bottom-right-radius: 3px;
+                }
+
+                .searchBtn {
+                    display: none;
+                }
+            }
+
+            .iconsBlock {
+                .languageChoiceContainer {
+                    display: none;
+                }
+
+                .profile {
+                    display: none;
+                }
+
+                .cartContainer {
+                    margin: 0;
+
+                    .cart {
+                        padding: 0;
+                    }
+
+                    .itemsCounter {
+                        right: 4px;
+                        top: 6px;
+                    }
+                }
+            }
+        }
+    }
 }

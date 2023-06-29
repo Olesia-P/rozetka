@@ -11,7 +11,6 @@ export default function Home() {
     // className={cx(isCartOpen && { body: { overflow: "hidden" } })}
     >
       <div className={css.space}></div>
-      <h1 className="defaultCaption">THIS SITE HAS THE MOBILE VERSION ONLY</h1>
       <div className={css.productsLayout}>
         {ProductsArray.map((element) => (
           <Product product={element} key={element.id} />

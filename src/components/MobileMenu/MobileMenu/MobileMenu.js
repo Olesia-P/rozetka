@@ -25,16 +25,20 @@ import PopUpCityChoiceFilling from "../PopUpFillings/PopUpCityChoiceFilling";
 import withPopUp from "../../../hocs/withPopUp/withPopUp";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { changeIsMobileMenuOpen } from "../../../store/modules/commonOpeningSlice";
+import {
+  changeIsMobileMenuOpen,
+  changeIsAuthorizOpen,
+} from "../../../store/modules/commonOpeningSlice";
 
 export default function MobileMenu() {
-  const [isAuthorizationPopUp, setIsAuthorizationPopUp] = useState(false);
+  // const [isAuthorizationPopUp, setIsAuthorizationPopUp] = useState(false);
   const [isCatalogPopUp, setIsCatalogPopUp] = useState(false);
   const [isCityChoicePopUp, setIsCityChoicePopUp] = useState(false);
 
-  const { isMobileMenuOpen } = useSelector(
+  const { isMobileMenuOpen, isAuthorizOpen } = useSelector(
     ({ commonOpening }) => commonOpening
   );
+
   const dispatch = useDispatch();
 
   const PopUpCatalog = withPopUp(PopUpCatalogFilling);
@@ -52,7 +56,7 @@ export default function MobileMenu() {
         ></div>
         <div className={cx(css.menu, css.scroll)}>
           <LogoBar />
-          <Authorization setIsAuthorizationPopUp={setIsAuthorizationPopUp} />
+          <Authorization />
           <PrytulaFond />
           <Catalog setIsCatalogPopUp={setIsCatalogPopUp} />
           <ReferenceCenter />
@@ -71,8 +75,8 @@ export default function MobileMenu() {
 
       <PopUpCatalog open={isCatalogPopUp} setOpenState={setIsCatalogPopUp} />
       <PopUpAuthorizationPopUp
-        open={isAuthorizationPopUp}
-        setOpenState={setIsAuthorizationPopUp}
+        open={isAuthorizOpen}
+        setOpenState={dispatch(changeIsAuthorizOpen)}
       />
       <PopUpCityChoice
         open={isCityChoicePopUp}

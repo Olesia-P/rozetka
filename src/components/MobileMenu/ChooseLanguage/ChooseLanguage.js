@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 import css from "./ChooseLanguage.module.scss";
 import cx from "classnames";
@@ -23,7 +24,10 @@ export default function ChooseLanguage() {
             setSelected("UA");
           }}
         >
-          <img src="https://xl-static.rozetka.com.ua/assets/icons/flag-ua.svg" />
+          <img
+            src="https://xl-static.rozetka.com.ua/assets/icons/flag-ua.svg"
+            alt="UAflag"
+          />
           <div>UA</div>
         </div>
       </div>
