@@ -2,12 +2,9 @@
 
 .cardProduct {
     display: flex;
-    justify-content: space-evenly;
     position: relative;
     border-top: 1px solid $divider;
     padding-top: 16px;
-    position: relative;
-
 
     .imgContainer {
         position: relative;
@@ -44,6 +41,8 @@
         font-size: 14px;
         text-decoration: none;
         line-height: 1.5;
+        flex-grow: 1;
+
     }
 }
 
