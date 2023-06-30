@@ -17,13 +17,20 @@ import {
 export default function Header() {
   const dispatch = useDispatch();
   const { products } = useSelector(({ cart }) => cart);
-  const { isAuthorizOpen, isCatalogOpen } = useSelector(
-    ({ commonOpening }) => commonOpening
-  );
+  const { isCartOpen } = useSelector(({ commonOpening }) => commonOpening);
   const [language, setLanguage] = useState("UA");
 
   return (
     <div className={cx(css.container)}>
+      {isCartOpen && (
+        <style jsx global>
+          {`
+            body {
+              overflow: hidden;
+            }
+          `}
+        </style>
+      )}
       <div className={css.layout}>
         <div className={css.hamburger}>
           <Hamburger />

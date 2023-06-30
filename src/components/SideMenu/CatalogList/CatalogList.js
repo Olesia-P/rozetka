@@ -35,7 +35,7 @@ export default function CatalogList() {
     { caption: "Дача, сад і город", icon: <LuShovel /> },
     { caption: "Спорт і захоплення", icon: <MdSportsTennis /> },
     { caption: "Одяг, взуття та прикраси", icon: <LuShirt /> },
-    { caption: "Краса та здоров&apos;я", icon: <GiLipstick /> },
+    { caption: "Краса та здоров'я", icon: <GiLipstick /> },
     { caption: "Дитячі товари", icon: <RiBearSmileLine /> },
     { caption: "Зоотовари", icon: <FaPaw /> },
     { caption: "Офіс, школа, книги", icon: <AiOutlinePaperClip /> },

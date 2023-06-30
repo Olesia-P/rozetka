@@ -53,7 +53,7 @@ export default function MobileMenu() {
             dispatch(changeIsMobileMenuOpen(false));
           }}
         ></div>
-        <div className={cx(css.menu, css.scroll)}>
+        <div className={cx(css.menu)}>
           <LogoBar />
           <Authorization />
           <PrytulaFond />
@@ -67,7 +67,7 @@ export default function MobileMenu() {
           <MobileMenuList object={help} isAccordion={false} />
           <MobileMenuList object={services} isAccordion={true} />
           <MobileMenuList object={forPartners} isAccordion={true} />
-          <DownloadApps />
+          <DownloadApps header="Завантажуйте наші додатки" />
           <SocialMedia />
         </div>
       </div>

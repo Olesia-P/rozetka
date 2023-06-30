@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import "../../styles/main.module";
 
 .container {
     position: fixed;
@@ -10,6 +10,7 @@
     z-index: 2;
     box-sizing: border-box;
     overflow-y: auto;
+    // height: max-content;
 
 
     .header {
@@ -50,6 +51,7 @@
         height: 100%;
         background-color: white;
         box-sizing: border-box;
+
 
         &.emptyCart {
             display: flex;

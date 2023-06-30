@@ -1,9 +1,6 @@
 @import "../../../styles/main.module";
 
-
 .container {
-    border-bottom: 1px solid $divider;
-    padding: 24px 0;
 
     .listItem {
         display: flex;
@@ -12,16 +9,25 @@
         font-weight: 500;
         padding: 0 12px;
         color: rgb(62, 119, 170);
-        line-height: 31px;
+        border-top: 1px solid $divider;
+        height: 40px;
+
+        &.green {
+            color: $green;
+        }
 
         .icon {
             margin-right: 8px;
-            color: rgb(173, 184, 200);
+            color: rgb(166, 165, 165);
             @include dfc;
 
             svg {
                 width: 24px;
                 height: 24px;
+            }
+
+            &.green {
+                color: $green;
             }
         }
 

@@ -1,4 +1,7 @@
-@import "../styles/variables";
+@import "../styles/main.module";
+
+
+
 
 .space {
     margin-top: 70px;
@@ -10,13 +13,12 @@
     width: 100%;
     overflow-y: auto;
     flex-wrap: wrap;
+
 }
 
-.testingPopUp {
-    width: 10rem;
-    padding: 10px 15px;
-    background-color: $green;
-    color: white;
-    margin: 0 auto;
-    cursor: pointer;
+
+@include mobile {
+    .productsLayout {
+        padding: 0;
+    }
 }

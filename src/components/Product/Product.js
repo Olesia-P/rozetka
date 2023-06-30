@@ -10,7 +10,7 @@ export default function Product({ product }) {
   const dispatch = useDispatch();
 
   return (
-    <div className={cx(css.productCard, "mobile-flex")}>
+    <div className={cx(css.productCard)}>
       <div className={css.imgContainer}>
         <img src={product.img} alt="product picture" />
       </div>
