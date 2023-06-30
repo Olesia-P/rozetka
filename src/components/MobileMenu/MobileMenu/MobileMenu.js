@@ -28,14 +28,13 @@ import { useDispatch } from "react-redux";
 import {
   changeIsMobileMenuOpen,
   changeIsAuthorizOpen,
+  changeIsCatalogOpen,
 } from "../../../store/modules/commonOpeningSlice";
 
 export default function MobileMenu() {
-  // const [isAuthorizationPopUp, setIsAuthorizationPopUp] = useState(false);
-  const [isCatalogPopUp, setIsCatalogPopUp] = useState(false);
   const [isCityChoicePopUp, setIsCityChoicePopUp] = useState(false);
 
-  const { isMobileMenuOpen, isAuthorizOpen } = useSelector(
+  const { isMobileMenuOpen, isAuthorizOpen, isCatalogOpen } = useSelector(
     ({ commonOpening }) => commonOpening
   );
 
@@ -58,7 +57,7 @@ export default function MobileMenu() {
           <LogoBar />
           <Authorization />
           <PrytulaFond />
-          <Catalog setIsCatalogPopUp={setIsCatalogPopUp} />
+          <Catalog />
           <ReferenceCenter />
           <Chat />
           <CartLink />
@@ -73,14 +72,19 @@ export default function MobileMenu() {
         </div>
       </div>
 
-      <PopUpCatalog open={isCatalogPopUp} setOpenState={setIsCatalogPopUp} />
+      <PopUpCatalog
+        isOpen={isCatalogOpen}
+        onClose={() => {
+          dispatch(changeIsCatalogOpen(false));
+        }}
+      />
       <PopUpAuthorizationPopUp
-        open={isAuthorizOpen}
-        setOpenState={dispatch(changeIsAuthorizOpen)}
+        isOpen={isAuthorizOpen}
+        onClose={() => dispatch(changeIsAuthorizOpen(false))}
       />
       <PopUpCityChoice
-        open={isCityChoicePopUp}
-        setOpenState={setIsCityChoicePopUp}
+        isOpen={isCityChoicePopUp}
+        onClose={() => setIsCityChoicePopUp(false)}
       />
     </div>
   );

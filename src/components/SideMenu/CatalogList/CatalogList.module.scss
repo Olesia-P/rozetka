@@ -1,0 +1,37 @@
+@import "../../../styles/variables";
+
+
+.container {
+    border-bottom: 1px solid $divider;
+    padding: 24px 0;
+
+    .listItem {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 0 12px;
+        color: rgb(62, 119, 170);
+        line-height: 31px;
+
+        .icon {
+            margin-right: 8px;
+            color: rgb(173, 184, 200);
+            @include dfc;
+
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .caption {
+            transition: all .2s ease;
+
+            &:hover {
+                color: red;
+                text-decoration: underline;
+            }
+        }
+    }
+}

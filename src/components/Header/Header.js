@@ -9,11 +9,17 @@ import { BiUser } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { changeIsCartOpen } from "../../store/modules/commonOpeningSlice";
 import { useState } from "react";
+import {
+  changeIsAuthorizOpen,
+  changeIsCatalogOpen,
+} from "../../store/modules/commonOpeningSlice";
 
 export default function Header() {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state.cart);
   const { products } = useSelector(({ cart }) => cart);
+  const { isAuthorizOpen, isCatalogOpen } = useSelector(
+    ({ commonOpening }) => commonOpening
+  );
   const [language, setLanguage] = useState("UA");
 
   return (
@@ -33,7 +39,10 @@ export default function Header() {
           alt="logo"
         />
 
-        <div className={css.catalogContainer}>
+        <div
+          className={css.catalogContainer}
+          onClick={() => dispatch(changeIsCatalogOpen(true))}
+        >
           <AiOutlineShop className={css.catalogLogo} />
           <div className={css.catalogCaption}>Каталог</div>
         </div>
@@ -77,7 +86,10 @@ export default function Header() {
             </div>
           </div>
 
-          <BiUser className={css.profile} />
+          <BiUser
+            className={css.profile}
+            onClick={() => dispatch(changeIsAuthorizOpen(true))}
+          />
 
           <div
             className={css.cartContainer}
