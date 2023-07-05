@@ -105,7 +105,14 @@ export default function Header() {
             }}
           >
             <SlBasket className={css.cart} />
-            <div className={css.itemsCounter}>{products.length}</div>
+            <div
+              className={cx(
+                css.itemsCounter,
+                products.length < 1 && css.noItemsCounter
+              )}
+            >
+              {products.length}
+            </div>
           </div>
         </div>
       </div>

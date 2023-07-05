@@ -5,6 +5,7 @@ const initialState = {
   isCartOpen: false,
   isAuthorizOpen: false,
   isCatalogOpen: false,
+  isOverlayDisplayed: false,
 };
 
 const commonOpeningSlice = createSlice({
@@ -23,6 +24,9 @@ const commonOpeningSlice = createSlice({
     changeIsCatalogOpen: (state, action) => {
       state.isCatalogOpen = action.payload;
     },
+    changeIsOverlayDisplayed: (state, action) => {
+      state.isOverlayDisplayed = action.payload;
+    },
   },
 });
 
@@ -32,4 +36,5 @@ export const {
   changeIsCartOpen,
   changeIsAuthorizOpen,
   changeIsCatalogOpen,
+  changeIsOverlayDisplayed,
 } = commonOpeningSlice.actions;

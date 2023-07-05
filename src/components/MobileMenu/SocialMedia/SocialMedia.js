@@ -9,10 +9,18 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 
-export default function SocialMedia() {
+export default function SocialMedia({ size }) {
   return (
     <div className={css.container}>
-      <div className={css.header}>Ми в соціальних мережах</div>
+      <div
+        className={cx(
+          css.header,
+          size === "mobileMenu" && css.margBttm8,
+          size === "sideMenu" && css.margBttm12
+        )}
+      >
+        Ми в соціальних мережах
+      </div>
       <div className={css.linksWrap}>
         <a href="">
           <FaFacebookF className={cx(css.icon, css.facebook)} />

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import css from "./MobileMenu.module.scss";
 import cx from "classnames";
 import LogoBar from "../LogoBar/LogoBar.js";
@@ -29,14 +29,18 @@ import {
   changeIsMobileMenuOpen,
   changeIsAuthorizOpen,
   changeIsCatalogOpen,
+  changeIsOverlayDisplayed,
 } from "../../../store/modules/commonOpeningSlice";
 
 export default function MobileMenu() {
   const [isCityChoicePopUp, setIsCityChoicePopUp] = useState(false);
 
-  const { isMobileMenuOpen, isAuthorizOpen, isCatalogOpen } = useSelector(
-    ({ commonOpening }) => commonOpening
-  );
+  const {
+    isMobileMenuOpen,
+    isAuthorizOpen,
+    isCatalogOpen,
+    isOverlayDisplayed,
+  } = useSelector(({ commonOpening }) => commonOpening);
 
   const dispatch = useDispatch();
 
@@ -44,13 +48,28 @@ export default function MobileMenu() {
   const PopUpAuthorizationPopUp = withPopUp(PopUpAuthorizationFilling);
   const PopUpCityChoice = withPopUp(PopUpCityChoiceFilling);
 
+  // const [overlayDisplay, setOverlayDisplay] = useState("none");
+
+  // if (isMobileMenuOpen) {
+  //   setOverlayDisplay("block");
+  // }
+
+  // console.log(isOverlayDisplayed);
+
   return (
     <div>
       <div className={cx(css.container, isMobileMenuOpen && css.open)}>
         <div
-          className={cx(css.overlay)}
+          className={cx(
+            css.overlay,
+            !isOverlayDisplayed && css.displayNone
+            // isOverlayDisplayed && css.displayBlock
+          )}
           onClick={() => {
             dispatch(changeIsMobileMenuOpen(false));
+            setTimeout(() => {
+              dispatch(changeIsOverlayDisplayed(false));
+            }, 700);
           }}
         ></div>
         <div className={cx(css.menu)}>
@@ -67,8 +86,8 @@ export default function MobileMenu() {
           <MobileMenuList object={help} isAccordion={false} />
           <MobileMenuList object={services} isAccordion={true} />
           <MobileMenuList object={forPartners} isAccordion={true} />
-          <DownloadApps header="Завантажуйте наші додатки" />
-          <SocialMedia />
+          <DownloadApps header="Завантажуйте наші додатки" size="mobileMenu" />
+          <SocialMedia size="mobileMenu" />
         </div>
       </div>
 

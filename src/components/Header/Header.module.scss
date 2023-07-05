@@ -86,6 +86,7 @@
                 font-size: 15px;
                 outline: none;
                 width: 100%;
+                border-right: none;
             }
 
             .micBtn {
@@ -95,6 +96,7 @@
                 @include dfc;
                 border: 1px solid white;
                 position: relative;
+                border-left: none;
 
                 .mic {
                     width: 7px;
@@ -210,12 +212,77 @@
                     font-size: 12px;
                     right: 45px;
                     top: 15px;
+
+                    &.noItemsCounter {
+                        display: none;
+                    }
                 }
             }
         }
     }
 }
 
+@include laptop {
+
+    .container {
+        padding: 0 16px;
+
+        .layout {
+            height: 56px;
+
+            .hamburger {
+                margin-right: 16px;
+            }
+
+            .mobileLogo {
+                margin-right: 24px;
+                display: block;
+            }
+
+            .desktopLogo {
+                display: none;
+            }
+
+            .catalogContainer {
+                display: none;
+            }
+
+            .searchForm {
+                .searchIconContainer {
+                    display: none;
+                }
+
+                .input {
+                    border-top-left-radius: 3px;
+                    border-bottom-left-radius: 3px;
+                }
+
+                .searchBtn {
+                    margin-right: 0px;
+                }
+            }
+
+            .iconsBlock {
+                .languageChoiceContainer {
+                    display: none;
+                }
+
+                .cartContainer {
+                    margin: 0;
+
+                    .cart {
+                        padding: 0;
+                    }
+
+                    .itemsCounter {
+                        right: 16px;
+                        top: 6px;
+                    }
+                }
+            }
+        }
+    }
+}
 
 @include mobile {
     .container {

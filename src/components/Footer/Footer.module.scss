@@ -1,0 +1,30 @@
+@import "../../styles/main.module";
+
+.container {
+    padding: 16px 24px;
+    border-top: 1px solid $divider;
+    margin-top: 16px;
+
+    .imgWrap {
+        @include dfc;
+        margin-bottom: 16px;
+
+        img {
+            padding: 1px 6px;
+        }
+    }
+
+
+
+    .copyright {
+        color: #797878;
+    }
+
+
+
+    .license {
+
+        margin-top: 12px;
+
+    }
+}

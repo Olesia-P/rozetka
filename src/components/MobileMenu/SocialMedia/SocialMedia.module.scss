@@ -17,14 +17,20 @@
         color: $bleak-header-grey;
         font-weight: 700;
 
-        margin-bottom: 8px;
+
+        &.margBttm8 {
+            margin-bottom: 8px;
+        }
+
+        &.margBttm12 {
+            margin-bottom: 12px;
+        }
     }
 
     .linksWrap {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-
         width: 95%;
         gap: 5px;
 

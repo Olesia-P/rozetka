@@ -1,6 +1,15 @@
 $breakpoints: (
-    "mobile": 768px
+    "mobile": 768px,
+    "laptop": 1200px
 );
+
+@mixin laptop {
+    @media screen and (max-width: map-get($breakpoints, "laptop")) {
+        @content
+    }
+}
+
+;
 
 @mixin mobile {
     @media screen and (max-width: map-get($breakpoints, "mobile")) {
