@@ -9,65 +9,24 @@
 
 
     .picturesContainer {
-        position: relative;
-        height: 100%;
-        width: 100%;
         display: flex;
         background-color: white;
         overflow: hidden;
         flex-wrap: nowrap;
 
         img {
+            height: 306px;
+            min-width: 100%;
             width: 100%;
-            height: 100%;
-            object-fit: contain;
-            // position: absolute;
+            @include dfc;
             transition: 1s ease-in-out;
-
         }
     }
 
-    .arrowLeft,
-    .arrowRight {
-        @include dfc;
-        position: absolute;
-        border-radius: 50%;
-        background-color: rgb(245, 245, 245);
-        top: 50%;
-
-        .arrow {
-            width: 24px;
-            height: 24px;
-            padding: 10px;
-        }
-    }
-
-    .arrowLeft {
-        left: 5%;
-    }
-
-    .arrowRight {
-        right: 5%;
-    }
 }
 
 
-// .animate {
-//     animation-duration: 0.75s;
-//     animation-delay: 0.5s;
-//     animation-name: animate-fade;
-//     animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
-//     animation-fill-mode: backwards;
-// }
-
-// @keyframes animate-slide {
-//     0% {
-//         opacity: 0;
-//         transform: translate(0, 20px);
-//     }
-
-//     100% {
-//         opacity: 1;
-//         transform: translate(0, 0);
-//     }
-// }
+.renderArrowPrev {
+    color: red;
+    background-color: red;
+}

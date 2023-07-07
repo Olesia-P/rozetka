@@ -34,6 +34,17 @@ import {
 
 export default function MobileMenu() {
   const [isCityChoicePopUp, setIsCityChoicePopUp] = useState(false);
+  // const [isOverlay, setIsOverlay] = useState(false);
+
+  // useEffect(() => {
+  //   isMobileMenuOpen
+  //     ? setTimeout(() => {
+  //         setIsOverlay(true);
+  //       }, 300)
+  //     : setTimeout(() => {
+  //         setIsOverlay(false);
+  //       }, 300);
+  // }, [isMobileMenuOpen]);
 
   const {
     isMobileMenuOpen,
@@ -47,14 +58,6 @@ export default function MobileMenu() {
   const PopUpCatalog = withPopUp(PopUpCatalogFilling);
   const PopUpAuthorizationPopUp = withPopUp(PopUpAuthorizationFilling);
   const PopUpCityChoice = withPopUp(PopUpCityChoiceFilling);
-
-  // const [overlayDisplay, setOverlayDisplay] = useState("none");
-
-  // if (isMobileMenuOpen) {
-  //   setOverlayDisplay("block");
-  // }
-
-  // console.log(isOverlayDisplayed);
 
   return (
     <div>
