@@ -1,8 +1,10 @@
 import Product from "../components/Product/Product";
 import { ProductsArray } from "../utils/ProductsArray";
+import { bannerPictures } from "../utils/BannerPicturesArray";
 import css from "./index.module.scss";
 import { useSelector } from "react-redux";
 import SideMenu from "../components/SideMenu/SideMenu/SideMenu";
+import SliderBanner from "../components/SliderBanner/SliderBanner";
 
 export default function Home() {
   const { isMobileMenuOpen } = useSelector(
@@ -25,9 +27,12 @@ export default function Home() {
           <SideMenu />
         </div>
         <div>
-          {ProductsArray.map((element) => (
+          <SliderBanner pictures={bannerPictures} />
+        </div>
+        <div>
+          {/* {ProductsArray.map((element) => (
             <Product product={element} key={element.id} />
-          ))}
+          ))} */}
         </div>
       </div>
     </div>

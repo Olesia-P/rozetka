@@ -14,6 +14,7 @@
         transition: opacity 0.5s ease-in;
         // transition-delay: 2s;
         // display: none;
+        z-index: 2;
 
         &.displayNone {
             display: none;
@@ -32,7 +33,7 @@
         font-size: 14px;
         scrollbar-width: thin;
         transition: transform 0.5s ease-in;
-        z-index: 1;
+        z-index: 3;
         height: 100%;
         overflow: scroll;
         overflow-x: hidden;

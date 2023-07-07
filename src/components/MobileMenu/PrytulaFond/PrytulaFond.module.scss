@@ -14,12 +14,14 @@
 
     .logo {
         margin-right: 16px;
+        cursor: pointer;
     }
 
     .link {
         color: white;
         text-decoration: none;
         font-weight: 700;
+        cursor: pointer;
     }
 
     .chevronContainer {
@@ -27,6 +29,7 @@
         justify-content: flex-end;
         align-items: center;
         width: 40px;
+        cursor: pointer;
 
         .chevron {
             color: white;

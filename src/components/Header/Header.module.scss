@@ -17,6 +17,7 @@
     background-color: $black;
     width: 100%;
     box-sizing: border-box;
+    z-index: 2;
 
     .layout {
         height: 72px;
@@ -289,35 +290,15 @@
         padding: 0 8px;
 
         .layout {
-            height: 56px;
-
             .hamburger {
                 margin-right: 8px;
             }
 
             .mobileLogo {
                 margin-right: 16px;
-                display: block;
-            }
-
-            .desktopLogo {
-                display: none;
-            }
-
-            .catalogContainer {
-                display: none;
             }
 
             .searchForm {
-                .searchIconContainer {
-                    display: none;
-                }
-
-                .input {
-                    border-top-left-radius: 3px;
-                    border-bottom-left-radius: 3px;
-                }
-
                 .micBtn {
                     border-top-right-radius: 3px;
                     border-bottom-right-radius: 3px;
@@ -329,21 +310,11 @@
             }
 
             .iconsBlock {
-                .languageChoiceContainer {
-                    display: none;
-                }
-
                 .profile {
                     display: none;
                 }
 
                 .cartContainer {
-                    margin: 0;
-
-                    .cart {
-                        padding: 0;
-                    }
-
                     .itemsCounter {
                         right: 4px;
                         top: 6px;

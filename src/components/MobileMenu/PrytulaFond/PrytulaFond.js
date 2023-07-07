@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import css from "./PrytulaFond.module.scss";
 // import Link from "next/link";
 import { FiChevronRight } from "react-icons/fi";
@@ -10,18 +12,10 @@ export default function PrytulaFond() {
         src="https://xl-static.rozetka.com.ua/assets/img/design/logos/prytula_foundation.svg"
       />
 
-      <a
-        href="https://www.liqpay.ua/uk/checkout/card/checkout_1685468596509562_55639874_L5F5fn1tUf7s5SMkg4h3"
-        className={css.link}
-      >
-        ФОНД СЕРГІЯ ПРИТУЛИ
-      </a>
-      <a
-        className={css.chevronContainer}
-        href="https://www.liqpay.ua/uk/checkout/card/checkout_1685468596509562_55639874_L5F5fn1tUf7s5SMkg4h3"
-      >
+      <div className={css.link}>ФОНД СЕРГІЯ ПРИТУЛИ</div>
+      <div className={css.chevronContainer}>
         <FiChevronRight className={css.chevron} />
-      </a>
+      </div>
     </div>
   );
 }
