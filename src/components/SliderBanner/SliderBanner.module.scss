@@ -14,34 +14,16 @@
         width: 100%;
         display: flex;
         background-color: white;
-
+        overflow: hidden;
+        flex-wrap: nowrap;
 
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            position: absolute;
+            object-fit: contain;
+            // position: absolute;
+            transition: 1s ease-in-out;
 
-
-            &.moveNext {
-                transform: translateX(-100%);
-                transition: all 0.3s ease-in-out;
-                // opacity: 0;
-                // z-index: -1;
-                // display: none;
-            }
-
-            &.moveCurrent {
-                // opacity: 1;
-                transform: translateX(0);
-                transition: all 0.3s ease-in-out;
-            }
-
-            &.movePrevious {
-                transform: translateX(100%);
-                transition: all 0.3s ease-in-out;
-
-            }
         }
     }
 

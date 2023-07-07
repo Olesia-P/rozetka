@@ -10,36 +10,50 @@ export default function SliderBanner({ pictures }) {
   //   console.log(pictures[currentPictureId].img);
 
   useEffect(() => {
-    setIsLoaded(false);
-    setTimeout(() => setIsLoaded(true), 300);
-  }, [currentPictureIndex]);
+    const interval = setInterval(() => {
+      carouselNextScroll();
+    }, 3000);
+    return () => clearInterval(interval);
+  });
 
-  const increaseIndex = () => {
-    currentPictureIndex === pictures.length - 1
-      ? setCurrentPictureIndex(0)
-      : setCurrentPictureIndex(currentPictureIndex + 1);
+  const carouselNextScroll = () => {
+    if (currentPictureIndex === pictures.length - 1) {
+      return setCurrentPictureIndex(0);
+    }
+    return setCurrentPictureIndex(currentPictureIndex + 1);
   };
-
-  const decreaseIndex = () => {
-    currentPictureIndex === 0
-      ? setCurrentPictureIndex(pictures.length - 1)
-      : setCurrentPictureIndex(currentPictureIndex - 1);
-  };
-
-  const nextPictureIndex = (currentIndex) => {
-    return currentIndex === pictures.length - 1 ? 0 : currentIndex + 1;
-  };
-
-  const previousPictureIndex = (currentIndex) => {
-    return currentIndex === 0 ? pictures.length - 1 : currentIndex - 1;
-  };
-
-  console.log(currentPictureIndex);
 
   return (
     <div className={css.container}>
       <div className={css.picturesContainer}>
-        <img
+        {pictures.map((element, index) => (
+          <img
+            key={element.id}
+            src={pictures[index].img}
+            alt={pictures[index].alt}
+            style={{ transform: `translate(-${currentPictureIndex * 100}%)` }}
+          />
+        ))}
+      </div>
+      <div className={css.arrowLeft}>
+        <BsChevronLeft
+          className={css.arrow}
+          // onClick={() => decreaseIndex()}
+        />
+      </div>
+      <div className={css.arrowRight}>
+        <BsChevronRight
+          className={css.arrow}
+          onClick={() => carouselNextScroll()}
+          // onClick={() => increaseIndex()}
+        />
+      </div>
+    </div>
+  );
+}
+
+{
+  /* <img
           className={cx(isLoaded && css.movePrevious)}
           src={pictures[previousPictureIndex(currentPictureIndex)].img}
           alt={pictures[previousPictureIndex(currentPictureIndex)].alt}
@@ -55,22 +69,43 @@ export default function SliderBanner({ pictures }) {
           className={cx(isLoaded && css.moveNext)}
           src={pictures[nextPictureIndex(currentPictureIndex)].img}
           alt={pictures[nextPictureIndex(currentPictureIndex)].alt}
-        />
-
-        {/* {pictures.map((element) => (
+        /> */
+}
+{
+  /* 
+        {pictures.map((element) => (
           <img
             key={element.id}
-            src={pictures[pictures.indexOf(element)].img}
-            alt={pictures[[pictures.indexOf(element)]].alt}
+            src={pictures[currentPictureIndex].img}
+            alt={pictures[currentPictureIndex].alt}
+            style={{ transform: `translate(-${currentPictureIndex * 100}%)` }}
           />
-        ))} */}
-      </div>
-      <div className={css.arrowLeft}>
-        <BsChevronLeft className={css.arrow} onClick={() => decreaseIndex()} />
-      </div>
-      <div className={css.arrowRight}>
-        <BsChevronRight className={css.arrow} onClick={() => increaseIndex()} />
-      </div>
-    </div>
-  );
+        ))} */
 }
+
+// const increaseIndex = () => {
+//   currentPictureIndex === pictures.length - 1
+//     ? setCurrentPictureIndex(0)
+//     : setCurrentPictureIndex(currentPictureIndex + 1);
+// };
+
+// const decreaseIndex = () => {
+//   currentPictureIndex === 0
+//     ? setCurrentPictureIndex(pictures.length - 1)
+//     : setCurrentPictureIndex(currentPictureIndex - 1);
+// };
+
+// const nextPictureIndex = (currentIndex) => {
+//   return currentIndex === pictures.length - 1 ? 0 : currentIndex + 1;
+// };
+
+// const previousPictureIndex = (currentIndex) => {
+//   return currentIndex === 0 ? pictures.length - 1 : currentIndex - 1;
+// };
+
+// console.log(currentPictureIndex);
+
+// useEffect(() => {
+//   setIsLoaded(false);
+//   setTimeout(() => setIsLoaded(true), 300);
+// }, [currentPictureIndex]);
