@@ -17,6 +17,12 @@
 }
 
 
+@include laptop {
+    .productsLayout {
+        padding: 0;
+    }
+}
+
 @include mobile {
     .productsLayout {
         padding: 0;

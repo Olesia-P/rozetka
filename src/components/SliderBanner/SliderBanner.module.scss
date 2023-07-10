@@ -25,8 +25,29 @@
 
 }
 
+@include laptop {
+    .container {
+        padding: 0 16px;
 
-.renderArrowPrev {
-    color: red;
-    background-color: red;
+
+
+
+    }
+}
+
+
+@include mobile {
+    .container {
+        padding: 0 8px;
+        height: 240px;
+        width: 359px;
+
+        .picturesContainer {
+
+            img {
+                height: 240px;
+            }
+        }
+
+    }
 }
