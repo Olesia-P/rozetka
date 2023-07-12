@@ -1,5 +1,5 @@
 import Product from "../components/Product/Product";
-import { ProductsArray } from "../utils/ProductsArray";
+import { ProductsArray } from "../utils/productsArray";
 import {
   bannerPictures,
   bannerPicturesSmall,
