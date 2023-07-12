@@ -1,7 +1,9 @@
 import Product from "../components/Product/Product";
 import { ProductsArray } from "../utils/ProductsArray";
-import { bannerPictures } from "../utils/bannerPicturesArray";
-import { bannerPicturesSmall } from "../utils/bannerPicturesArray";
+import {
+  bannerPictures,
+  bannerPicturesSmall,
+} from "../utils/bannerPicturesArray";
 import css from "./index.module.scss";
 import { useSelector } from "react-redux";
 import SideMenu from "../components/SideMenu/SideMenu/SideMenu";
