@@ -15,19 +15,24 @@ import {
 
 export default function SideMenu() {
   return (
-    <div className={css.container}>
-      <CatalogList />
-      <MixedPurposeList />
-      <WelcomeBlock />
-      <DownloadApps header="Встановлюйте наші додатки" size="sideMenu" />
-      <SocialMedia size="sideMenu" />
-      <div className={css.menuList}>
-        <MobileMenuList object={companyInfo} isAccordion={false} />
-        <MobileMenuList object={help} isAccordion={false} />
-        <MobileMenuList object={services} isAccordion={false} />
-        <MobileMenuList object={forPartners} isAccordion={false} />
+    <div>
+      <div className={css.containerDesktop}>
+        <CatalogList listType="desktop" />
+        <MixedPurposeList />
+        <WelcomeBlock />
+        <DownloadApps header="Встановлюйте наші додатки" size="sideMenu" />
+        <SocialMedia size="sideMenu" />
+        <div className={css.menuList}>
+          <MobileMenuList object={companyInfo} isAccordion={false} />
+          <MobileMenuList object={help} isAccordion={false} />
+          <MobileMenuList object={services} isAccordion={false} />
+          <MobileMenuList object={forPartners} isAccordion={false} />
+        </div>
+        <Footer />
       </div>
-      <Footer />
+      <div className={css.containerLaptop}>
+        <CatalogList listType="laptop" />
+      </div>
     </div>
   );
 }

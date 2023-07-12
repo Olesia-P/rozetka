@@ -18,7 +18,7 @@ import {
   help,
   forPartners,
   services,
-} from "../../../utils/MobileMenuListObjects";
+} from "../../../utils/mobileMenuListObjects";
 import PopUpAuthorizationFilling from "../PopUpFillings/PopUpAuthorizationFilling";
 import PopUpCatalogFilling from "../PopUpFillings/PopUpCatalogFilling";
 import PopUpCityChoiceFilling from "../PopUpFillings/PopUpCityChoiceFilling";

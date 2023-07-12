@@ -38,11 +38,11 @@
         right: 1%;
     }
 
-    &.desktop {
+    .desktop {
         display: block;
     }
 
-    &.mobile {
+    .mobile {
         display: none;
     }
 }
@@ -76,11 +76,11 @@
             left: 37%;
         }
 
-        &.desktop {
+        .desktop {
             display: none;
         }
 
-        &.mobile {
+        .mobile {
             display: block;
         }
     }

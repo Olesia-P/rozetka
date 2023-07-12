@@ -90,11 +90,3 @@ export default function SliderBanner({ pictures, smallPictures }) {
     </div>
   );
 }
-
-//  {
-//    pictures.map((element, index) => (
-//      <Carousel key={element.id} infiniteLoop={true} showThumbs={false}>
-//        <img src={pictures[index].img} alt={pictures[index].alt} />
-//      </Carousel>
-//    ));
-//  }

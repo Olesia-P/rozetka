@@ -1,6 +1,6 @@
 @import "../../../styles/main.module";
 
-.container {
+.containerDesktop {
 
     background-color: white;
     width: 300px;
@@ -12,8 +12,22 @@
     }
 }
 
+.containerLaptop {
+    display: none;
+}
+
+
 @include laptop {
-    .container {
+    .containerDesktop {
+        display: none;
+    }
+
+
+}
+
+@include mobile {
+
+    .containerLaptop {
         display: none;
     }
 }
