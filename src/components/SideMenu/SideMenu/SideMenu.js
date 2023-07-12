@@ -11,7 +11,7 @@ import {
   help,
   forPartners,
   services,
-} from "../../../utils/MobileMenuListObjects";
+} from "../../../utils/mobileMenuListObjects";
 
 export default function SideMenu() {
   return (

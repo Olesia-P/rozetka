@@ -1,53 +1,87 @@
 @import "../../styles/main.module";
 
 .container {
-    position: relative;
+    // position: relative;
     padding: 40px;
-    height: 306px;
-    width: 919px;
-    background-color: white;
 
+    li {
+        border: 1px solid $divider;
+    }
 
-    .picturesContainer {
-        display: flex;
-        background-color: white;
-        overflow: hidden;
-        flex-wrap: nowrap;
+    .arrowLeft,
+    .arrowRight {
+        @include dfc;
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgb(245, 245, 245);
+        top: 40%;
+        z-index: 1;
+        transition: all 0.1s ease-in;
 
-        img {
-            height: 306px;
-            min-width: 100%;
-            width: 100%;
-            @include dfc;
-            transition: 1s ease-in-out;
+        .arrow {
+            width: 40px;
+            height: 40px;
+            padding: 10px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(212, 208, 208);
         }
     }
 
+    .arrowLeft {
+        left: 1%;
+    }
+
+    .arrowRight {
+        right: 1%;
+    }
+
+    &.desktop {
+        display: block;
+    }
+
+    &.mobile {
+        display: none;
+    }
+}
+
+.indicator {
+    color: rgb(202, 201, 201);
+    position: absolute;
+    font-size: 15pt;
+    bottom: 0%;
+    left: 45%;
+    z-index: 1;
+
+    &.active {
+        color: $green;
+    }
 }
 
 @include laptop {
     .container {
-        padding: 0 16px;
-
-
-
-
+        padding: 0 0 0 16px;
     }
 }
-
 
 @include mobile {
     .container {
         padding: 0 8px;
-        height: 240px;
-        width: 359px;
 
-        .picturesContainer {
-
-            img {
-                height: 240px;
-            }
+        .indicator {
+            font-size: 10pt;
+            bottom: 0px;
+            left: 37%;
         }
 
+        &.desktop {
+            display: none;
+        }
+
+        &.mobile {
+            display: block;
+        }
     }
 }

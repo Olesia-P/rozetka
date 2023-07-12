@@ -1,6 +1,7 @@
 import Product from "../components/Product/Product";
 import { ProductsArray } from "../utils/ProductsArray";
-import { bannerPictures } from "../utils/BannerPicturesArray";
+import { bannerPictures } from "../utils/bannerPicturesArray";
+import { bannerPicturesSmall } from "../utils/bannerPicturesArray";
 import css from "./index.module.scss";
 import { useSelector } from "react-redux";
 import SideMenu from "../components/SideMenu/SideMenu/SideMenu";
@@ -27,7 +28,10 @@ export default function Home() {
           <SideMenu />
         </div>
         <div>
-          <SliderBanner pictures={bannerPictures} />
+          <SliderBanner
+            pictures={bannerPictures}
+            smallPictures={bannerPicturesSmall}
+          />
         </div>
         <div>
           {/* {ProductsArray.map((element) => (

@@ -1,4 +1,4 @@
-export const ProductsArray = [
+export const productsArray = [
   {
     name: "Кавомашина KRUPS Essential EA816570",
     img: "https://content.rozetka.com.ua/goods/images/preview/160433459.jpg",
