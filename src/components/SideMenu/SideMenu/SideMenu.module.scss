@@ -22,7 +22,9 @@
         display: none;
     }
 
-
+    .containerLaptop {
+        display: block;
+    }
 }
 
 @include mobile {
