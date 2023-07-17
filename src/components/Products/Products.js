@@ -18,15 +18,19 @@ export default function Product({ products, header }) {
 
   useEffect(() => {
     if (isLaptop) {
-      setTreatedProductsArray(products.slice(0, 2));
+      setTreatedProductsArray(products.slice(0, 4));
     }
 
     if (isMobile) {
-      setTreatedProductsArray(products.slice(0, 4));
+      setTreatedProductsArray(products.slice(0, 2));
+    }
+    if (!isLaptop && !isMobile) {
+      setTreatedProductsArray(products);
     }
   }, [isMobile, isLaptop]);
 
-  console.log(treatedProductsArray);
+  console.log(isLaptop);
+  console.log(isMobile);
   return (
     <div className={css.container}>
       <div className={css.header}>{header}</div>
