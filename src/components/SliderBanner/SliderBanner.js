@@ -7,7 +7,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 
 export default function SliderBanner({ pictures, smallPictures }) {
-  console.log(smallPictures);
   const nextArrow = (clickHandler, isNextItem, accessibilityLabel) => {
     return (
       <div className={css.arrowRight} onClick={clickHandler}>

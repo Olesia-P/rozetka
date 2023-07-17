@@ -1,0 +1,92 @@
+@import "../../styles/main.module";
+
+.container {
+    padding: 0 18px 0 40px;
+
+    .header {
+        margin-bottom: 16px;
+        font-size: 20px;
+        font-weight: 700;
+
+    }
+
+    .containerProducts {
+        // @include dfc;
+        display: flex;
+        max-width: 100%;
+        // box-sizing: border-box;
+
+        .productCard {
+            box-sizing: border-box;
+            flex-direction: column;
+            justify-content: center;
+            // align-items: flex-start;
+            width: 19%;
+            height: 335px;
+            padding: 20px;
+            border-right: 1px solid $divider;
+            border-bottom: 1px solid $divider;
+
+            .imgContainer {
+                // box-sizing: border-box;
+                height: 140px;
+
+                @include dfc;
+
+                img {
+                    box-sizing: border-box;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+
+            .name {
+                font-size: 14px;
+                line-height: 19px;
+                margin: 10px 0;
+                max-height: 40px;
+                overflow-wrap: break-word;
+                overflow: hidden;
+
+            }
+
+            .oldPrice {
+                @include oldPrice;
+            }
+
+            .noOldPrice {
+                padding-top: 15px;
+            }
+
+            .currentPrice {
+                @include currentPrice;
+
+                &.noDiscount {
+                    color: black;
+                }
+
+            }
+
+            .btn {
+                box-sizing: border-box;
+                @include greenBtn;
+                justify-content: center;
+                align-items: center;
+                margin: 20px 0;
+                transition: all 0.2s ease-in;
+                cursor: pointer;
+
+                &:hover {
+                    filter: brightness(120%);
+                }
+            }
+
+            .cart {
+                color: white;
+                width: 24px;
+                height: 24px;
+                margin-right: 10px;
+            }
+        }
+    }
+}

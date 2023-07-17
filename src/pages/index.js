@@ -1,5 +1,5 @@
-import Product from "../components/Product/Product";
-import { ProductsArray } from "../utils/productsArray";
+import Products from "../components/Products/Products";
+import { productsArray } from "../utils/productsArray";
 import {
   bannerPictures,
   bannerPicturesSmall,
@@ -34,11 +34,7 @@ export default function Home() {
             pictures={bannerPictures}
             smallPictures={bannerPicturesSmall}
           />
-        </div>
-        <div>
-          {/* {ProductsArray.map((element) => (
-            <Product product={element} key={element.id} />
-          ))} */}
+          <Products products={productsArray} header="Гарячі новинки" />
         </div>
       </div>
     </div>
