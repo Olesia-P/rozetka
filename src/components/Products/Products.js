@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import css from "./Products.module.scss";
 import cx from "classnames";
@@ -12,16 +13,16 @@ export default function Product({ products, header }) {
   const dispatch = useDispatch();
   const [treatedProductsArray, setTreatedProductsArray] = useState(products);
 
-  const isMobile = useMediaQuery(768);
   const isLaptop = useMediaQuery(1200);
+  const isMobile = useMediaQuery(768);
 
   useEffect(() => {
-    if (isMobile) {
-      setTreatedProductsArray(products.slice(0, 4));
-    }
-
     if (isLaptop) {
       setTreatedProductsArray(products.slice(0, 2));
+    }
+
+    if (isMobile) {
+      setTreatedProductsArray(products.slice(0, 4));
     }
   }, [isMobile, isLaptop]);
 
@@ -30,40 +31,34 @@ export default function Product({ products, header }) {
     <div className={css.container}>
       <div className={css.header}>{header}</div>
       <div className={css.containerProducts}>
-        {treatedProductsArray?.map((element, index) => (
-          <div
-            className={cx(css.productCard)}
-            key={treatedProductsArray[index].id}
-          >
+        {treatedProductsArray.map((element) => (
+          <div className={cx(css.productCard)} key={element.id}>
             <div className={css.imgContainer}>
-              <img
-                src={treatedProductsArray[index].img}
-                alt="product picture"
-              />
+              <img src={element.img} alt="product picture" />
             </div>
-            <div className={css.name}>{treatedProductsArray[index].name}</div>
-            {treatedProductsArray[index].oldPrice > 0 && (
+            <div className={css.name}>{element.name}</div>
+            {element.oldPrice > 0 && (
               <div className={css.oldPrice}>
-                {numberWithSpaces(treatedProductsArray[index].oldPrice)} ₴
+                {numberWithSpaces(element.oldPrice)} ₴
               </div>
             )}
-            {treatedProductsArray[index].oldPrice === 0 && (
+            {element.oldPrice === 0 && (
               <div className={css.noOldPrice}>{""}</div>
             )}
 
             <div
               className={cx(
                 css.currentPrice,
-                treatedProductsArray[index].oldPrice === 0 && css.noDiscount
+                element.oldPrice === 0 && css.noDiscount
               )}
             >
-              {numberWithSpaces(treatedProductsArray[index].currentPrice)} ₴
+              {numberWithSpaces(element.currentPrice)} ₴
             </div>
             <div
               className={cx(css.btn)}
               onClick={() => {
-                dispatch(addToCart(treatedProductsArray[index]));
-                dispatch(updateProductCost(treatedProductsArray[index].id));
+                dispatch(addToCart(element));
+                dispatch(updateProductCost(element.id));
               }}
             >
               <SlBasket className={css.cart} /> Купити

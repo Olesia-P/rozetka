@@ -3,13 +3,13 @@ import { useState, useEffect } from "react";
 
 export default function useMediaQuery(minWidth) {
   const [state, setState] = useState({
-    windowWidth: window.innerWidth,
+    windowWidth: typeof window !== "undefined" ? window.innerWidth : 0,
     isDesiredWidth: false,
   });
 
   useEffect(() => {
     const resizeHandler = () => {
-      const currentWindowWidth = window.innerWidth;
+      const currentWindowWidth = window?.innerWidth;
       const isDesiredWidth = currentWindowWidth < minWidth;
       setState({ windowWidth: currentWindowWidth, isDesiredWidth });
     };
