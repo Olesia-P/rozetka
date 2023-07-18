@@ -11,7 +11,7 @@ import useMediaQuery from "../../hooks/useMediaQuery";
 
 export default function Product({ products, header }) {
   const dispatch = useDispatch();
-  const [treatedProductsArray, setTreatedProductsArray] = useState(products);
+  const [treatedProductsArray, setTreatedProductsArray] = useState([]);
 
   const isLaptop = useMediaQuery(1200);
   const isMobile = useMediaQuery(768);
@@ -29,8 +29,6 @@ export default function Product({ products, header }) {
     }
   }, [isMobile, isLaptop]);
 
-  console.log(isLaptop);
-  console.log(isMobile);
   return (
     <div className={css.container}>
       <div className={css.header}>{header}</div>

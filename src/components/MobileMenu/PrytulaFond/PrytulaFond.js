@@ -1,12 +1,17 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
+import { useDispatch } from "react-redux";
 import css from "./PrytulaFond.module.scss";
-// import Link from "next/link";
 import { FiChevronRight } from "react-icons/fi";
+import { changeIsPrytulaFondOpen } from "../../../store/modules/commonOpeningSlice";
 
 export default function PrytulaFond() {
+  const dispatch = useDispatch();
   return (
-    <div className={css.container}>
+    <div
+      className={css.container}
+      onClick={() => dispatch(changeIsPrytulaFondOpen(true))}
+    >
       <img
         className={css.logo}
         src="https://xl-static.rozetka.com.ua/assets/img/design/logos/prytula_foundation.svg"

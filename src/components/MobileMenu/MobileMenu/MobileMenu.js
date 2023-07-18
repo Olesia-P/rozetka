@@ -22,6 +22,8 @@ import {
 import PopUpAuthorizationFilling from "../PopUpFillings/PopUpAuthorizationFilling";
 import PopUpCatalogFilling from "../PopUpFillings/PopUpCatalogFilling";
 import PopUpCityChoiceFilling from "../PopUpFillings/PopUpCityChoiceFilling";
+import PopUpReferenceCenterFilling from "../PopUpFillings/PopUpReferenceCenterFilling";
+import PopUpPrytulaFondFilling from "../PopUpFillings/PopUpPrytulaFondFilling";
 import withPopUp from "../../../hocs/withPopUp/withPopUp";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -30,6 +32,8 @@ import {
   changeIsAuthorizOpen,
   changeIsCatalogOpen,
   changeIsOverlayDisplayed,
+  changeIsReferenceCenterOpen,
+  changeIsPrytulaFondOpen,
 } from "../../../store/modules/commonOpeningSlice";
 
 export default function MobileMenu() {
@@ -51,6 +55,8 @@ export default function MobileMenu() {
     isAuthorizOpen,
     isCatalogOpen,
     isOverlayDisplayed,
+    isReferenceCenterOpen,
+    isPrytulaFondOpen,
   } = useSelector(({ commonOpening }) => commonOpening);
 
   const dispatch = useDispatch();
@@ -58,6 +64,8 @@ export default function MobileMenu() {
   const PopUpCatalog = withPopUp(PopUpCatalogFilling);
   const PopUpAuthorizationPopUp = withPopUp(PopUpAuthorizationFilling);
   const PopUpCityChoice = withPopUp(PopUpCityChoiceFilling);
+  const PopUpReferenceCenter = withPopUp(PopUpReferenceCenterFilling);
+  const PopUpPrytulaFond = withPopUp(PopUpPrytulaFondFilling);
 
   return (
     <div>
@@ -107,6 +115,14 @@ export default function MobileMenu() {
       <PopUpCityChoice
         isOpen={isCityChoicePopUp}
         onClose={() => setIsCityChoicePopUp(false)}
+      />
+      <PopUpReferenceCenter
+        isOpen={isReferenceCenterOpen}
+        onClose={() => dispatch(changeIsReferenceCenterOpen(false))}
+      />
+      <PopUpPrytulaFond
+        isOpen={isPrytulaFondOpen}
+        onClose={() => dispatch(changeIsPrytulaFondOpen(false))}
       />
     </div>
   );

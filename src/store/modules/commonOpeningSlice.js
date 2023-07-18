@@ -6,6 +6,8 @@ const initialState = {
   isAuthorizOpen: false,
   isCatalogOpen: false,
   isOverlayDisplayed: false,
+  isReferenceCenterOpen: false,
+  isPrytulaFondOpen: false,
 };
 
 const commonOpeningSlice = createSlice({
@@ -27,6 +29,12 @@ const commonOpeningSlice = createSlice({
     changeIsOverlayDisplayed: (state, action) => {
       state.isOverlayDisplayed = action.payload;
     },
+    changeIsReferenceCenterOpen: (state, action) => {
+      state.isReferenceCenterOpen = action.payload;
+    },
+    changeIsPrytulaFondOpen: (state, action) => {
+      state.isPrytulaFondOpen = action.payload;
+    },
   },
 });
 
@@ -37,4 +45,6 @@ export const {
   changeIsAuthorizOpen,
   changeIsCatalogOpen,
   changeIsOverlayDisplayed,
+  changeIsReferenceCenterOpen,
+  changeIsPrytulaFondOpen,
 } = commonOpeningSlice.actions;
