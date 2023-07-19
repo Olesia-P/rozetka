@@ -14,18 +14,75 @@
     overflow-y: auto;
     flex-wrap: nowrap;
 
+    .catalogButton {
+        display: none;
+    }
+
+    .showMoreButton {
+        display: none;
+    }
 }
 
 
 @include laptop {
     .productsLayout {
         padding: 0;
-        flex-direction: column-reverse;
+        // flex-direction: column-reverse;
+        flex-direction: column;
+
+        .catalogButton {
+            display: none;
+        }
+
+        .showMoreButton {
+            display: none;
+        }
     }
 }
 
 @include mobile {
     .productsLayout {
         padding: 0;
+
+        .catalogButton {
+            @include dfc;
+            height: 40px;
+            background-color: $green;
+            border-radius: 8px;
+            color: white;
+            position: relative;
+            font-size: 20px;
+            margin: 15px 8px;
+
+            .catalogLogo {
+                height: 30px;
+                width: 30px;
+                position: absolute;
+                left: 5px;
+            }
+        }
+
+        .showMoreButton {
+            @include dfc;
+            height: 36px;
+            border: 1px solid $divider;
+            margin: 15px 8px;
+            color: rgb(62, 119, 170);
+            position: relative;
+            font-size: 14px;
+
+            .arrow {
+
+                svg {
+                    height: 8px;
+                    width: 8px;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        .NOshowMoreButton {
+            display: none;
+        }
     }
 }

@@ -9,12 +9,25 @@ import { numberWithSpaces } from "../../utils/functions";
 import { useEffect, useState } from "react";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
-export default function Product({ products, header }) {
+export default function Product({
+  products,
+  header,
+  showAllItems,
+  setShowAllItems,
+}) {
   const dispatch = useDispatch();
   const [treatedProductsArray, setTreatedProductsArray] = useState([]);
 
   const isLaptop = useMediaQuery(1200);
   const isMobile = useMediaQuery(768);
+
+  //   window.addEventListener("resize", handleResize);
+  //  const handleResize= ()=>{
+  const currentWidth = typeof window !== "undefined" ? window.innerWidth : 0;
+  //   if (currentWidth > )
+  // }
+
+  console.log(setShowAllItems);
 
   useEffect(() => {
     if (isLaptop) {
@@ -24,10 +37,19 @@ export default function Product({ products, header }) {
     if (isMobile) {
       setTreatedProductsArray(products.slice(0, 2));
     }
+
     if (!isLaptop && !isMobile) {
+      setTreatedProductsArray(products.slice(0, 5));
+    }
+
+    if (showAllItems) {
       setTreatedProductsArray(products);
     }
-  }, [isMobile, isLaptop]);
+
+    if (currentWidth > 768) {
+      setShowAllItems(false);
+    }
+  }, [isMobile, isLaptop, showAllItems]);
 
   return (
     <div className={css.container}>

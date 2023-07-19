@@ -74,7 +74,7 @@ export default function SliderBanner({ pictures, smallPictures }) {
           showArrows={false}
           renderIndicator={showIndicators}
           swipeable={true}
-          width={"97%"}
+          width={"100%"}
           dynamicHeight={true}
         >
           {smallPictures.map((element, index) => (

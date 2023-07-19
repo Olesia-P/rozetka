@@ -6,7 +6,7 @@ export const productsArray = [
     currentPrice: 12999,
     discount: 42,
     quantity: 1,
-    id: 111,
+    id: 1,
   },
 
   {
@@ -16,7 +16,7 @@ export const productsArray = [
     currentPrice: 1099,
     discount: 63,
     quantity: 1,
-    id: 222,
+    id: 2,
   },
 
   {
@@ -26,7 +26,7 @@ export const productsArray = [
     currentPrice: 450,
     discount: 36,
     quantity: 1,
-    id: 333,
+    id: 3,
   },
 
   {
@@ -36,7 +36,7 @@ export const productsArray = [
     currentPrice: 457,
     discount: 10,
     quantity: 1,
-    id: 444,
+    id: 4,
   },
 
   {
@@ -46,6 +46,72 @@ export const productsArray = [
     currentPrice: 2999,
     discount: 0,
     quantity: 1,
-    id: 555,
+    id: 5,
+  },
+  {
+    name: "Мобільний телефон Samsung Galaxy A24 6/128GB Dark Red (SM-A245FDRVSEK)",
+    img: "https://content2.rozetka.com.ua/goods/images/preview/328126511.jpg",
+    oldPrice: 9999,
+    currentPrice: 8999,
+    discount: 11,
+    quantity: 1,
+    id: 6,
+  },
+];
+
+const productsArray2 = [
+  {
+    name: "Кондиціонер HYUNDAI ARN09HSSUAWF1/ARU09HSSUAWF1",
+    img: "https://content.rozetka.com.ua/goods/images/preview/267467639.jpg",
+    oldPrice: 17999,
+    currentPrice: 15999,
+    discount: 12,
+    quantity: 1,
+    id: 7,
+  },
+  {
+    name: "Контейнер для зберігання Krauff с крышкой 600 мл (29-298-026)",
+    img: "https://content1.rozetka.com.ua/goods/images/preview/345651657.jpg",
+    oldPrice: 339,
+    currentPrice: 170,
+    discount: 50,
+    quantity: 1,
+    id: 8,
+  },
+  {
+    name: "Робот-пилесос Rowenta X-PLORER S130AI Standard White RR9067WH",
+    img: "https://content.rozetka.com.ua/goods/images/preview/334331422.jpg",
+    oldPrice: 26009,
+    currentPrice: 12999,
+    discount: 50,
+    quantity: 1,
+    id: 9,
+  },
+  {
+    name: "Ваги кухонні Sea Breeze SB-070",
+    img: "https://content.rozetka.com.ua/goods/images/preview/348226319.jpg",
+    oldPrice: 0,
+    currentPrice: 165,
+    discount: 0,
+    quantity: 1,
+    id: 10,
+  },
+  {
+    name: "Вентилятор RZTK FT 1515B",
+    img: "https://content1.rozetka.com.ua/goods/images/preview/186382233.jpg",
+    oldPrice: 495,
+    currentPrice: 399,
+    discount: 20,
+    quantity: 1,
+    id: 11,
+  },
+  {
+    name: "Ремінець BeCover для Huawei Band 7/Honor Band 7 Black (BC_709456)",
+    img: "https://content2.rozetka.com.ua/goods/images/preview/349327741.jpg",
+    oldPrice: 0,
+    currentPrice: 179,
+    discount: 1,
+    quantity: 1,
+    id: 12,
   },
 ];

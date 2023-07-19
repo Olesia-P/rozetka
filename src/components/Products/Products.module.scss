@@ -7,20 +7,16 @@
         margin-bottom: 16px;
         font-size: 20px;
         font-weight: 700;
-
     }
 
     .containerProducts {
-        // @include dfc;
         display: flex;
         max-width: 100%;
-        // box-sizing: border-box;
 
         .productCard {
             box-sizing: border-box;
             flex-direction: column;
             justify-content: center;
-            // align-items: flex-start;
             width: 19%;
             height: 335px;
             padding: 20px;
@@ -28,9 +24,7 @@
             border-bottom: 1px solid $divider;
 
             .imgContainer {
-                // box-sizing: border-box;
                 height: 140px;
-
                 @include dfc;
 
                 img {
@@ -47,7 +41,6 @@
                 max-height: 40px;
                 overflow-wrap: break-word;
                 overflow: hidden;
-
             }
 
             .oldPrice {
@@ -64,7 +57,6 @@
                 &.noDiscount {
                     color: black;
                 }
-
             }
 
             .btn {
@@ -86,6 +78,33 @@
                 width: 24px;
                 height: 24px;
                 margin-right: 10px;
+            }
+        }
+    }
+}
+
+@include laptop {
+    .container {
+        padding: 0 16px;
+
+        .containerProducts {
+            .productCard {
+                width: 25%;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .container {
+        padding: 0 8px;
+
+        .containerProducts {
+            flex-wrap: wrap;
+
+            .productCard {
+                width: 50%;
+
             }
         }
     }
