@@ -27,6 +27,7 @@
                 height: 140px;
                 @include dfc;
 
+
                 img {
                     box-sizing: border-box;
                     max-width: 100%;
@@ -38,7 +39,7 @@
                 font-size: 14px;
                 line-height: 19px;
                 margin: 10px 0;
-                max-height: 40px;
+                height: 40px;
                 overflow-wrap: break-word;
                 overflow: hidden;
             }

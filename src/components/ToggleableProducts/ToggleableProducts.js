@@ -18,10 +18,7 @@ export default function ToggleableProducts({
         setShowAllItems={setShowAllItems}
       />
       <div
-        className={cx(
-          !showAllItems && css.showMoreButton,
-          showAllItems && css.NOshowMoreButton
-        )}
+        className={cx(css.showMoreButton, showAllItems && css.NOshowMoreButton)}
         onClick={() => setShowAllItems(true)}
       >
         Показати ще
