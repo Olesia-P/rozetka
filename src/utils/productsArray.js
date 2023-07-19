@@ -1,4 +1,4 @@
-export const productsArray = [
+export const productsArray1 = [
   {
     name: "Кавомашина KRUPS Essential EA816570",
     img: "https://content.rozetka.com.ua/goods/images/preview/160433459.jpg",
@@ -59,7 +59,7 @@ export const productsArray = [
   },
 ];
 
-const productsArray2 = [
+export const productsArray2 = [
   {
     name: "Кондиціонер HYUNDAI ARN09HSSUAWF1/ARU09HSSUAWF1",
     img: "https://content.rozetka.com.ua/goods/images/preview/267467639.jpg",

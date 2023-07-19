@@ -21,13 +21,7 @@ export default function Product({
   const isLaptop = useMediaQuery(1200);
   const isMobile = useMediaQuery(768);
 
-  //   window.addEventListener("resize", handleResize);
-  //  const handleResize= ()=>{
   const currentWidth = typeof window !== "undefined" ? window.innerWidth : 0;
-  //   if (currentWidth > )
-  // }
-
-  console.log(setShowAllItems);
 
   useEffect(() => {
     if (isLaptop) {
@@ -47,7 +41,9 @@ export default function Product({
     }
 
     if (currentWidth > 768) {
-      setShowAllItems(false);
+      if (typeof setShowAllItems !== "undefined") {
+        setShowAllItems(false);
+      }
     }
   }, [isMobile, isLaptop, showAllItems]);
 
