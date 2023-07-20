@@ -27,5 +27,11 @@
         border-radius: 8px;
         border: 1px solid #3e77aa;
         height: 32px;
+        cursor: pointer;
+        transition: all ease 0.3s;
+
+        &:hover {
+            filter: brightness(125%);
+        }
     }
 }
