@@ -18,7 +18,7 @@
             box-sizing: border-box;
             flex-direction: column;
             justify-content: center;
-            width: 19%;
+            width: 20%;
             height: 335px;
             padding: 20px;
             border-right: 1px solid $divider;
@@ -80,6 +80,10 @@
                 width: 24px;
                 height: 24px;
                 margin-right: 10px;
+            }
+
+            &.bigDesktop {
+                width: 16.66%;
             }
         }
     }

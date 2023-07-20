@@ -18,11 +18,12 @@
     border: 1px solid white;
     background-color: white;
     position: fixed;
-    height: 823px;
+    height: 515px;
     width: 963px;
     left: 0;
-    top: 2.3%;
     right: 0;
+    top: 0;
+    bottom: 0;
     margin: auto;
     z-index: 3;
     display: none;
@@ -30,11 +31,12 @@
 
     .container {
         position: fixed;
-        height: 820px;
+        height: 513px;
         width: 960px;
         left: 0;
-        top: 2.5%;
         right: 0;
+        top: 0;
+        bottom: 0;
         margin: auto;
         background-color: white;
         z-index: 3;
@@ -73,8 +75,6 @@
                         color: red;
                     }
                 }
-
-
             }
         }
 
@@ -119,26 +119,6 @@
     }
 
 }
-
-// @include laptop {
-//     .borderRadiusContainer {
-//         height: 90.5%;
-//         width: 95.5%;
-//         left: 2.2%;
-//         top: 4.6%;
-
-//         .container {
-//             height: 90%;
-//             width: 95%;
-//             left: 2.5%;
-//             top: 5%;
-
-//             .header {
-//                 width: 95%;
-//             }
-//         }
-//     }
-// }
 
 @include mobile {
     .borderRadiusContainer {

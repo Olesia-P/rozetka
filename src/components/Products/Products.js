@@ -37,19 +37,30 @@ export default function Product({ products, header, expandable }) {
       setTreatedProductsArray(products);
     }
 
+    if (currentWidth > 1440) {
+      setTreatedProductsArray(products);
+    }
     if (currentWidth > 768) {
       if (typeof setShowAllItems !== "undefined") {
         setShowAllItems(false);
       }
     }
-  }, [isMobile, isLaptop, showAllItems]);
+  }, [isMobile, isLaptop, showAllItems, currentWidth]);
+
+  console.log(currentWidth);
 
   return (
     <div className={css.container}>
       <div className={css.header}>{header}</div>
       <div className={css.containerProducts}>
         {treatedProductsArray.map((element) => (
-          <div className={cx(css.productCard)} key={element.id}>
+          <div
+            className={cx(
+              css.productCard,
+              currentWidth > 1400 && css.bigDesktop
+            )}
+            key={element.id}
+          >
             <div className={css.imgContainer}>
               <img src={element.img} alt="product picture" />
             </div>

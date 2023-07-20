@@ -52,7 +52,7 @@ export default function SliderBanner({ pictures, smallPictures }) {
           renderArrowPrev={prevArrow}
           renderIndicator={showIndicators}
           swipeable={true}
-          width={"97%"}
+          width={"100%"}
           dynamicHeight={true}
         >
           {pictures.map((element, index) => (
