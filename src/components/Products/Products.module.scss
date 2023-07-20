@@ -12,6 +12,7 @@
     .containerProducts {
         display: flex;
         max-width: 100%;
+        margin-bottom: 60px;
 
         .productCard {
             box-sizing: border-box;
@@ -84,6 +85,10 @@
     }
 }
 
+.showMoreButton {
+    display: none;
+}
+
 @include laptop {
     .container {
         padding: 0 16px;
@@ -93,6 +98,10 @@
                 width: 25%;
             }
         }
+    }
+
+    .showMoreButton {
+        display: none;
     }
 }
 
@@ -108,5 +117,28 @@
 
             }
         }
+    }
+
+    .showMoreButton {
+        @include dfc;
+        height: 36px;
+        border: 1px solid $divider;
+        margin: 15px 8px;
+        color: rgb(62, 119, 170);
+        position: relative;
+        font-size: 14px;
+
+        .arrow {
+
+            svg {
+                height: 8px;
+                width: 8px;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .NOshowMoreButton {
+        display: none;
     }
 }

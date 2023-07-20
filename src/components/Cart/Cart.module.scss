@@ -1,86 +1,147 @@
 @import "../../styles/main.module";
 
-.container {
-    position: fixed;
-    height: 100%;
+.overlay {
     width: 100%;
-    background-color: white;
-    // transform: scale(0.0);
+    height: 100%;
+    position: fixed;
+    background-color: rgb(0, 0, 0, 0.5);
     display: none;
     z-index: 2;
-    box-sizing: border-box;
-    overflow-y: auto;
-    // height: max-content;
 
-
-    .header {
-        position: fixed;
-        padding: 0 16px;
-        height: 57px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: 1px solid $divider;
-        background-color: white;
-        width: 100%;
-        box-sizing: border-box;
-        z-index: 4;
-
-        .title {
-            font-weight: 700;
-            font-size: 20px;
-        }
-
-        .crossContainer {
-            @include dfc;
-            width: 26px;
-            height: 26px;
-
-            .cross {
-                width: 20px;
-                height: 20px;
-                color: $font-grey;
-            }
-        }
+    &.opened {
+        display: block;
     }
+}
 
-    .contentContainer {
-        margin-top: 58px;
-        padding: 0 16px 16px 16px;
-        width: 100%;
-        height: 100%;
+.borderRadiusContainer {
+    border-radius: 8px;
+    border: 1px solid white;
+    background-color: white;
+    position: fixed;
+    height: 91%;
+    width: 70.2%;
+    left: 14.80%;
+    top: 4.5%;
+    z-index: 3;
+    display: none;
+
+    .container {
+        position: fixed;
+        height: 90%;
+        width: 70%;
+        left: 15%;
+        top: 5%;
         background-color: white;
+        z-index: 3;
         box-sizing: border-box;
+        overflow-y: auto;
 
-
-        &.emptyCart {
+        .header {
+            width: 70%;
+            position: fixed;
+            padding: 0 16px;
+            height: 57px;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            padding: 16px;
-            margin-bottom: 48px;
+            justify-content: space-between;
+            border-bottom: 1px solid $divider;
+            background-color: white;
+            box-sizing: border-box;
+            z-index: 3;
 
-            img {
-                margin-bottom: 60px;
-                width: 260px;
-            }
-
-            h4 {
+            .title {
+                font-weight: 700;
                 font-size: 20px;
-                margin: 0 0 16px 0;
             }
 
-            p {
-                font-size: 14px;
-                margin: 0;
-                color: #797878;
+            .crossContainer {
+                @include dfc;
+                width: 26px;
+                height: 26px;
+
+                .cross {
+                    width: 20px;
+                    height: 20px;
+                    color: $font-grey;
+                }
+            }
+        }
+
+        .contentContainer {
+            margin-top: 58px;
+            padding: 0 16px 16px 16px;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            box-sizing: border-box;
+
+            &.emptyCart {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 16px;
+                margin-bottom: 48px;
+
+                img {
+                    margin-bottom: 60px;
+                    width: 260px;
+                }
+
+                h4 {
+                    font-size: 20px;
+                    margin: 0 0 16px 0;
+                }
+
+                p {
+                    font-size: 14px;
+                    margin: 0;
+                    color: #797878;
+                }
             }
         }
     }
 
     &.opened {
-        // transform: scale(1);
-        // transition: all 0.2s ease-in-out;
         display: block;
+    }
+}
+
+@include laptop {
+    .borderRadiusContainer {
+        height: 90.5%;
+        width: 95.5%;
+        left: 2.2%;
+        top: 4.6%;
+
+        .container {
+            height: 90%;
+            width: 95%;
+            left: 2.5%;
+            top: 5%;
+
+            .header {
+                width: 95%;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .borderRadiusContainer {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+
+        .container {
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+
+            .header {
+                width: 100%;
+            }
+        }
     }
 }

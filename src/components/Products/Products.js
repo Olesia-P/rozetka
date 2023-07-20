@@ -8,15 +8,12 @@ import { addToCart, updateProductCost } from "../../store/modules/cartSlice";
 import { numberWithSpaces } from "../../utils/functions";
 import { useEffect, useState } from "react";
 import useMediaQuery from "../../hooks/useMediaQuery";
+import { AiOutlineArrowDown } from "react-icons/ai";
 
-export default function Product({
-  products,
-  header,
-  showAllItems,
-  setShowAllItems,
-}) {
+export default function Product({ products, header, expandable }) {
   const dispatch = useDispatch();
   const [treatedProductsArray, setTreatedProductsArray] = useState([]);
+  const [showAllItems, setShowAllItems] = useState(false);
 
   const isLaptop = useMediaQuery(1200);
   const isMobile = useMediaQuery(768);
@@ -86,6 +83,20 @@ export default function Product({
           </div>
         ))}
       </div>
+      {expandable && (
+        <div
+          className={cx(
+            css.showMoreButton,
+            showAllItems && css.NOshowMoreButton
+          )}
+          onClick={() => setShowAllItems(true)}
+        >
+          Показати ще
+          <div className={css.arrow}>
+            <AiOutlineArrowDown />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

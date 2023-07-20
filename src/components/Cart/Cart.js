@@ -16,34 +16,37 @@ export default function Cart() {
 
   return (
     <div>
-      <div className={cx(css.container, isCartOpen && css.opened)}>
-        <div className={css.header}>
-          <div className={css.title}>Кошик</div>
-          <div
-            className={css.crossContainer}
-            onClick={() => {
-              dispatch(changeIsCartOpen(false));
-            }}
-          >
-            <RxCross2 className={css.cross} />
+      <div className={cx(css.overlay, isCartOpen && css.opened)}></div>
+      <div className={cx(css.borderRadiusContainer, isCartOpen && css.opened)}>
+        <div className={css.container}>
+          <div className={css.header}>
+            <div className={css.title}>Кошик</div>
+            <div
+              className={css.crossContainer}
+              onClick={() => {
+                dispatch(changeIsCartOpen(false));
+              }}
+            >
+              <RxCross2 className={css.cross} />
+            </div>
           </div>
-        </div>
 
-        {products.length > 0 ? (
-          <div className={cx(css.contentContainer)}>
-            <CardProduct />
-            <CountOrder />
-          </div>
-        ) : (
-          <div className={cx(css.contentContainer, css.emptyCart)}>
-            <img
-              src="https://xl-static.rozetka.com.ua/assets/img/design/modal-cart-dummy.svg"
-              alt="empty cart"
-            />
-            <h4>Кошик порожній</h4>
-            <p>Але це ніколи не пізно виправити :)</p>
-          </div>
-        )}
+          {products.length > 0 ? (
+            <div className={cx(css.contentContainer)}>
+              <CardProduct />
+              <CountOrder />
+            </div>
+          ) : (
+            <div className={cx(css.contentContainer, css.emptyCart)}>
+              <img
+                src="https://xl-static.rozetka.com.ua/assets/img/design/modal-cart-dummy.svg"
+                alt="empty cart"
+              />
+              <h4>Кошик порожній</h4>
+              <p>Але це ніколи не пізно виправити :)</p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
