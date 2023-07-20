@@ -21,97 +21,101 @@ export default function Header() {
   const [language, setLanguage] = useState("UA");
 
   return (
-    <div className={cx(css.container)}>
-      {isCartOpen && (
-        <style jsx global>
-          {`
-            body {
-              overflow: hidden;
-            }
-          `}
-        </style>
-      )}
-      <div className={css.layout}>
-        <div className={css.hamburger}>
-          <Hamburger />
-        </div>
-        <img
-          className={css.mobileLogo}
-          src="https://content2.rozetka.com.ua/widget_logotype/light/original/342999092.svg"
-          alt="logo"
-        />
-        <img
-          className={css.desktopLogo}
-          src="https://content2.rozetka.com.ua/widget_logotype/full/original/229862237.svg"
-          alt="logo"
-        />
+    <div>
+      <div className={css.blackBackground}></div>
+      <div className={cx(css.container)}>
+        {isCartOpen && (
+          <style jsx global>
+            {`
+              body {
+                overflow: hidden;
+              }
+            `}
+          </style>
+        )}
 
-        <div
-          className={css.catalogContainer}
-          onClick={() => dispatch(changeIsCatalogOpen(true))}
-        >
-          <AiOutlineShop className={css.catalogLogo} />
-          <div className={css.catalogCaption}>Каталог</div>
-        </div>
-
-        <div className={css.searchForm}>
-          <div className={css.searchIconContainer}>
-            <AiOutlineSearch className={css.searchIcon} />
+        <div className={css.layout}>
+          <div className={css.hamburger}>
+            <Hamburger />
           </div>
-          <input
-            type="text"
-            placeholder="Я шукаю..."
-            className={css.input}
-            autoComplete="off"
-            autoFocus="off"
+          <img
+            className={css.mobileLogo}
+            src="https://content2.rozetka.com.ua/widget_logotype/light/original/342999092.svg"
+            alt="logo"
           />
-          <div className={css.micBtn}>
-            <FaMicrophone className={css.mic} />
-          </div>
-          <div className={css.searchBtn}>Знайти</div>
-        </div>
-
-        <div className={css.iconsBlock}>
-          <div className={css.languageChoiceContainer}>
-            <div
-              className={cx(css.ru, language === "UA" && css.notChosenLang)}
-              onClick={() => setLanguage("RU")}
-            >
-              RU
-            </div>
-            <div className={css.UAflag}>
-              <img
-                src="https://xl-static.rozetka.com.ua/assets/icons/flag-ua.svg"
-                alt="UAflag"
-              />
-            </div>
-            <div
-              className={cx(css.ua, language === "RU" && css.notChosenLang)}
-              onClick={() => setLanguage("UA")}
-            >
-              UA
-            </div>
-          </div>
-
-          <BiUser
-            className={css.profile}
-            onClick={() => dispatch(changeIsAuthorizOpen(true))}
+          <img
+            className={css.desktopLogo}
+            src="https://content2.rozetka.com.ua/widget_logotype/full/original/229862237.svg"
+            alt="logo"
           />
 
           <div
-            className={css.cartContainer}
-            onClick={() => {
-              dispatch(changeIsCartOpen(true));
-            }}
+            className={css.catalogContainer}
+            onClick={() => dispatch(changeIsCatalogOpen(true))}
           >
-            <SlBasket className={css.cart} />
+            <AiOutlineShop className={css.catalogLogo} />
+            <div className={css.catalogCaption}>Каталог</div>
+          </div>
+
+          <div className={css.searchForm}>
+            <div className={css.searchIconContainer}>
+              <AiOutlineSearch className={css.searchIcon} />
+            </div>
+            <input
+              type="text"
+              placeholder="Я шукаю..."
+              className={css.input}
+              autoComplete="off"
+              autoFocus="off"
+            />
+            <div className={css.micBtn}>
+              <FaMicrophone className={css.mic} />
+            </div>
+            <div className={css.searchBtn}>Знайти</div>
+          </div>
+
+          <div className={css.iconsBlock}>
+            <div className={css.languageChoiceContainer}>
+              <div
+                className={cx(css.ru, language === "UA" && css.notChosenLang)}
+                onClick={() => setLanguage("RU")}
+              >
+                RU
+              </div>
+              <div className={css.UAflag}>
+                <img
+                  src="https://xl-static.rozetka.com.ua/assets/icons/flag-ua.svg"
+                  alt="UAflag"
+                />
+              </div>
+              <div
+                className={cx(css.ua, language === "RU" && css.notChosenLang)}
+                onClick={() => setLanguage("UA")}
+              >
+                UA
+              </div>
+            </div>
+
+            <BiUser
+              className={css.profile}
+              onClick={() => dispatch(changeIsAuthorizOpen(true))}
+            />
+
             <div
-              className={cx(
-                css.itemsCounter,
-                products.length < 1 && css.noItemsCounter
-              )}
+              className={css.cartContainer}
+              onClick={() => {
+                dispatch(changeIsCartOpen(true));
+              }}
             >
-              {products.length}
+              <SlBasket className={css.cart} />
+              <div
+                className={cx(
+                  css.itemsCounter,
+                  products.length < 1 && css.noItemsCounter
+                )}
+              >
+                {products.length}
+              </div>
             </div>
           </div>
         </div>
