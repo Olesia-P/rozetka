@@ -16,9 +16,14 @@ export default function Cart() {
 
   return (
     <div>
-      <div className={cx(css.overlay, isCartOpen && css.opened)}></div>
+      <div
+        className={cx(css.overlay, isCartOpen && css.opened)}
+        onClick={() => {
+          dispatch(changeIsCartOpen(false));
+        }}
+      ></div>
       <div className={cx(css.borderRadiusContainer, isCartOpen && css.opened)}>
-        <div className={css.container}>
+        <div className={cx(css.container)}>
           <div className={css.header}>
             <div className={css.title}>Кошик</div>
             <div

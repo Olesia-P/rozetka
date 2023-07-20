@@ -22,22 +22,22 @@ export default function SocialMedia({ size }) {
         Ми в соціальних мережах
       </div>
       <div className={css.linksWrap}>
-        <a href="">
+        <a href="https://www.facebook.com/rozetka.ua">
           <FaFacebookF className={cx(css.icon, css.facebook)} />
         </a>
-        <a href="">
+        <a href="https://twitter.com/rozetka_ua">
           <FaTwitter className={cx(css.icon, css.twitter)} />
         </a>
-        <a href="">
+        <a href="http://bit.ly/RZTK_UA">
           <AiFillYoutube className={cx(css.icon, css.youtube)} />
         </a>
-        <a href="">
+        <a href="https://instagram.com/rozetkaua">
           <AiOutlineInstagram className={cx(css.icon, css.instagram)} />
         </a>
-        <a href="">
+        <a href="https://invite.viber.com/?g2=AQB9mwM%2F5f%2FxJUlMxP4V9flr2%2BvXTC1MpxdGFZ0P6d%2Fs6Ws%2FFe%2FQtLiZwA4E28sj">
           <FaViber className={cx(css.icon, css.viber)} />
         </a>
-        <a href="">
+        <a href="https://t.me/rrozetka">
           <FaTelegramPlane className={cx(css.icon, css.telegram)} />
         </a>
       </div>

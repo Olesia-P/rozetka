@@ -18,26 +18,30 @@
     border: 1px solid white;
     background-color: white;
     position: fixed;
-    height: 91%;
-    width: 70.2%;
-    left: 14.80%;
-    top: 4.5%;
+    height: 823px;
+    width: 963px;
+    left: 0;
+    top: 2.3%;
+    right: 0;
+    margin: auto;
     z-index: 3;
     display: none;
 
+
     .container {
         position: fixed;
-        height: 90%;
-        width: 70%;
-        left: 15%;
-        top: 5%;
+        height: 820px;
+        width: 960px;
+        left: 0;
+        top: 2.5%;
+        right: 0;
+        margin: auto;
         background-color: white;
         z-index: 3;
-        box-sizing: border-box;
         overflow-y: auto;
 
         .header {
-            width: 70%;
+            width: 960px;
             position: fixed;
             padding: 0 16px;
             height: 57px;
@@ -56,14 +60,21 @@
 
             .crossContainer {
                 @include dfc;
-                width: 26px;
-                height: 26px;
+                width: 50px;
+                height: 50px;
+                cursor: pointer;
 
                 .cross {
                     width: 20px;
                     height: 20px;
                     color: $font-grey;
+
+                    &:hover {
+                        color: red;
+                    }
                 }
+
+
             }
         }
 
@@ -99,32 +110,35 @@
                 }
             }
         }
+
+
     }
 
     &.opened {
         display: block;
     }
+
 }
 
-@include laptop {
-    .borderRadiusContainer {
-        height: 90.5%;
-        width: 95.5%;
-        left: 2.2%;
-        top: 4.6%;
+// @include laptop {
+//     .borderRadiusContainer {
+//         height: 90.5%;
+//         width: 95.5%;
+//         left: 2.2%;
+//         top: 4.6%;
 
-        .container {
-            height: 90%;
-            width: 95%;
-            left: 2.5%;
-            top: 5%;
+//         .container {
+//             height: 90%;
+//             width: 95%;
+//             left: 2.5%;
+//             top: 5%;
 
-            .header {
-                width: 95%;
-            }
-        }
-    }
-}
+//             .header {
+//                 width: 95%;
+//             }
+//         }
+//     }
+// }
 
 @include mobile {
     .borderRadiusContainer {
