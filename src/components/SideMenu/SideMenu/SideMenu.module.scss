@@ -1,7 +1,6 @@
 @import "../../../styles/main.module";
 
 .containerDesktop {
-
     background-color: white;
     width: 300px;
     border-right: 1px solid $divider;
@@ -15,7 +14,6 @@
 .containerLaptop {
     display: none;
 }
-
 
 @include laptop {
     .containerDesktop {

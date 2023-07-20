@@ -12,7 +12,6 @@ function MyApp({ Component, pageProps }) {
         <Header />
         <MobileMenu />
         <Cart />
-
         <Component {...pageProps} />
       </div>
     </Provider>

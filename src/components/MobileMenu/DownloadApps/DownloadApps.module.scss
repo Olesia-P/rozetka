@@ -1,6 +1,5 @@
 @import "../../../styles/main.module";
 
-
 .container {
     display: flex;
     flex-direction: column;
@@ -19,11 +18,8 @@
 
         &.margBttm12 {
             margin-bottom: 12px;
-
         }
     }
-
-
 
     .imgWrap {
         display: flex;

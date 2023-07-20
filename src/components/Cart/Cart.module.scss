@@ -28,7 +28,6 @@
     z-index: 3;
     display: none;
 
-
     .container {
         position: fixed;
         height: 513px;
@@ -110,14 +109,11 @@
                 }
             }
         }
-
-
     }
 
     &.opened {
         display: block;
     }
-
 }
 
 @include mobile {

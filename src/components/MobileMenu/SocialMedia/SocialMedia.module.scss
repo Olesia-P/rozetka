@@ -1,10 +1,5 @@
 @import "../../../styles/main.module";
 
-// .container {
-//     display: none;
-// }
-
-// @media(max-width:$max-width-mobile) {
 .container {
     display: flex;
     flex-direction: column;
@@ -16,7 +11,6 @@
     .header {
         color: $bleak-header-grey;
         font-weight: 700;
-
 
         &.margBttm8 {
             margin-bottom: 8px;
@@ -84,5 +78,3 @@
 
     }
 }
-
-// }

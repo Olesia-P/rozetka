@@ -4,7 +4,6 @@
     line-height: 1.5;
     display: flex;
 
-
     .overlay {
         opacity: 0;
         width: 100%;
@@ -12,16 +11,10 @@
         position: fixed;
         background-color: rgb(0, 0, 0, 0.5);
         transition: opacity 0.5s ease-in;
-        // transition-delay: 2s;
-        // display: none;
         z-index: 2;
 
         &.displayNone {
             display: none;
-        }
-
-        &.displayBlock {
-            display: block;
         }
     }
 
@@ -39,12 +32,10 @@
         overflow-x: hidden;
     }
 
-
     &.open {
         .menu {
             transform: translateX(0);
             transition: transform 0.5s ease-in;
-
         }
 
         .overlay {

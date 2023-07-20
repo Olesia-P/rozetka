@@ -40,16 +40,3 @@ export const forPartners = {
     "Оренда приміщень",
   ],
 };
-
-// export const decideObject = () => {
-//   switch (objectName) {
-//     case "companyInfo":
-//       return companyInfo;
-//     case "help":
-//       return help;
-//     case "services":
-//       return services;
-//     case "forPartners":
-//       return forPartners;
-//   }
-// };

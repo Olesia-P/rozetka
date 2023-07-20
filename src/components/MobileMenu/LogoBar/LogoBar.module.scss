@@ -1,10 +1,5 @@
 @import "../../../styles/main.module";
 
-// .logoBar {
-//     display: none;
-// }
-
-// @media(max-width:$max-width-mobile) {
 .logoBar {
     background-color: $black;
     display: flex;
@@ -29,5 +24,3 @@
         }
     }
 }
-
-// }

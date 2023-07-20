@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import css from "./LogoBar.module.scss";
 import { RxCross2 } from "react-icons/rx";
@@ -14,6 +13,7 @@ export default function LogoBar() {
     <div className={css.logoBar}>
       <img
         className={css.logo}
+        alt="rozetka logo"
         src="https://content2.rozetka.com.ua/widget_logotype/full/original/229862237.svg"
       />
       <div

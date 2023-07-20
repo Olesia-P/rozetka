@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import css from "./MobileMenu.module.scss";
 import cx from "classnames";
 import LogoBar from "../LogoBar/LogoBar.js";
@@ -38,17 +38,6 @@ import {
 
 export default function MobileMenu() {
   const [isCityChoicePopUp, setIsCityChoicePopUp] = useState(false);
-  // const [isOverlay, setIsOverlay] = useState(false);
-
-  // useEffect(() => {
-  //   isMobileMenuOpen
-  //     ? setTimeout(() => {
-  //         setIsOverlay(true);
-  //       }, 300)
-  //     : setTimeout(() => {
-  //         setIsOverlay(false);
-  //       }, 300);
-  // }, [isMobileMenuOpen]);
 
   const {
     isMobileMenuOpen,
@@ -71,11 +60,7 @@ export default function MobileMenu() {
     <div>
       <div className={cx(css.container, isMobileMenuOpen && css.open)}>
         <div
-          className={cx(
-            css.overlay,
-            !isOverlayDisplayed && css.displayNone
-            // isOverlayDisplayed && css.displayBlock
-          )}
+          className={cx(css.overlay, !isOverlayDisplayed && css.displayNone)}
           onClick={() => {
             dispatch(changeIsMobileMenuOpen(false));
             setTimeout(() => {

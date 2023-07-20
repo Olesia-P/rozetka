@@ -1,9 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState, useEffect } from "react";
 import css from "./SliderBanner.module.scss";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import cx from "classnames";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 export default function SliderBanner({ pictures, smallPictures }) {

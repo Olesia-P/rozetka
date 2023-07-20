@@ -21,11 +21,9 @@
     }
 }
 
-
 @include laptop {
     .productsLayout {
         padding: 0;
-        // flex-direction: column-reverse;
         flex-direction: column;
 
         .catalogButton {
@@ -70,7 +68,6 @@
             font-size: 14px;
 
             .arrow {
-
                 svg {
                     height: 8px;
                     width: 8px;

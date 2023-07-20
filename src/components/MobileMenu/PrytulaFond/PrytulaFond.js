@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import { useDispatch } from "react-redux";
 import css from "./PrytulaFond.module.scss";
@@ -14,6 +13,7 @@ export default function PrytulaFond() {
     >
       <img
         className={css.logo}
+        alt="rozetka logo"
         src="https://xl-static.rozetka.com.ua/assets/img/design/logos/prytula_foundation.svg"
       />
 

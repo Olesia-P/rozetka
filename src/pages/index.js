@@ -28,6 +28,7 @@ export default function Home() {
           `}
         </style>
       )}
+
       <div className={css.space}></div>
 
       {!isLaptop && (
@@ -70,7 +71,6 @@ export default function Home() {
             products={productsArray1}
             expandable={true}
           />
-
           <Products
             header="Рекомендовані товари"
             products={productsArray2}
