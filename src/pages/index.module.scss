@@ -11,6 +11,7 @@
     margin: 0 auto;
     overflow-y: auto;
     flex-wrap: nowrap;
+    box-sizing: border-box;
 
     .catalogButton {
         display: none;

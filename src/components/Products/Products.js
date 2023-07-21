@@ -47,8 +47,6 @@ export default function Product({ products, header, expandable }) {
     }
   }, [isMobile, isLaptop, showAllItems, currentWidth]);
 
-  console.log(currentWidth);
-
   return (
     <div className={css.container}>
       <div className={css.header}>{header}</div>
