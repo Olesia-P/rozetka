@@ -9,9 +9,13 @@
     display: flex;
     max-width: 1600px;
     margin: 0 auto;
-    overflow-y: auto;
+
     flex-wrap: nowrap;
     box-sizing: border-box;
+
+    .main {
+        overflow-y: auto;
+    }
 
     .catalogButton {
         display: none;

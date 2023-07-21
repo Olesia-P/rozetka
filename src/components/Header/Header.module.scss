@@ -16,6 +16,7 @@
     height: 72px;
     background-color: $black;
     width: 100%;
+
 }
 
 .container {
@@ -234,6 +235,10 @@
 }
 
 @include laptop {
+    .blackBackground {
+        display: none;
+
+    }
 
     .container {
         padding: 0 16px;

@@ -36,21 +36,13 @@ export default function Home() {
           <div>
             <SideMenu />
           </div>
-          <div>
+          <div className={css.main}>
             <SliderBanner
               pictures={bannerPictures}
               smallPictures={bannerPicturesSmall}
             />
-            <Products
-              products={productsArray1}
-              header="Гарячі новинки"
-              expandable={false}
-            />
-            <Products
-              products={productsArray2}
-              header="Рекомендовані товари"
-              expandable={false}
-            />
+            <Products products={productsArray1} header="Гарячі новинки" />
+            <Products products={productsArray2} header="Рекомендовані товари" />
           </div>
         </div>
       )}
@@ -66,16 +58,8 @@ export default function Home() {
             <AiOutlineShop className={css.catalogLogo} />
             <div className={css.catalogCaption}>Каталог товарів</div>
           </div>
-          <Products
-            header="Гарячі новинки"
-            products={productsArray1}
-            expandable={true}
-          />
-          <Products
-            header="Рекомендовані товари"
-            products={productsArray2}
-            expandable={true}
-          />
+          <Products header="Гарячі новинки" products={productsArray1} />
+          <Products header="Рекомендовані товари" products={productsArray2} />
         </div>
       )}
     </div>

@@ -3,7 +3,6 @@
 .container {
     padding: 0 18px 0 40px;
 
-
     .header {
         margin-bottom: 16px;
         font-size: 20px;
@@ -14,6 +13,7 @@
         display: flex;
         max-width: 100%;
         margin-bottom: 60px;
+        flex-wrap: wrap;
 
         .productCard {
             box-sizing: border-box;
@@ -81,16 +81,60 @@
                 height: 24px;
                 margin-right: 10px;
             }
+        }
+    }
 
-            &.bigDesktop {
-                width: 16.66%;
+    .showMoreButtonContainer {
+        position: relative;
+
+        .showMoreButton {
+            @include dfc;
+            height: 36px;
+            border: 1px solid $divider;
+            color: rgb(62, 119, 170);
+            font-size: 14px;
+            width: 20%;
+            position: absolute;
+            right: 0;
+            top: -60px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                color: $red;
+            }
+
+            .arrow {
+                svg {
+                    height: 8px;
+                    width: 8px;
+                    margin-left: 10px;
+                }
+            }
+
+            &.NOshowMoreButton {
+                display: none;
             }
         }
     }
 }
 
-.showMoreButton {
-    display: none;
+
+@include desktop {
+    .container {
+        .containerProducts {
+            .productCard {
+                width: 16.66%;
+            }
+        }
+
+        .showMoreButtonContainer {
+            .showMoreButton {
+                width: 16.66%;
+            }
+        }
+    }
 }
 
 @include laptop {
@@ -102,10 +146,12 @@
                 width: 25%;
             }
         }
-    }
 
-    .showMoreButton {
-        display: none;
+        .showMoreButtonContainer {
+            .showMoreButton {
+                width: 25%;
+            }
+        }
     }
 }
 
@@ -120,27 +166,12 @@
                 width: 50%;
             }
         }
-    }
 
-    .showMoreButton {
-        @include dfc;
-        height: 36px;
-        border: 1px solid $divider;
-        margin: 15px 8px;
-        color: rgb(62, 119, 170);
-        position: relative;
-        font-size: 14px;
-
-        .arrow {
-            svg {
-                height: 8px;
-                width: 8px;
-                margin-left: 10px;
+        .showMoreButtonContainer {
+            .showMoreButton {
+                width: 100%;
+                border: 1px solid rgb(216, 215, 215);
             }
         }
-    }
-
-    .NOshowMoreButton {
-        display: none;
     }
 }

@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import useMediaQuery from "../../hooks/useMediaQuery";
 import { AiOutlineArrowDown } from "react-icons/ai";
 
-export default function Product({ products, header, expandable }) {
+export default function Product({ products, header }) {
   const dispatch = useDispatch();
   const [treatedProductsArray, setTreatedProductsArray] = useState([]);
   const [showAllItems, setShowAllItems] = useState(false);
@@ -33,17 +33,12 @@ export default function Product({ products, header, expandable }) {
       setTreatedProductsArray(products.slice(0, 5));
     }
 
-    if (showAllItems) {
-      setTreatedProductsArray(products);
+    if (currentWidth > 1440) {
+      setTreatedProductsArray(products.slice(0, 6));
     }
 
-    if (currentWidth > 1440) {
+    if (showAllItems) {
       setTreatedProductsArray(products);
-    }
-    if (currentWidth > 768) {
-      if (typeof setShowAllItems !== "undefined") {
-        setShowAllItems(false);
-      }
     }
   }, [isMobile, isLaptop, showAllItems, currentWidth]);
 
@@ -52,13 +47,7 @@ export default function Product({ products, header, expandable }) {
       <div className={css.header}>{header}</div>
       <div className={css.containerProducts}>
         {treatedProductsArray.map((element) => (
-          <div
-            className={cx(
-              css.productCard,
-              currentWidth > 1400 && css.bigDesktop
-            )}
-            key={element.id}
-          >
+          <div className={cx(css.productCard)} key={element.id}>
             <div className={css.imgContainer}>
               <img src={element.img} alt="product picture" />
             </div>
@@ -92,7 +81,8 @@ export default function Product({ products, header, expandable }) {
           </div>
         ))}
       </div>
-      {expandable && (
+
+      <div className={css.showMoreButtonContainer}>
         <div
           className={cx(
             css.showMoreButton,
@@ -101,11 +91,11 @@ export default function Product({ products, header, expandable }) {
           onClick={() => setShowAllItems(true)}
         >
           Показати ще
-          <div className={css.arrow}>
+          <div className={cx(css.arrow)}>
             <AiOutlineArrowDown />
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
