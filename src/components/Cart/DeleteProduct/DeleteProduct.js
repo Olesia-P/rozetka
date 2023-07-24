@@ -10,7 +10,7 @@ export default function DeleteProduct({ productId }) {
   const dispatch = useDispatch();
   const [isOpenDelete, setIsOpenDelete] = useState(false);
   return (
-    <div>
+    <>
       <div
         className={cx(css.overlay, isOpenDelete && css.openDelete)}
         onClick={() => {
@@ -34,6 +34,6 @@ export default function DeleteProduct({ productId }) {
         <MdDeleteOutline className={css.icon} />
         <div className={css.caption}>Видалити</div>
       </div>
-    </div>
+    </>
   );
 }

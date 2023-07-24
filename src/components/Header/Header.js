@@ -21,7 +21,7 @@ export default function Header() {
   const [language, setLanguage] = useState("UA");
 
   return (
-    <div>
+    <>
       <div className={css.blackBackground}></div>
       <div className={cx(css.container)}>
         {isCartOpen && (
@@ -120,6 +120,6 @@ export default function Header() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

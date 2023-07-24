@@ -15,7 +15,7 @@ export default function Cart() {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <>
       <div
         className={cx(css.overlay, isCartOpen && css.opened)}
         onClick={() => {
@@ -53,6 +53,6 @@ export default function Cart() {
           )}
         </div>
       </div>
-    </div>
+    </>
   );
 }

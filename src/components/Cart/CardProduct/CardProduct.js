@@ -17,7 +17,7 @@ export default function CardProduct() {
   const { products } = useSelector(({ cart }) => cart);
 
   return (
-    <div>
+    <>
       {products.map((element) => (
         <div key={element.id}>
           <div className={css.cardProduct}>
@@ -84,6 +84,6 @@ export default function CardProduct() {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 }

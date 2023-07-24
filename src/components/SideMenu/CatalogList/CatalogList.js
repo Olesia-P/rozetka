@@ -4,7 +4,7 @@ import { FiChevronRight } from "react-icons/fi";
 
 export default function CatalogList({ listType }) {
   return (
-    <div>
+    <>
       {listType === "desktop" && (
         <div className={css.containerDesktop}>
           {catalogListArray.map((element) => (
@@ -33,6 +33,6 @@ export default function CatalogList({ listType }) {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

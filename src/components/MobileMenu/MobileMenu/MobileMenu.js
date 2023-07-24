@@ -57,7 +57,7 @@ export default function MobileMenu() {
   const PopUpPrytulaFond = withPopUp(PopUpPrytulaFondFilling);
 
   return (
-    <div>
+    <>
       <div className={cx(css.container, isMobileMenuOpen && css.open)}>
         <div
           className={cx(css.overlay, !isOverlayDisplayed && css.displayNone)}
@@ -109,6 +109,6 @@ export default function MobileMenu() {
         isOpen={isPrytulaFondOpen}
         onClose={() => dispatch(changeIsPrytulaFondOpen(false))}
       />
-    </div>
+    </>
   );
 }

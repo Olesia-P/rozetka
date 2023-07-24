@@ -15,7 +15,7 @@ import {
 
 export default function SideMenu() {
   return (
-    <div>
+    <>
       <div className={css.containerDesktop}>
         <CatalogList listType="desktop" />
         <MixedPurposeList />
@@ -33,6 +33,6 @@ export default function SideMenu() {
       <div className={css.containerLaptop}>
         <CatalogList listType="laptop" />
       </div>
-    </div>
+    </>
   );
 }

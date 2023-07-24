@@ -18,7 +18,7 @@ export default function Home() {
     ({ commonOpening }) => commonOpening
   );
   return (
-    <div>
+    <>
       {isMobileMenuOpen && (
         <style jsx global>
           {`
@@ -62,6 +62,6 @@ export default function Home() {
           <Products header="Рекомендовані товари" products={productsArray2} />
         </div>
       )}
-    </div>
+    </>
   );
 }
