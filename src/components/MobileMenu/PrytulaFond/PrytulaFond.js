@@ -14,7 +14,7 @@ export default function PrytulaFond() {
       <img
         className={css.logo}
         alt="rozetka logo"
-        src="https://xl-static.rozetka.com.ua/assets/img/design/logos/prytula_foundation.svg"
+        src="/prytula_foundation.svg"
       />
 
       <div className={css.link}>ФОНД СЕРГІЯ ПРИТУЛИ</div>

@@ -43,10 +43,7 @@ export default function Cart() {
             </div>
           ) : (
             <div className={cx(css.contentContainer, css.emptyCart)}>
-              <img
-                src="https://xl-static.rozetka.com.ua/assets/img/design/modal-cart-dummy.svg"
-                alt="empty cart"
-              />
+              <img src="/modal-cart-dummy.svg" alt="empty cart" />
               <h4>Кошик порожній</h4>
               <p>Але це ніколи не пізно виправити :)</p>
             </div>

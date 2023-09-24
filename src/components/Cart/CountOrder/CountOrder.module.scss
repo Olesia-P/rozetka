@@ -15,6 +15,7 @@
         border-radius: 4px;
         height: 90px;
         font-weight: 400;
+        position: relative;
 
         .receiptSum {
             display: flex;
@@ -33,6 +34,7 @@
             font-size: 18px;
             border-radius: 8px;
             @include dfc;
+            position: sticky;
         }
     }
 }

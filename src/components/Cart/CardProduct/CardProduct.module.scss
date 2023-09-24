@@ -47,13 +47,16 @@
 
 .orderDetailsCard {
     padding: 16px 0;
+    padding-bottom: 24px;
     height: 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 
     .counterContainer {
         @include dfc;
+
+
 
         .counterBtn {
             width: 40px;
@@ -96,6 +99,7 @@
         align-items: flex-end;
         justify-content: center;
         line-height: 1.2;
+        width: 25%;
 
         .oldPrice {
             @include oldPrice;
@@ -108,5 +112,11 @@
         .currentPrice {
             @include currentPrice
         }
+    }
+}
+
+@include mobile {
+    .orderDetailsCard {
+        justify-content: space-between;
     }
 }

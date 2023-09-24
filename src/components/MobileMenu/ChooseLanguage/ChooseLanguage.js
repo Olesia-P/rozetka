@@ -24,10 +24,7 @@ export default function ChooseLanguage() {
             setSelected("UA");
           }}
         >
-          <img
-            src="https://xl-static.rozetka.com.ua/assets/icons/flag-ua.svg"
-            alt="UAflag"
-          />
+          <img src="/flag-ua.svg" alt="UAflag" />
           <div>UA</div>
         </div>
       </div>

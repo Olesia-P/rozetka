@@ -11,11 +11,7 @@ export default function LogoBar() {
   const dispatch = useDispatch();
   return (
     <div className={css.logoBar}>
-      <img
-        className={css.logo}
-        alt="rozetka logo"
-        src="https://content2.rozetka.com.ua/widget_logotype/full/original/229862237.svg"
-      />
+      <img className={css.logo} alt="rozetka logo" src="/rozetka_logo.svg" />
       <div
         className={css.crossContainer}
         onClick={() => {

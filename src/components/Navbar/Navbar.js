@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import css from "./Header.module.scss";
+import css from "./Navbar.module.scss";
 import cx from "classnames";
 import Hamburger from "../Hamburger/Hamburger.js";
 import { FaMicrophone } from "react-icons/fa";
@@ -14,7 +14,7 @@ import {
   changeIsCatalogOpen,
 } from "../../store/modules/commonOpeningSlice";
 
-export default function Header() {
+export default function Navbar() {
   const dispatch = useDispatch();
   const { products } = useSelector(({ cart }) => cart);
   const { isCartOpen } = useSelector(({ commonOpening }) => commonOpening);
@@ -40,14 +40,10 @@ export default function Header() {
           </div>
           <img
             className={css.mobileLogo}
-            src="https://content2.rozetka.com.ua/widget_logotype/light/original/342999092.svg"
+            src="/rozetka_logo_mobile.svg"
             alt="logo"
           />
-          <img
-            className={css.desktopLogo}
-            src="https://content2.rozetka.com.ua/widget_logotype/full/original/229862237.svg"
-            alt="logo"
-          />
+          <img className={css.desktopLogo} src="/rozetka_logo.svg" alt="logo" />
 
           <div
             className={css.catalogContainer}
@@ -83,10 +79,7 @@ export default function Header() {
                 RU
               </div>
               <div className={css.UAflag}>
-                <img
-                  src="https://xl-static.rozetka.com.ua/assets/icons/flag-ua.svg"
-                  alt="UAflag"
-                />
+                <img src="/flag-ua.svg" alt="UAflag" />
               </div>
               <div
                 className={cx(css.ua, language === "RU" && css.notChosenLang)}

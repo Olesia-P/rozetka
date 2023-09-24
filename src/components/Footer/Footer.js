@@ -6,16 +6,10 @@ export default function Footer() {
     <div className={css.container}>
       <div className={css.imgWrap}>
         <a>
-          <img
-            alt="mastercard"
-            src="https://xl-static.rozetka.com.ua/assets/img/design/mastercard-logo.svg"
-          />
+          <img alt="mastercard" src="/mastercard-logo.svg" />
         </a>
         <a>
-          <img
-            alt="visa"
-            src="https://xl-static.rozetka.com.ua/assets/img/design/visa-logo.svg"
-          />
+          <img alt="visa" src="/visa-logo.svg" />
         </a>
       </div>
       <div className={css.copyright}>
