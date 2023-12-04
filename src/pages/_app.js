@@ -5,12 +5,14 @@ import Navbar from "../components/Navbar/Navbar.js";
 import { Provider } from "react-redux";
 import { store } from "../store";
 import Cart from "../components/Cart/Cart";
+import Meta from "../components/meta/meta.jsx";
 
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
       <Head>
         <title>Rozetka Homepage Visual Copy</title>
+        <Meta />
       </Head>
       <div>
         <Navbar />
