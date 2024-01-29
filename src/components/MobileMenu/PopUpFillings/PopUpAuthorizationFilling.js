@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function PopUpAuthorizationFilling() {
-  return <h1>This is authorization page</h1>;
+  return <div>This is authorization page</div>;
 }

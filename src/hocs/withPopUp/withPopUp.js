@@ -9,13 +9,15 @@ const withPopUp = (Component) => (props) => {
       <div className={css.title}>
         <Component />
       </div>
-      <h2>This project is visual only.</h2>
-      <h2>Actions that you can do:</h2>
-      <ul>
-        <li>add products to the cart</li>
-        <li>increase or decrease amount of products in the cart</li>
-        <li>delete products from the cart</li>
-      </ul>
+      <div>
+        <div className={css.comment}>This project is visual only.</div>
+        <div className={css.comment}>Actions that you can do:</div>
+      </div>
+      <div className={css.listWrap}>
+        <p> - add products to the cart</p>
+        <p> - increase or decrease amount of products in the cart</p>
+        <p> - delete products from the cart</p>
+      </div>
       <div className={css.button} onClick={() => props.onClose()}>
         X
       </div>
