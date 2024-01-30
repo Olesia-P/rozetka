@@ -37,4 +37,4 @@ Original “Rozetka” website is often updated and has design changes. **This p
 - Creating **pop-ups**;
 - Using **Redux** for **global state management**.
 
-Here you can check the <a href="https://superlative-kleicha-ac1778.netlify.app/" target="_blank">deployed site</a>!
+Here you can check the <a href="https://rozetka-visual-copy.netlify.app/" target="_blank">deployed site</a>!
