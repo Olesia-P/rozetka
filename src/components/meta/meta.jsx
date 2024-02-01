@@ -15,7 +15,7 @@ export default function Meta() {
       <meta property="og:type" content="website" />
       <meta
         property="og:url"
-        content="https://rozetka-visual-copy.netlify.app/"
+        content="https://rozetka-homepage-visual-copy.netlify.app/"
       />
       <meta property="og:title" content="Rozetka Homepage Visual Copy" />
       <meta
@@ -27,7 +27,7 @@ export default function Meta() {
       <meta property="twitter:card" content="summary_large_image" />
       <meta
         property="twitter:url"
-        content="https://rozetka-visual-copy.netlify.app/"
+        content="https://rozetka-homepage-visual-copy.netlify.app/"
       />
       <meta property="twitter:title" content="Rozetka Homepage Visual Copy" />
       <meta
